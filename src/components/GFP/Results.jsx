@@ -224,7 +224,7 @@ class Results extends Component {
           </Typography>
         </Grid>
 
-        <Grid container direction={"row"}>
+        <Grid container direction="row">
           <Grid item md={6} sm={12} className={classes.gridItem}>
             <div className={classes.paper}>
               <Scatter
