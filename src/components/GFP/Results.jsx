@@ -20,7 +20,7 @@ import { fluorescence, correlation } from "./Data/Data";
 
 const useStyles = (theme) => ({
   root: {
-    // flexGrow: 1,
+    flexGrow: 1,
   },
   paper: {
     padding: theme.spacing(2),
@@ -196,6 +196,7 @@ class Results extends Component {
   render() {
     const { classes } = this.props;
     return (
+      <Fragment>
       <div className={classes.root}>
         <Typography variant="h5" gutterBottom>
           GFP results
@@ -298,6 +299,7 @@ class Results extends Component {
           </Button>
         </Grid>
       </div>
+      </Fragment>
     );
   }
 }
