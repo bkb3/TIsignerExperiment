@@ -20,7 +20,7 @@ import { fluorescence, correlation } from "./Data/Data";
 
 const useStyles = (theme) => ({
   root: {
-    flexGrow: 1,
+    // flexGrow: 1,
   },
   paper: {
     padding: theme.spacing(2),
@@ -225,8 +225,9 @@ class Results extends Component {
         </Grid>
 
         <Grid container direction="row">
-          <Grid item md={6} sm={12} className={classes.gridItem}>
+          <Grid item md={6} sm={12} xs={9} className={classes.gridItem}>
             <div className={classes.paper}>
+              <div style={{position:"relative",}}>
               <Scatter
                 data={this.state.data}
                 options={this.state.options}
@@ -234,9 +235,10 @@ class Results extends Component {
                 // width={350}
                 // height={350}
               />
+              </div>
             </div>
           </Grid>
-          <Grid item md={6} sm={12} className={classes.gridItem}>
+          <Grid item md={6} sm={12} xs={9} className={classes.gridItem}>
             <div className={classes.paper}>
               <Typography
                 variant="h6"
@@ -245,6 +247,13 @@ class Results extends Component {
               >
                 Click on a point to view the sequence.
               </Typography>
+                            {/* <Scatter
+                data={this.state.data}
+                options={this.state.options}
+                // getElementAtEvent={getElementAtEvent}
+                // width={350}
+                // height={350}
+              /> */}
             </div>
           </Grid>
         </Grid>
