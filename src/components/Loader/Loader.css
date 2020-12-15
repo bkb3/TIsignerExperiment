@@ -1,0 +1,102 @@
+/* Adapted from : */
+/* https://codepen.io/aitchiss/pen/YzwqzBr */
+
+
+.tube {
+  --liquid-color: #03bd3a;
+  --liquid-height: 65%;
+}
+
+.test-tube {
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  height: 150px;
+  width: 40px;
+  border-radius: 0 0 30% 30%;
+  background: linear-gradient(
+    to top,
+    var(--liquid-color),
+    var(--liquid-color) var(--liquid-height),
+    transparent var(--liquid-height),
+    transparent
+  );
+}
+
+/* Gradient to create tube shape */
+.test-tube::before {
+  content: "";
+  position: absolute;
+  height: 150px;
+  width: 40px;
+  border-radius: 0 0 30% 30%;
+  background: linear-gradient(
+    to right,
+    rgba(187, 168, 240, 0.6),
+    rgba(104, 102, 233, 0.1) 50%,
+    rgba(127, 115, 233, 0.6)
+  );
+}
+
+/* Circle at top of test tube */
+.test-tube::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -10px;
+  width: 60px;
+  height: 10px;
+  border-radius: 95%;
+  border: 5px solid rgba(196, 192, 233, 0.8);
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  animation: bubbleUp 2s infinite;
+  width: 10px;
+  height: 10px;
+}
+
+.tube .bubble {
+  bottom: 10px;
+  left: 5px;
+}
+
+.bubble::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  animation: bubbleUp 2s infinite;
+}
+
+.tube .bubble::before {
+  left: 10px;
+  top: -10px;
+}
+
+.bubble::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  animation: bubbleUp 2s infinite;
+}
+
+.tube .bubble::after {
+  left: 20px;
+  top: -15px;
+}
+
+@keyframes bubbleUp {
+  100% {
+    transform: translateY(-50px);
+    background: transparent;
+  }
+}
