@@ -192,6 +192,7 @@ class Results extends Component {
     this.plot();
   }
 
+
   render() {
     const { classes } = this.props;
     return (
@@ -223,8 +224,8 @@ class Results extends Component {
           </Typography>
         </Grid>
 
-        <Grid container direction="row">
-          <Grid item md={12} sm={6} className={classes.gridItem}>
+        <Grid container direction={"row"}>
+          <Grid item md={6} sm={12} className={classes.gridItem}>
             <div className={classes.paper}>
               <Scatter
                 data={this.state.data}
@@ -235,7 +236,7 @@ class Results extends Component {
               />
             </div>
           </Grid>
-          <Grid item md={12} sm={4} className={classes.gridItem}>
+          <Grid item md={6} sm={12} className={classes.gridItem}>
             <div className={classes.paper}>
               <Typography
                 variant="h6"
