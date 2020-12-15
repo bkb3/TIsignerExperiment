@@ -153,7 +153,7 @@ function GFPConstructs() {
         </code>
       </pre>
       <Grid container direction="row" >
-        <Grid item md={6} sm={9} xs={9} className={classes.gridItem}>
+        <Grid item md={6} className={classes.gridItem}>
           <div className={classes.paper}>
             <Scatter
               data={data}
@@ -164,7 +164,7 @@ function GFPConstructs() {
             />
           </div>
         </Grid>
-        <Grid item md={6} sm={9} xs={9} className={classes.gridItem}>
+        <Grid item md={4} className={classes.gridItem}>
           <div className={classes.paper}>
             <Typography
               variant="h6"

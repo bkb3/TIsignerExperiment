@@ -130,7 +130,7 @@ class Results extends Component {
     // suggestedMax: 50}},): null),
     let options = {
       responsive: true,
-      maintainAspectRatio: false,
+      maintainAspectRatio: true,
       scales: {
         yAxes: [
           {
@@ -225,15 +225,15 @@ class Results extends Component {
           </Typography>
         </Grid>
 
-        <Grid container direction="row">
+        <Grid container direction="row"  alignItems="stretch">
           <Grid item md={6} sm={9} xs={9} className={classes.gridItem}>
             <div className={classes.paper}>
               <Scatter
                 data={this.state.data}
                 options={this.state.options}
                 // getElementAtEvent={getElementAtEvent}
-                // width={350}
-                // height={350}
+                width={350}
+                height={200}
               />
             </div>
           </Grid>
@@ -250,8 +250,8 @@ class Results extends Component {
                 data={this.state.data}
                 options={this.state.options}
                 // getElementAtEvent={getElementAtEvent}
-                // width={350}
-                // height={350}
+                width={350}
+                height={200}
               />
             </div>
           </Grid>
