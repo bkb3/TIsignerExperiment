@@ -225,9 +225,8 @@ class Results extends Component {
         </Grid>
 
         <Grid container direction="row">
-          <Grid item md={6} sm={12} xs={9} className={classes.gridItem}>
+          <Grid item md={6} sm={9} xs={9} className={classes.gridItem}>
             <div className={classes.paper}>
-              <div style={{position:"relative",}}>
               <Scatter
                 data={this.state.data}
                 options={this.state.options}
@@ -235,25 +234,24 @@ class Results extends Component {
                 // width={350}
                 // height={350}
               />
-              </div>
             </div>
           </Grid>
-          <Grid item md={6} sm={12} xs={9} className={classes.gridItem}>
+          <Grid item md={6} sm={9} xs={9} className={classes.gridItem}>
             <div className={classes.paper}>
-              <Typography
+              {/* <Typography
                 variant="h6"
                 gutterbottom="true"
                 className={classes.typography}
               >
                 Click on a point to view the sequence.
-              </Typography>
-                            {/* <Scatter
+              </Typography> */}
+                            <Scatter
                 data={this.state.data}
                 options={this.state.options}
                 // getElementAtEvent={getElementAtEvent}
                 // width={350}
                 // height={350}
-              /> */}
+              />
             </div>
           </Grid>
         </Grid>
