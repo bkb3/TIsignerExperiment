@@ -124,82 +124,85 @@ class Results extends Component {
     let currentTime = fluorescence.map((a) => a["Data"][i]["Time"]);
 
     let data = {
-      datasets: [
-        {
-          label: "GFP Fluorescence",
-          data: expressionScore.map((v, j) => ({
-            x: v,
-            y: currentMeanFluorescence[j],
-            yMin: currentMeanFluorescence[j] - currentStdFluorescence[j],
-            yMax: currentMeanFluorescence[j] + currentStdFluorescence[j],
-          })),
-          pointRadius: function (context) {
-            var index = context.dataIndex;
-            return index === 0 ? 5 : 2;
-          },
-          pointHoverRadius: 7,
-        },
-        {
-          label: "GFP Fluorescence 1",
-          data: expressionScore.map((v, j) => ({
-            x: v,
-            y: currentFluorescence[j][0],
-          })),
-          pointRadius: function (context) {
-            var index = context.dataIndex;
-            return index === 0 ? 5 : 2;
-          },
-          pointHoverRadius: 7,
-        },
-        {
-          label: "GFP Fluorescence 2",
-          data: expressionScore.map((v, j) => ({
-            x: v,
-            y: currentFluorescence[j][1],
-          })),
-          pointRadius: function (context) {
-            var index = context.dataIndex;
-            return index === 0 ? 5 : 2;
-          },
-          pointHoverRadius: 7,
-        },
-        {
-          label: "GFP Fluorescence 3",
-          data: expressionScore.map((v, j) => ({
-            x: v,
-            y: currentFluorescence[j][2],
-          })),
-          pointRadius: function (context) {
-            var index = context.dataIndex;
-            return index === 0 ? 5 : 2;
-          },
-          pointHoverRadius: 7,
-        },
-        {
-          label: "GFP Fluorescence 4",
-          data: expressionScore.map((v, j) => ({
-            x: v,
-            y: currentFluorescence[j][3],
-          })),
-          pointRadius: function (context) {
-            var index = context.dataIndex;
-            return index === 0 ? 5 : 2;
-          },
-          pointHoverRadius: 7,
-        },
-        {
-          label: "GFP Fluorescence 5",
-          data: expressionScore.map((v, j) => ({
-            x: v,
-            y: currentFluorescence[j][4],
-          })),
-          pointRadius: function (context) {
-            var index = context.dataIndex;
-            return index === 0 ? 5 : 2;
-          },
-          pointHoverRadius: 7,
-        },
-      ],
+      datasets: !this.state.showAllConstructs
+        ? [
+            {
+              label: "Mean Fluorescence",
+              data: expressionScore.map((v, j) => ({
+                x: v,
+                y: currentMeanFluorescence[j],
+                yMin: currentMeanFluorescence[j] - currentStdFluorescence[j],
+                yMax: currentMeanFluorescence[j] + currentStdFluorescence[j],
+              })),
+              pointRadius: function (context) {
+                var index = context.dataIndex;
+                return index === 0 ? 5 : 2;
+              },
+              pointHoverRadius: 7,
+            },
+          ]
+        : [
+            {
+              label: "GFP Fluorescence 1",
+              data: expressionScore.map((v, j) => ({
+                x: v,
+                y: currentFluorescence[j][0],
+              })),
+              pointRadius: function (context) {
+                var index = context.dataIndex;
+                return index === 0 ? 5 : 2;
+              },
+              pointHoverRadius: 7,
+            },
+            {
+              label: "GFP Fluorescence 2",
+              data: expressionScore.map((v, j) => ({
+                x: v,
+                y: currentFluorescence[j][1],
+              })),
+              pointRadius: function (context) {
+                var index = context.dataIndex;
+                return index === 0 ? 5 : 2;
+              },
+              pointHoverRadius: 7,
+            },
+            {
+              label: "GFP Fluorescence 3",
+              data: expressionScore.map((v, j) => ({
+                x: v,
+                y: currentFluorescence[j][2],
+              })),
+              pointRadius: function (context) {
+                var index = context.dataIndex;
+                return index === 0 ? 5 : 2;
+              },
+              pointHoverRadius: 7,
+            },
+            {
+              label: "GFP Fluorescence 4",
+              data: expressionScore.map((v, j) => ({
+                x: v,
+                y: currentFluorescence[j][3],
+              })),
+              pointRadius: function (context) {
+                var index = context.dataIndex;
+                return index === 0 ? 5 : 2;
+              },
+              pointHoverRadius: 7,
+            },
+            {
+              label: "GFP Fluorescence 5",
+              data: expressionScore.map((v, j) => ({
+                x: v,
+                y: currentFluorescence[j][4],
+              })),
+              pointRadius: function (context) {
+                var index = context.dataIndex;
+                return index === 0 ? 5 : 2;
+              },
+              pointHoverRadius: 7,
+            },
+          ],
     };
     // (this.state.fixYAxis? ({ticks:{suggestedMin: 20,
     // suggestedMax: 50}},): null),
@@ -238,7 +241,7 @@ class Results extends Component {
         },
       },
       legend: {
-        display: false,
+        display: true,
       },
       tooltips: {
         callbacks: {
@@ -332,7 +335,7 @@ class Results extends Component {
           </Grid>
           <Grid container direction="row" justify="center">
             <FormControl component="fieldset" className={classes.paper}>
-              <FormLabel component="legend">Plot Options</FormLabel>
+              {/* <FormLabel component="legend">Plot Options</FormLabel> */}
               <FormGroup row>
                 <FormControlLabel
                   control={
