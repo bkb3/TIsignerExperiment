@@ -11,9 +11,9 @@ function CorrelationPlot(props) {
     labels: allTimes,
     datasets: [
       {
-        label: "SpearmanR",
+        label: "Mean Fluorescence",
         fill: false,
-        lineTension: 0.1,
+        // lineTension: 0.1,
         data: props.correlation.map((a) => a["Mean SpearmanR"]),
       },
     ],
@@ -71,7 +71,7 @@ function CorrelationPlot(props) {
       // },
       displayColors: false,
     },
-    annotation: {
+    annotation: props.showAnnotation ? {
       annotations: [
         {
           type: "line",
@@ -88,7 +88,7 @@ function CorrelationPlot(props) {
           },
         },
       ],
-    },
+    }:null,
   };
 
   return <Line data={data} options={options} width={350} height={200} />;

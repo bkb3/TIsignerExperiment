@@ -68,7 +68,7 @@ function ScatterPlot(props) {
 
         [
           {
-            label: "GFP Fluorescence 1",
+            label: "Replicate 1",
             data: expressionScore.map((v, j) => ({
               x: v,
               y: currentFluorescence[j][0],
@@ -80,7 +80,7 @@ function ScatterPlot(props) {
             pointHoverRadius: 7,
           },
           {
-            label: "GFP Fluorescence 2",
+            label: "Replicate 2",
             data: expressionScore.map((v, j) => ({
               x: v,
               y: currentFluorescence[j][1],
@@ -92,7 +92,7 @@ function ScatterPlot(props) {
             pointHoverRadius: 7,
           },
           {
-            label: "GFP Fluorescence 3",
+            label: "Replicate 3",
             data: expressionScore.map((v, j) => ({
               x: v,
               y: currentFluorescence[j][2],
@@ -104,7 +104,7 @@ function ScatterPlot(props) {
             pointHoverRadius: 7,
           },
           {
-            label: "GFP Fluorescence 4",
+            label: "Replicate 4",
             data: expressionScore.map((v, j) => ({
               x: v,
               y: currentFluorescence[j][3],
@@ -116,7 +116,7 @@ function ScatterPlot(props) {
             pointHoverRadius: 7,
           },
           {
-            label: "GFP Fluorescence 5",
+            label: "Replicate 5",
             data: expressionScore.map((v, j) => ({
               x: v,
               y: currentFluorescence[j][4],
@@ -174,7 +174,8 @@ function ScatterPlot(props) {
           let datasetLabel =
             data.datasets[tooltipItem.datasetIndex].label || "";
           return [
-            `${datasetLabel} : ${constructType}`,
+            `${datasetLabel}`,
+            `Type : ${constructType}`,
             `Expression Score: ${tooltipItem.label}`,
             `Normalised Fluorescence: ${tooltipItem.value}`,
           ];

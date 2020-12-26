@@ -64,6 +64,7 @@ class Results extends Component {
       sliderCurrentPosition: 15,
       fixYAxis: true,
       showAllConstructs: false,
+      showCorrelationAnnotation: true,
     };
   }
 
@@ -82,6 +83,12 @@ class Results extends Component {
   handleChangeShowAllConstructs = (e) => {
     this.setState({
       showAllConstructs: !this.state.showAllConstructs,
+    });
+  };
+
+  handleChangeCorrelationAnnotation = (e) => {
+    this.setState({
+      showCorrelationAnnotation: !this.state.showCorrelationAnnotation,
     });
   };
 
@@ -142,6 +149,7 @@ class Results extends Component {
                   correlation={correlation}
                   fixYAxis={this.state.fixYAxis}
                   showAllConstructs={this.state.showAllConstructs}
+                  showAnnotation={this.state.showCorrelationAnnotation}
                 />
               </div>
             </Grid>
@@ -172,6 +180,20 @@ class Results extends Component {
                     !this.state.showAllConstructs
                       ? "See all repeats"
                       : "See mean instead"
+                  }
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={this.state.showCorrelationAnnotation}
+                      onChange={this.handleChangeCorrelationAnnotation}
+                      name="ToggleCorrelationAnnotation"
+                    />
+                  }
+                  label={
+                    !this.state.showCorrelationAnnotation
+                      ? "Annotation line hidden"
+                      : "Annotation line shown"
                   }
                 />
               </FormGroup>
