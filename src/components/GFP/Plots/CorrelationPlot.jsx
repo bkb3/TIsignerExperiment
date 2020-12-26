@@ -7,6 +7,7 @@ import ChartAnnotationsPlugin from "chartjs-plugin-annotation";
 function CorrelationPlot(props) {
   //   let i = props.sliderCurrentPosition;
   let allTimes = props.correlation.map((a) => a.Time);
+  let pvalues = props.correlation.map((a) => a["Mean Pvalue"]);
   let data = {
     labels: allTimes,
     datasets: [
@@ -37,7 +38,8 @@ function CorrelationPlot(props) {
         },
       ],
       xAxes: [
-        {id: "x-axis",
+        {
+          id: "x-axis",
           ticks: {
             beginAtZero: false,
           },
@@ -57,38 +59,40 @@ function CorrelationPlot(props) {
       display: true,
     },
     tooltips: {
-      // callbacks: {
-      //   label: function (tooltipItem, data) {
-      //     let constructType = types[tooltipItem.index];
-      //     let datasetLabel =
-      //       data.datasets[tooltipItem.datasetIndex].label || "";
-      //     return [
-      //       `${datasetLabel} : ${constructType}`,
-      //       `Expression Score: ${tooltipItem.label}`,
-      //       `Normalised Fluorescence: ${tooltipItem.value}`,
-      //     ];
-      //   },
-      // },
+      callbacks: {
+        label: function (tooltipItem, data) {
+          let pval = pvalues[tooltipItem.index];
+          let datasetLabel =
+            data.datasets[tooltipItem.datasetIndex].label || "";
+          return [
+            `${datasetLabel}`,
+            `Spearman's ρ: ${tooltipItem.value}`,
+            `P value: ${pval}`,
+          ];
+        },
+      },
       displayColors: false,
     },
-    annotation: props.showAnnotation ? {
-      annotations: [
-        {
-          type: "line",
-          drawTime: "afterDatasetsDraw",
-          mode: "vertical",
-          scaleID: "x-axis",
-          value: props.sliderCurrentPosition,
-        //   borderColor: "rgb(75, 192, 192)",
-          borderWidth: 2,
-          label: {
-            enabled: false,
-            content: "Current time",
-            position: "bottom",
-          },
-        },
-      ],
-    }:null,
+    annotation: props.showAnnotation
+      ? {
+          annotations: [
+            {
+              type: "line",
+              drawTime: "afterDatasetsDraw",
+              mode: "vertical",
+              scaleID: "x-axis",
+              value: props.sliderCurrentPosition,
+              //   borderColor: "rgb(75, 192, 192)",
+              borderWidth: 2,
+              label: {
+                enabled: false,
+                content: "Current time",
+                position: "bottom",
+              },
+            },
+          ],
+        }
+      : null,
   };
 
   return <Line data={data} options={options} width={350} height={200} />;
