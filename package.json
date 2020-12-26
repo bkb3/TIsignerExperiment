@@ -10,6 +10,7 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.5.0",
     "chart.js": "^2.9.4",
+    "chartjs-plugin-annotation": "^0.5.7",
     "chartjs-plugin-colorschemes": "^0.4.0",
     "chartjs-plugin-error-bars": "^1.2.3",
     "react": "^17.0.1",

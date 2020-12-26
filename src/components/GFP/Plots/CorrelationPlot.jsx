@@ -2,11 +2,12 @@ import React from "react";
 import { Line } from "@reactchartjs/react-chart.js";
 import "chartjs-plugin-colorschemes/src/plugins/plugin.colorschemes";
 import { Tableau10 } from "chartjs-plugin-colorschemes/src/colorschemes/colorschemes.tableau";
+import ChartAnnotationsPlugin from "chartjs-plugin-annotation";
 
 function CorrelationPlot(props) {
-//   let i = props.sliderCurrentPosition;
-    let allTimes = props.correlation.map((a) => a.Time);
-    console.log(props.correlation)
+  //   let i = props.sliderCurrentPosition;
+  let allTimes = props.correlation.map((a) => a.Time);
+  console.log(props.correlation);
   let data = {
     labels: allTimes,
     // labels: ["January", "February", "March", "April", "May", "June", "July"],
@@ -15,7 +16,7 @@ function CorrelationPlot(props) {
         label: "SpearmanR",
         fill: false,
         lineTension: 0.1,
-        data: props.correlation.map(a=> a['Mean SpearmanR']),
+        data: props.correlation.map((a) => a["Mean SpearmanR"]),
         // data: [2, 59, 80, 81, 56, 55, 58],
       },
     ],
@@ -39,7 +40,7 @@ function CorrelationPlot(props) {
         },
       ],
       xAxes: [
-        {
+        {id: "x-axis",
           ticks: {
             beginAtZero: false,
           },
@@ -72,6 +73,24 @@ function CorrelationPlot(props) {
       //   },
       // },
       displayColors: false,
+    },
+    annotation: {
+      annotations: [
+        {
+          type: "line",
+          drawTime: "afterDatasetsDraw",
+          mode: "vertical",
+          scaleID: "x-axis",
+          value: props.sliderCurrentPosition,
+        //   borderColor: "rgb(75, 192, 192)",
+          borderWidth: 2,
+          label: {
+            enabled: false,
+            content: "Current time",
+            position: "bottom",
+          },
+        },
+      ],
     },
   };
 
