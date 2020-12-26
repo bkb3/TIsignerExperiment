@@ -7,17 +7,50 @@ import ChartAnnotationsPlugin from "chartjs-plugin-annotation";
 function CorrelationPlot(props) {
   //   let i = props.sliderCurrentPosition;
   let allTimes = props.correlation.map((a) => a.Time);
-  let pvalues = props.correlation.map((a) => a["Mean Pvalue"]);
+//   let pvalues = props.correlation.map((a) => a["Mean Pvalue"]);
   let data = {
     labels: allTimes,
-    datasets: [
-      {
-        label: "Mean Fluorescence",
-        fill: false,
-        // lineTension: 0.1,
-        data: props.correlation.map((a) => a["Mean SpearmanR"]),
-      },
-    ],
+    datasets: !props.showAllConstructs
+      ? [
+          {
+            label: "Mean Fluorescence",
+            fill: false,
+            // lineTension: 0.1,
+            data: props.correlation.map((a) => a["Mean SpearmanR"]),
+          },
+        ]
+      : [
+          {
+            label: "Replicate 1",
+            fill: false,
+            // lineTension: 0.1,
+            data: props.correlation.map((a) => a["Individual SpearmanR"][0]),
+          },
+          {
+            label: "Replicate 2",
+            fill: false,
+            // lineTension: 0.1,
+            data: props.correlation.map((a) => a["Individual SpearmanR"][1]),
+          },
+          {
+            label: "Replicate 3",
+            fill: false,
+            // lineTension: 0.1,
+            data: props.correlation.map((a) => a["Individual SpearmanR"][2]),
+          },
+          {
+            label: "Replicate 4",
+            fill: false,
+            // lineTension: 0.1,
+            data: props.correlation.map((a) => a["Individual SpearmanR"][3]),
+          },
+          {
+            label: "Replicate 5",
+            fill: false,
+            // lineTension: 0.1,
+            data: props.correlation.map((a) => a["Individual SpearmanR"][4]),
+          },
+        ],
   };
 
   let options = {
@@ -61,13 +94,13 @@ function CorrelationPlot(props) {
     tooltips: {
       callbacks: {
         label: function (tooltipItem, data) {
-          let pval = pvalues[tooltipItem.index];
+        //   let pval = pvalues[tooltipItem.index];
           let datasetLabel =
             data.datasets[tooltipItem.datasetIndex].label || "";
           return [
             `${datasetLabel}`,
             `Spearman's ρ: ${tooltipItem.value}`,
-            `P value: ${pval}`,
+            // `P value: ${pval}`,
           ];
         },
       },

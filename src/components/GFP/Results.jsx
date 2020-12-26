@@ -178,8 +178,8 @@ class Results extends Component {
                   }
                   label={
                     !this.state.showAllConstructs
-                      ? "See all repeats"
-                      : "See mean instead"
+                      ? "Show all repeats"
+                      : "Show mean instead"
                   }
                 />
                 <FormControlLabel
