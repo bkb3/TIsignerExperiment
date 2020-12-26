@@ -7,17 +7,14 @@ import ChartAnnotationsPlugin from "chartjs-plugin-annotation";
 function CorrelationPlot(props) {
   //   let i = props.sliderCurrentPosition;
   let allTimes = props.correlation.map((a) => a.Time);
-  console.log(props.correlation);
   let data = {
     labels: allTimes,
-    // labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [
       {
         label: "SpearmanR",
         fill: false,
         lineTension: 0.1,
         data: props.correlation.map((a) => a["Mean SpearmanR"]),
-        // data: [2, 59, 80, 81, 56, 55, 58],
       },
     ],
   };
@@ -35,7 +32,7 @@ function CorrelationPlot(props) {
           },
           scaleLabel: {
             display: true,
-            labelString: "Normalised Fluorescence",
+            labelString: "Spearman's ρ",
           },
         },
       ],
