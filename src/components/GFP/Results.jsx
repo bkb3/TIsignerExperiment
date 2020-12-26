@@ -1,5 +1,6 @@
 import React, { Fragment, useState, Component } from "react";
 import { Scatter } from "@reactchartjs/react-chart.js";
+import {Line} from 'react-chartjs-2';
 import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
@@ -69,7 +70,8 @@ class Results extends Component {
       showAllConstructs: false,
       time: null,
     };
-    this.plot = this.plot.bind(this);
+    // this.plot = this.plot.bind(this);
+    // this.corr = this.corr.bind(this);
   }
 
   handleSliderChange = (e, newValue) => {
@@ -103,11 +105,11 @@ class Results extends Component {
     let i = this.state.sliderCurrentPosition;
 
     let types = fluorescence.map((a) => a["Type"]);
-    let openingEnergy = fluorescence.map((a) => a["Opening Energy"]);
+    // let openingEnergy = fluorescence.map((a) => a["Opening Energy"]);
     let expressionScore = fluorescence.map((a) => a["Expression Score"]);
     let nucleotideSequence = fluorescence.map((a) => a["First 30 nt"]);
 
-    let nativeGFP = nucleotideSequence[0];
+    // let nativeGFP = nucleotideSequence[0];
 
     let currentFluorescence = fluorescence.map(
       (a) => a["Data"][i]["All Fluorescence"]
@@ -141,7 +143,27 @@ class Results extends Component {
               pointHoverRadius: 7,
             },
           ]
-        : [
+        : // [
+          //   currentFluorescence[0].map(
+          //       (k, l) => (
+          //         // console.log("GFP Fluorescence " + i + " " + l),
+          //         {
+          //           label: "GFP Fluorescence " + i,
+          //           data: expressionScore.map((v, j) => ({
+          //             x: k,
+          //             y: v,
+          //           })),
+          //           pointRadius: function (context) {
+          //             var index = context.dataIndex;
+          //             return index === 0 ? 5 : 2;
+          //           },
+          //           pointHoverRadius: 7,
+          //         }
+          //       )
+          //     ),
+          //   ],
+
+          [
             {
               label: "GFP Fluorescence 1",
               data: expressionScore.map((v, j) => ({
@@ -204,8 +226,7 @@ class Results extends Component {
             },
           ],
     };
-    // (this.state.fixYAxis? ({ticks:{suggestedMin: 20,
-    // suggestedMax: 50}},): null),
+
     let options = {
       responsive: true,
       maintainAspectRatio: true,
@@ -266,8 +287,106 @@ class Results extends Component {
     });
   };
 
+
+  corr = () => {
+      let i = this.state.sliderCurrentPosition;
+      let currentTime = fluorescence.map((a) => a["Data"][i]["Time"]);
+      let allTimes = correlation.map(a=> a.Time)
+
+
+    let data = {
+      // labels: allTimes,
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      datasets: [
+        {
+          label: 'My First dataset',
+          fill: false,
+          lineTension: 0.1,
+          backgroundColor: 'rgba(75,192,192,0.4)',
+          borderColor: 'rgba(75,192,192,1)',
+          borderCapStyle: 'butt',
+          borderDash: [],
+          borderDashOffset: 0.0,
+          borderJoinStyle: 'miter',
+          pointBorderColor: 'rgba(75,192,192,1)',
+          pointBackgroundColor: '#fff',
+          pointBorderWidth: 1,
+          pointHoverRadius: 5,
+          pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+          pointHoverBorderColor: 'rgba(220,220,220,1)',
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 10,
+          // data: correlation.map(a=> a['Mean SpearmanR'])
+          data: [65, 59, 80, 81, 56, 55, 40],
+        }
+      ]
+    };
+
+
+    let options = {
+      responsive: true,
+      maintainAspectRatio: true,
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              // beginAtZero: true,
+              // suggestedMax: this.state.fixYAxis ? 50 : null,
+              // suggestedMin: this.state.fixYAxis ? 15 : null,
+            },
+            scaleLabel: {
+              display: true,
+              labelString: "Normalised Fluorescence",
+            },
+          },
+        ],
+        xAxes: [
+          {
+            ticks: {
+              beginAtZero: false,
+            },
+            scaleLabel: {
+              display: true,
+              labelString: "Expression Score",
+            },
+          },
+        ],
+      },
+      plugins: {
+        colorschemes: {
+          scheme: Tableau10,
+        },
+      },
+      legend: {
+        display: true,
+      },
+      tooltips: {
+        // callbacks: {
+        //   label: function (tooltipItem, data) {
+        //     let constructType = types[tooltipItem.index];
+        //     let datasetLabel =
+        //       data.datasets[tooltipItem.datasetIndex].label || "";
+        //     return [
+        //       `${datasetLabel} : ${constructType}`,
+        //       `Expression Score: ${tooltipItem.label}`,
+        //       `Normalised Fluorescence: ${tooltipItem.value}`,
+        //     ];
+        //   },
+        // },
+        displayColors: false,
+      },
+    };
+    this.setState({
+      corrData: data,
+      corrOptions: options,
+    });
+  };
+
+
   componentDidMount() {
     this.plot();
+    this.corr();
   }
 
   render() {
@@ -323,9 +442,9 @@ class Results extends Component {
               >
                 Click on a point to view the sequence.
               </Typography> */}
-                <Scatter
-                  data={this.state.data}
-                  options={this.state.options}
+                <Line
+                  data={this.state.corrData}
+                  options={this.state.corrOptions}
                   // getElementAtEvent={getElementAtEvent}
                   width={350}
                   height={200}
@@ -357,7 +476,7 @@ class Results extends Component {
                   }
                   label={
                     !this.state.showAllConstructs
-                      ? "See all constructs"
+                      ? "See all repeats"
                       : "See only mean"
                   }
                 />
