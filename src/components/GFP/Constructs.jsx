@@ -154,13 +154,13 @@ function GFPConstructs() {
       </pre>
       <Grid container direction="row" >
         <Grid item md={6} className={classes.gridItem}>
-          <div className={classes.paper}>
+          <div style={{height:'300px'}}>
             <Scatter
               data={data}
               options={options}
               getElementAtEvent={getElementAtEvent}
-              width={350}
-              height={350}
+              // width={350}
+              // height={350}
             />
           </div>
         </Grid>

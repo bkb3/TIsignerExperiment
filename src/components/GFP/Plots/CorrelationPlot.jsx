@@ -7,7 +7,7 @@ import ChartAnnotationsPlugin from "chartjs-plugin-annotation";
 function CorrelationPlot(props) {
   //   let i = props.sliderCurrentPosition;
   let allTimes = props.correlation.map((a) => a.Time);
-//   let pvalues = props.correlation.map((a) => a["Mean Pvalue"]);
+  //   let pvalues = props.correlation.map((a) => a["Mean Pvalue"]);
   let data = {
     labels: allTimes,
     datasets: !props.showAllConstructs
@@ -55,7 +55,7 @@ function CorrelationPlot(props) {
 
   let options = {
     responsive: true,
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
     scales: {
       yAxes: [
         {
@@ -78,7 +78,7 @@ function CorrelationPlot(props) {
           },
           scaleLabel: {
             display: true,
-            labelString: "Expression Score",
+            labelString: "Time",
           },
         },
       ],
@@ -94,7 +94,7 @@ function CorrelationPlot(props) {
     tooltips: {
       callbacks: {
         label: function (tooltipItem, data) {
-        //   let pval = pvalues[tooltipItem.index];
+          //   let pval = pvalues[tooltipItem.index];
           let datasetLabel =
             data.datasets[tooltipItem.datasetIndex].label || "";
           return [
@@ -128,6 +128,14 @@ function CorrelationPlot(props) {
       : null,
   };
 
-  return <Line data={data} options={options} width={350} height={200} />;
+  return (
+    <div style={{ height: "300px" }}>
+      <Line data={data} options={options} />
+    </div>
+    // <div style={{height:'300px'}}>
+    //      <Line data={data} options={options} width={350} height={200} />
+    // </div>
+    // return <Line data={data} options={options} />;
+  );
 }
 export default CorrelationPlot;

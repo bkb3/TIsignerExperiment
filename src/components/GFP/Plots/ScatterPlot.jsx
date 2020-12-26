@@ -132,7 +132,7 @@ function ScatterPlot(props) {
 
   let options = {
     responsive: true,
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
     scales: {
       yAxes: [
         {
@@ -185,7 +185,13 @@ function ScatterPlot(props) {
     },
   };
 
-  return <Scatter data={data} options={options} width={350} height={200} />;
+  return (
+    <div style={{ height: "300px" }}>
+      <Scatter data={data} options={options} />
+    </div>
+  );
+  // <Scatter data={data} options={options} width={350} height={200} />;
+  // return <Scatter data={data} options={options} />;
 }
 
 export default ScatterPlot;
