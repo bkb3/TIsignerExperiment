@@ -5,6 +5,7 @@ import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
+import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -18,6 +19,8 @@ import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import LaunchIcon from "@material-ui/icons/Launch";
 import Container from "@material-ui/core/Container";
+import Tooltip from "@material-ui/core/Tooltip";
+import CopyrightIcon from "@material-ui/icons/Copyright";
 import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
@@ -53,6 +56,12 @@ const useStyles = makeStyles((theme) => ({
   },
   nested: {
     paddingLeft: theme.spacing(4),
+  },
+  footer: {
+    position: "fixed",
+    bottom: 0,
+    paddingLeft: theme.spacing(3),
+    paddingBottom: theme.spacing(4),
   },
 }));
 
@@ -162,12 +171,39 @@ function Main(props) {
       <Divider />
       <List>
         {["TISIGNER", "About"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemText primary={text} />
-            {index === 0 ? <LaunchIcon /> : null}
-          </ListItem>
+          <Tooltip
+            title={
+              index === 0
+                ? "Launch TISIGNER.com in a new tab"
+                : "Our team, source code and more!"
+            }
+            key={`${text} tooltip`}
+          >
+            <ListItem
+              button
+              key={text}
+              component={index === 0 ? "a" : null}
+              href={index === 0 ? "https://tisigner.com" : null}
+              target={index === 0 ? "_blank" : null}
+              rel={index === 0 ? "noopener noreferrer" : null}
+            >
+              <ListItemText primary={text} />
+              {index === 0 ? <LaunchIcon /> : null}
+            </ListItem>
+          </Tooltip>
         ))}
       </List>
+
+      <div className={classes.footer}>
+        <Divider />
+        <Button disabled startIcon={<CopyrightIcon />}>
+          2020{" "}
+          {new Date().getFullYear() === 2020
+            ? null
+            : ` - ${new Date().getFullYear()}`}{" "}
+          Authors
+        </Button>
+      </div>
     </div>
   );
 
