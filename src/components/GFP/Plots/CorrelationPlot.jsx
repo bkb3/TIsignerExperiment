@@ -89,7 +89,7 @@ function CorrelationPlot(props) {
       },
     },
     legend: {
-      display: true,
+      display: false,
     },
     tooltips: {
       callbacks: {

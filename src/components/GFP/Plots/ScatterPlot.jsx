@@ -165,7 +165,7 @@ function ScatterPlot(props) {
       },
     },
     legend: {
-      display: true,
+      display: false,
     },
     tooltips: {
       callbacks: {
