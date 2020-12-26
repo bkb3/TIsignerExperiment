@@ -132,6 +132,7 @@ class Results extends Component {
           </Grid>
 
           <Grid container direction="row" alignItems="stretch">
+            {/* <Grid item md={6} sm={9} xs={9} className={classes.gridItem}> */}
             <Grid item md={6} sm={9} xs={9} className={classes.gridItem}>
               <div className={classes.paper}>
                 <ScatterPlot
