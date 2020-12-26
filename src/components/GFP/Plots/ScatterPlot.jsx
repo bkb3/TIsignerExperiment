@@ -26,7 +26,7 @@ function ScatterPlot(props) {
     (a) => a["Data"][i]["Std Fluorescence"]
   );
 
-  let currentTime = props.fluorescence.map((a) => a["Data"][i]["Time"]);
+  // let currentTime = props.fluorescence.map((a) => a["Data"][i]["Time"]);
 
   let data = {
     datasets: !props.showAllConstructs

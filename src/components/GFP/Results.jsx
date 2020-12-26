@@ -1,4 +1,4 @@
-import React, { Fragment, useState, Component } from "react";
+import React, { Fragment, Component } from "react";
 // import { Scatter } from "@reactchartjs/react-chart.js";
 // import { Line } from "react-chartjs-2";
 import Grid from "@material-ui/core/Grid";
@@ -171,7 +171,7 @@ class Results extends Component {
                   label={
                     !this.state.showAllConstructs
                       ? "See all repeats"
-                      : "See only mean"
+                      : "See mean instead"
                   }
                 />
               </FormGroup>
