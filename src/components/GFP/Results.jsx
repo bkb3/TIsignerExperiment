@@ -1,23 +1,21 @@
 import React, { Fragment, useState, Component } from "react";
-import { Scatter } from "@reactchartjs/react-chart.js";
-import {Line} from 'react-chartjs-2';
+// import { Scatter } from "@reactchartjs/react-chart.js";
+// import { Line } from "react-chartjs-2";
 import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import Slider from "@material-ui/core/Slider";
-import FormLabel from "@material-ui/core/FormLabel";
+// import FormLabel from "@material-ui/core/FormLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormHelperText from "@material-ui/core/FormHelperText";
+// import FormHelperText from "@material-ui/core/FormHelperText";
 import Switch from "@material-ui/core/Switch";
-import "chartjs-plugin-colorschemes/src/plugins/plugin.colorschemes";
-import { Tableau10 } from "chartjs-plugin-colorschemes/src/colorschemes/colorschemes.tableau";
 import { fluorescence, correlation } from "./Data/Data";
-
-// import { ScatterWithErrorBarsChart } from 'chartjs-chart-error-bars';
+import ScatterPlot from "./Plots/ScatterPlot";
+import CorrelationPlot from "./Plots/CorrelationPlot";
 
 const useStyles = (theme) => ({
   root: {
@@ -58,8 +56,6 @@ const useStyles = (theme) => ({
   },
 });
 
-// const classes = useStyles;
-
 class Results extends Component {
   constructor(props) {
     super(props);
@@ -68,326 +64,28 @@ class Results extends Component {
       sliderCurrentPosition: 15,
       fixYAxis: true,
       showAllConstructs: false,
-      time: null,
     };
-    // this.plot = this.plot.bind(this);
-    // this.corr = this.corr.bind(this);
   }
 
   handleSliderChange = (e, newValue) => {
-    this.setState(
-      {
-        sliderCurrentPosition: newValue,
-      },
-      () => this.plot()
-    );
+    this.setState({
+      sliderCurrentPosition: newValue,
+    });
   };
 
   handleChangeFixYAxisSwitch = (e) => {
-    this.setState(
-      {
-        fixYAxis: !this.state.fixYAxis,
-      },
-      () => this.plot()
-    );
+    this.setState({
+      fixYAxis: !this.state.fixYAxis,
+    });
   };
 
   handleChangeShowAllConstructs = (e) => {
-    this.setState(
-      {
-        showAllConstructs: !this.state.showAllConstructs,
-      },
-      () => this.plot()
-    );
-  };
-
-  plot = () => {
-    let i = this.state.sliderCurrentPosition;
-
-    let types = fluorescence.map((a) => a["Type"]);
-    // let openingEnergy = fluorescence.map((a) => a["Opening Energy"]);
-    let expressionScore = fluorescence.map((a) => a["Expression Score"]);
-    let nucleotideSequence = fluorescence.map((a) => a["First 30 nt"]);
-
-    // let nativeGFP = nucleotideSequence[0];
-
-    let currentFluorescence = fluorescence.map(
-      (a) => a["Data"][i]["All Fluorescence"]
-    );
-
-    let currentMeanFluorescence = fluorescence.map(
-      (a) => a["Data"][i]["Mean Fluorescence"]
-    );
-
-    let currentStdFluorescence = fluorescence.map(
-      (a) => a["Data"][i]["Std Fluorescence"]
-    );
-
-    let currentTime = fluorescence.map((a) => a["Data"][i]["Time"]);
-
-    let data = {
-      datasets: !this.state.showAllConstructs
-        ? [
-            {
-              label: "Mean Fluorescence",
-              data: expressionScore.map((v, j) => ({
-                x: v,
-                y: currentMeanFluorescence[j],
-                yMin: currentMeanFluorescence[j] - currentStdFluorescence[j],
-                yMax: currentMeanFluorescence[j] + currentStdFluorescence[j],
-              })),
-              pointRadius: function (context) {
-                var index = context.dataIndex;
-                return index === 0 ? 5 : 2;
-              },
-              pointHoverRadius: 7,
-            },
-          ]
-        : // [
-          //   currentFluorescence[0].map(
-          //       (k, l) => (
-          //         // console.log("GFP Fluorescence " + i + " " + l),
-          //         {
-          //           label: "GFP Fluorescence " + i,
-          //           data: expressionScore.map((v, j) => ({
-          //             x: k,
-          //             y: v,
-          //           })),
-          //           pointRadius: function (context) {
-          //             var index = context.dataIndex;
-          //             return index === 0 ? 5 : 2;
-          //           },
-          //           pointHoverRadius: 7,
-          //         }
-          //       )
-          //     ),
-          //   ],
-
-          [
-            {
-              label: "GFP Fluorescence 1",
-              data: expressionScore.map((v, j) => ({
-                x: v,
-                y: currentFluorescence[j][0],
-              })),
-              pointRadius: function (context) {
-                var index = context.dataIndex;
-                return index === 0 ? 5 : 2;
-              },
-              pointHoverRadius: 7,
-            },
-            {
-              label: "GFP Fluorescence 2",
-              data: expressionScore.map((v, j) => ({
-                x: v,
-                y: currentFluorescence[j][1],
-              })),
-              pointRadius: function (context) {
-                var index = context.dataIndex;
-                return index === 0 ? 5 : 2;
-              },
-              pointHoverRadius: 7,
-            },
-            {
-              label: "GFP Fluorescence 3",
-              data: expressionScore.map((v, j) => ({
-                x: v,
-                y: currentFluorescence[j][2],
-              })),
-              pointRadius: function (context) {
-                var index = context.dataIndex;
-                return index === 0 ? 5 : 2;
-              },
-              pointHoverRadius: 7,
-            },
-            {
-              label: "GFP Fluorescence 4",
-              data: expressionScore.map((v, j) => ({
-                x: v,
-                y: currentFluorescence[j][3],
-              })),
-              pointRadius: function (context) {
-                var index = context.dataIndex;
-                return index === 0 ? 5 : 2;
-              },
-              pointHoverRadius: 7,
-            },
-            {
-              label: "GFP Fluorescence 5",
-              data: expressionScore.map((v, j) => ({
-                x: v,
-                y: currentFluorescence[j][4],
-              })),
-              pointRadius: function (context) {
-                var index = context.dataIndex;
-                return index === 0 ? 5 : 2;
-              },
-              pointHoverRadius: 7,
-            },
-          ],
-    };
-
-    let options = {
-      responsive: true,
-      maintainAspectRatio: true,
-      scales: {
-        yAxes: [
-          {
-            ticks: {
-              // beginAtZero: true,
-              suggestedMax: this.state.fixYAxis ? 50 : null,
-              suggestedMin: this.state.fixYAxis ? 15 : null,
-            },
-            scaleLabel: {
-              display: true,
-              labelString: "Normalised Fluorescence",
-            },
-          },
-        ],
-        xAxes: [
-          {
-            ticks: {
-              beginAtZero: false,
-            },
-            scaleLabel: {
-              display: true,
-              labelString: "Expression Score",
-            },
-          },
-        ],
-      },
-      plugins: {
-        colorschemes: {
-          scheme: Tableau10,
-        },
-      },
-      legend: {
-        display: true,
-      },
-      tooltips: {
-        callbacks: {
-          label: function (tooltipItem, data) {
-            let constructType = types[tooltipItem.index];
-            let datasetLabel =
-              data.datasets[tooltipItem.datasetIndex].label || "";
-            return [
-              `${datasetLabel} : ${constructType}`,
-              `Expression Score: ${tooltipItem.label}`,
-              `Normalised Fluorescence: ${tooltipItem.value}`,
-            ];
-          },
-        },
-        displayColors: false,
-      },
-    };
     this.setState({
-      data: data,
-      options: options,
-      time: currentTime[0],
+      showAllConstructs: !this.state.showAllConstructs,
     });
   };
 
-
-  corr = () => {
-      let i = this.state.sliderCurrentPosition;
-      let currentTime = fluorescence.map((a) => a["Data"][i]["Time"]);
-      let allTimes = correlation.map(a=> a.Time)
-
-
-    let data = {
-      // labels: allTimes,
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-      datasets: [
-        {
-          label: 'My First dataset',
-          fill: false,
-          lineTension: 0.1,
-          // backgroundColor: 'rgba(75,192,192,0.4)',
-          // borderColor: 'rgba(75,192,192,1)',
-          // borderCapStyle: 'butt',
-          // borderDash: [],
-          // borderDashOffset: 0.0,
-          // borderJoinStyle: 'miter',
-          // pointBorderColor: 'rgba(75,192,192,1)',
-          // pointBackgroundColor: '#fff',
-          // pointBorderWidth: 1,
-          // pointHoverRadius: 5,
-          // pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-          // pointHoverBorderColor: 'rgba(220,220,220,1)',
-          // pointHoverBorderWidth: 2,
-          // pointRadius: 1,
-          // pointHitRadius: 10,
-          // data: correlation.map(a=> a['Mean SpearmanR'])
-          data: [65, 59, 80, 81, 56, 55, 40],
-        }
-      ]
-    };
-
-
-    let options = {
-      responsive: true,
-      maintainAspectRatio: true,
-      scales: {
-        yAxes: [
-          {
-            ticks: {
-              // beginAtZero: true,
-              // suggestedMax: this.state.fixYAxis ? 50 : null,
-              // suggestedMin: this.state.fixYAxis ? 15 : null,
-            },
-            scaleLabel: {
-              display: true,
-              labelString: "Normalised Fluorescence",
-            },
-          },
-        ],
-        xAxes: [
-          {
-            ticks: {
-              beginAtZero: false,
-            },
-            scaleLabel: {
-              display: true,
-              labelString: "Expression Score",
-            },
-          },
-        ],
-      },
-      plugins: {
-        colorschemes: {
-          scheme: Tableau10,
-        },
-      },
-      legend: {
-        display: true,
-      },
-      tooltips: {
-        // callbacks: {
-        //   label: function (tooltipItem, data) {
-        //     let constructType = types[tooltipItem.index];
-        //     let datasetLabel =
-        //       data.datasets[tooltipItem.datasetIndex].label || "";
-        //     return [
-        //       `${datasetLabel} : ${constructType}`,
-        //       `Expression Score: ${tooltipItem.label}`,
-        //       `Normalised Fluorescence: ${tooltipItem.value}`,
-        //     ];
-        //   },
-        // },
-        displayColors: false,
-      },
-    };
-    this.setState({
-      corrData: data,
-      corrOptions: options,
-    });
-  };
-
-
-  componentDidMount() {
-    this.plot();
-    this.corr();
-  }
+  componentDidMount() {}
 
   render() {
     const { classes } = this.props;
@@ -417,37 +115,33 @@ class Results extends Component {
 
           <Grid container direction="row" justify="center">
             <Typography variant="h6" component="h2" gutterBottom>
-              {this.state.time ? `Time: ${this.state.time}` : null}
+              Time:{" "}
+              {
+                fluorescence.map(
+                  (a) => a["Data"][this.state.sliderCurrentPosition]["Time"]
+                )[0]
+              }
             </Typography>
           </Grid>
 
           <Grid container direction="row" alignItems="stretch">
             <Grid item md={6} sm={9} xs={9} className={classes.gridItem}>
               <div className={classes.paper}>
-                <Scatter
-                  data={this.state.data}
-                  options={this.state.options}
-                  // getElementAtEvent={getElementAtEvent}
-                  width={350}
-                  height={200}
+                <ScatterPlot
+                  sliderCurrentPosition={this.state.sliderCurrentPosition}
+                  fluorescence={fluorescence}
+                  fixYAxis={this.state.fixYAxis}
+                  showAllConstructs={this.state.showAllConstructs}
                 />
               </div>
             </Grid>
             <Grid item md={6} sm={9} xs={9} className={classes.gridItem}>
               <div className={classes.paper}>
-                {/* <Typography
-                variant="h6"
-                gutterbottom="true"
-                className={classes.typography}
-              >
-                Click on a point to view the sequence.
-              </Typography> */}
-                <Line
-                  data={this.state.corrData}
-                  options={this.state.corrOptions}
-                  // getElementAtEvent={getElementAtEvent}
-                  width={350}
-                  height={200}
+                <CorrelationPlot
+                  sliderCurrentPosition={this.state.sliderCurrentPosition}
+                  correlation={correlation}
+                  fixYAxis={this.state.fixYAxis}
+                  showAllConstructs={this.state.showAllConstructs}
                 />
               </div>
             </Grid>
