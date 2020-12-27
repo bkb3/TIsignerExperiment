@@ -6,6 +6,9 @@ import { Tableau10 } from "chartjs-plugin-colorschemes/src/colorschemes/colorsch
 const maxYaxis = 50;
 const minYaxis = 15;
 
+
+
+
 function ScatterPlot(props) {
   let i = props.sliderCurrentPosition;
   let types = props.fluorescence.map((a) => a["Type"]);
@@ -36,8 +39,8 @@ function ScatterPlot(props) {
             data: expressionScore.map((v, j) => ({
               x: v,
               y: currentMeanFluorescence[j],
-              yMin: currentMeanFluorescence[j] - currentStdFluorescence[j],
-              yMax: currentMeanFluorescence[j] + currentStdFluorescence[j],
+              // yMin: currentMeanFluorescence[j] - currentStdFluorescence[j],
+              // yMax: currentMeanFluorescence[j] + currentStdFluorescence[j],
             })),
             pointRadius: function (context) {
               var index = context.dataIndex;

@@ -40,7 +40,7 @@ const useStyles = (theme) => ({
   },
   typography: {
     width: "100%",
-    maxWidth: 500,
+    // maxWidth: 500,
     // backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(1),
   },

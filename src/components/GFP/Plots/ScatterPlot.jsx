@@ -36,8 +36,8 @@ function ScatterPlot(props) {
             data: expressionScore.map((v, j) => ({
               x: v,
               y: currentMeanFluorescence[j],
-              yMin: currentMeanFluorescence[j] - currentStdFluorescence[j],
-              yMax: currentMeanFluorescence[j] + currentStdFluorescence[j],
+              // yMin: currentMeanFluorescence[j] - currentStdFluorescence[j],
+              // yMax: currentMeanFluorescence[j] + currentStdFluorescence[j],
             })),
             pointRadius: function (context) {
               var index = context.dataIndex;
