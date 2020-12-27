@@ -188,7 +188,7 @@ function Main(props) {
       </List>
       <Divider />
       <List>
-        {["TISIGNER", "About"].map((text, index) => (
+        {["TISIGNER", "About us"].map((text, index) => (
           <Tooltip
             title={
               index === 0
