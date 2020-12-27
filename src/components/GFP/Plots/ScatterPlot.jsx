@@ -45,6 +45,66 @@ function ScatterPlot(props) {
             },
             pointHoverRadius: 7,
           },
+          {
+            label: "Replicate 1",
+            data: expressionScore.map((v, j) => ({
+              x: v,
+              y: currentFluorescence[j][0],
+            })),
+            pointRadius: function (context) {
+              var index = context.dataIndex;
+              return index === 0 ? 1 : 0.5;
+            },
+            pointHoverRadius: 1,
+          },
+          {
+            label: "Replicate 2",
+            data: expressionScore.map((v, j) => ({
+              x: v,
+              y: currentFluorescence[j][1],
+            })),
+            pointRadius: function (context) {
+              var index = context.dataIndex;
+              return index === 0 ? 1 : 0.5;
+            },
+            pointHoverRadius: 1,
+          },
+          {
+            label: "Replicate 3",
+            data: expressionScore.map((v, j) => ({
+              x: v,
+              y: currentFluorescence[j][2],
+            })),
+            pointRadius: function (context) {
+              var index = context.dataIndex;
+              return index === 0 ? 1 : 0.5;
+            },
+            pointHoverRadius: 1,
+          },
+          {
+            label: "Replicate 4",
+            data: expressionScore.map((v, j) => ({
+              x: v,
+              y: currentFluorescence[j][3],
+            })),
+            pointRadius: function (context) {
+              var index = context.dataIndex;
+              return index === 0 ? 1 : 0.5;
+            },
+            pointHoverRadius: 1,
+          },
+          {
+            label: "Replicate 5",
+            data: expressionScore.map((v, j) => ({
+              x: v,
+              y: currentFluorescence[j][4],
+            })),
+            pointRadius: function (context) {
+              var index = context.dataIndex;
+              return index === 0 ? 1 : 0.5;
+            },
+            pointHoverRadius: 1,
+          },
         ]
       : // [
         //   currentFluorescence[0].map(

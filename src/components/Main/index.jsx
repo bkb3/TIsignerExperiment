@@ -197,7 +197,7 @@ function Main(props) {
       <div className={classes.footer}>
         <Divider />
         <Button disabled startIcon={<CopyrightIcon />}>
-          2020{" "}
+          2020
           {new Date().getFullYear() === 2020
             ? null
             : ` - ${new Date().getFullYear()}`}{" "}

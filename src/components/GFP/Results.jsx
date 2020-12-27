@@ -15,6 +15,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
 import { fluorescence, correlation } from "./Data/Data";
 import ScatterPlot from "./Plots/ScatterPlot";
+// import ScatterPlot from "./Plots/ScatterPlotly";
 import CorrelationPlot from "./Plots/CorrelationPlot";
 
 const useStyles = (theme) => ({
@@ -179,8 +180,8 @@ class Results extends Component {
                   }
                   label={
                     !this.state.showAllConstructs
-                      ? "Show all repeats"
-                      : "Show mean instead"
+                      ? "Mean shown"
+                      : "Mean hidden"
                   }
                 />
                 <FormControlLabel
