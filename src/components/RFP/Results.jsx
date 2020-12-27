@@ -4,7 +4,10 @@ import React, { Fragment, Component } from "react";
 import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import Snackbar from "@material-ui/core/Snackbar";
 import Button from "@material-ui/core/Button";
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 import GetAppIcon from "@material-ui/icons/GetApp";
 import Slider from "@material-ui/core/Slider";
 // import FormLabel from "@material-ui/core/FormLabel";
@@ -66,6 +69,7 @@ class Results extends Component {
       fixYAxis: true,
       showAllConstructs: false,
       showCorrelationAnnotation: true,
+      snackbarOpen: false,
     };
   }
 
@@ -93,6 +97,23 @@ class Results extends Component {
     });
   };
 
+
+  handleClick = () => {
+    this.setState({
+      snackbarOpen: !this.state.snackbarOpen
+    })
+  };
+
+  handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    this.setState({
+      snackbarOpen: !this.state.snackbarOpen
+    })
+  };
+
+
   componentDidMount() {}
 
   render() {
@@ -108,7 +129,7 @@ class Results extends Component {
             Use the slider
           </Typography>
           <Typography variant="body2" gutterBottom>
-            Fluorescence is normalised by ....
+          Luminescence is normalised by ....
           </Typography>
 
           <Slider
@@ -208,13 +229,50 @@ class Results extends Component {
               color="default"
               className={classes.button}
               startIcon={<GetAppIcon />}
-              // href={`data:text/json;charset=utf-8,${encodeURIComponent(
-              //   JSON.stringify(sequences)
-              // )}`}
-              download="TIsigner_RFP_constructs.json"
+              href={`data:text/json;charset=utf-8,${encodeURIComponent(
+                JSON.stringify(fluorescence)
+              )}`}
+              download="TIsigner_RFP_Luminescence.json"
+              onClick={this.handleClick}
             >
-              Download Constructs (JSON)
+              Download Luminescence (JSON)
             </Button>
+            <Button
+              color="default"
+              className={classes.button}
+              startIcon={<GetAppIcon />}
+              href={`data:text/json;charset=utf-8,${encodeURIComponent(
+                JSON.stringify(correlation)
+              )}`}
+              download="TIsigner_RFP_Correlation.json"
+              onClick={this.handleClick}
+            >
+              Download Correlation (JSON)
+            </Button>
+
+            <Snackbar
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "center",
+          }}
+          open={this.state.snackbarOpen}
+          autoHideDuration={2000}
+          onClose={this.handleClose}
+          message="Downloaded! Please save the file."
+          action={
+            <Fragment>
+              <IconButton
+                size="small"
+                aria-label="close"
+                color="inherit"
+                onClick={this.handleClose}
+              >
+                <CloseIcon fontSize="small" />
+              </IconButton>
+            </Fragment>
+          }
+        />
+
           </Grid>
         </div>
       </Fragment>

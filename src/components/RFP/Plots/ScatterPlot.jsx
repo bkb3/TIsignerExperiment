@@ -203,7 +203,7 @@ function ScatterPlot(props) {
           },
           scaleLabel: {
             display: true,
-            labelString: "Normalised Fluorescence",
+            labelString: "Normalised Luminescence",
           },
         },
       ],
