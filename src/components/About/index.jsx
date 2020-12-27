@@ -1,6 +1,7 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import ListItemText from "@material-ui/core/ListItemText";
 // import GitHubIcon from '@material-ui/icons/GitHub';
 import "./customFade.css";
 
@@ -23,6 +24,7 @@ function About() {
       <Typography variant="h4" gutterBottom>
         About us
       </Typography>
+      <ListItemText secondary="In no particular order" />
       <Typography variant="h5" gutterBottom>
         Theory
       </Typography>
@@ -71,22 +73,22 @@ function About() {
         <li>
           <Typography variant="body1" gutterBottom>
             <a
-              href="https://rd.callaghaninnovation.govt.nz/about-us/our-people/page-60/"
+              href="https://rd.callaghaninnovation.govt.nz/about-us/our-people/page-61/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Craig van Dolleweerd
+              Daniela Remus
             </a>
           </Typography>
         </li>
         <li>
           <Typography variant="body1" gutterBottom>
             <a
-              href="https://rd.callaghaninnovation.govt.nz/about-us/our-people/page-61/"
+              href="https://rd.callaghaninnovation.govt.nz/about-us/our-people/page-60/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Daniela Remus
+              Craig van Dolleweerd
             </a>
           </Typography>
         </li>
