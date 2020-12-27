@@ -7,6 +7,7 @@ import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@material-ui/core/Typography";
@@ -194,16 +195,31 @@ function Main(props) {
         ))}
       </List>
 
-      <div className={classes.footer}>
-        <Divider />
-        <Button disabled startIcon={<CopyrightIcon />}>
+      {/* <div className={classes.footer}> */}
+      <Divider />
+      <List component="div" disablePadding>
+        <ListItem button disabled>
+          <ListItemIcon>
+            <CopyrightIcon />
+          </ListItemIcon>
+          <ListItemText
+            primary={
+              "2020" +
+              (new Date().getFullYear() === 2020
+                ? ""
+                : ` - ${new Date().getFullYear()}`) + " Authors"
+            }
+          />
+        </ListItem>
+      </List>
+      {/* <Button disabled startIcon={<CopyrightIcon />}>
           2020
           {new Date().getFullYear() === 2020
             ? null
             : ` - ${new Date().getFullYear()}`}{" "}
           Authors
-        </Button>
-      </div>
+        </Button> */}
+      {/* </div> */}
     </div>
   );
 

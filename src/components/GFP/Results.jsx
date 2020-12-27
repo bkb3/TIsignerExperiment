@@ -181,7 +181,7 @@ class Results extends Component {
                   label={
                     !this.state.showAllConstructs
                       ? "Mean shown"
-                      : "Mean hidden"
+                      : "Reps shown"
                   }
                 />
                 <FormControlLabel
