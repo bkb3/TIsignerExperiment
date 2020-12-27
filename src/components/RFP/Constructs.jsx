@@ -5,9 +5,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import GetAppIcon from "@material-ui/icons/GetApp";
+import Snackbar from "@material-ui/core/Snackbar";
+// import MuiAlert from '@material-ui/lab/Alert';
 import "chartjs-plugin-colorschemes/src/plugins/plugin.colorschemes";
 import { Tableau10 } from "chartjs-plugin-colorschemes/src/colorschemes/colorschemes.tableau";
 import { sequences } from "./Data/Sequences";
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -122,6 +126,19 @@ const options = {
 function RFPConstructs() {
   const classes = useStyles();
   const [clickedElementIndex, setClickedElementIndex] = useState("");
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   const getElementAtEvent = (element) => {
     if (!element.length) return;
@@ -152,9 +169,9 @@ function RFPConstructs() {
           ATGAGTAAAGGAGAAGAACTTTTCACTGGAGTTGTCCCAATTCTTGTTGAATTAGATGGTGATGTTAATGGGCACAAATTTTCTGTCAGTGGAGAGGGTGAAGGTGATGCAACATACGGAAAACTTACCCTTAAATTTATTTGCACTACTGGAAAACTACCTGTTCCATGGCCAACACTTGTCACTACTTTCTCTTATGGTGTTCAATGCTTTTCAAGATACCCAGATCATATGAAACGGCATGACTTTTTCAAGAGTGCCATGCCCGAAGGTTATGTACAGGAAAGAACTATATTTTTCAAAGATGACGGGAACTACAAGACACGTGCTGAAGTCAAGTTTGAAGGTGATACCCTTGTTAATAGAATCGAGTTAAAAGGTATTGATTTTAAAGAAGATGGAAACATTCTTGGACACAAATTGGAATACAACTATAACTCACACAATGTATACATCATGGCAGACAAACAAAAGAATGGAATCAAAGTTAACTTCAAAATTAGACACAACATTGAAGATGGAAGCGTTCAACTAGCAGACCATTATCAACAAAATACTCCAATTGGAGATGGCCCTGTCCTTTTACCAGACAACCATTACCTGTCCACACAATCTGCCCTTTCGAAAGATCCCAACGAAAAGAGAGATCACATGGTCCTTCTTGAGTTTGTAACAGCTGCTGGGATTACACATGGCATGGATGAACTATACAAATAG
         </code>
       </pre>
-      <Grid container direction="row" >
+      <Grid container direction="row">
         <Grid item md={6} className={classes.gridItem}>
-          <div style={{height:'300px'}}>
+          <div style={{ height: "300px" }}>
             <Scatter
               data={data}
               options={options}
@@ -198,7 +215,8 @@ function RFPConstructs() {
                         })
                         .join(""),
                     }}
-                  className={classes.sequence} />
+                    className={classes.sequence}
+                  />
                   {/* Showing the difference in sequence w.r.to native */}
                 </Typography>
 
@@ -229,9 +247,33 @@ function RFPConstructs() {
           )}`}
           download="TIsigner_RFP_constructs.json"
           key="Download Constructs (JSON)"
+          onClick={handleClick}
         >
           Download Constructs (JSON)
         </Button>
+
+        <Snackbar
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "center",
+          }}
+          open={open}
+          autoHideDuration={2000}
+          onClose={handleClose}
+          message="Downloaded! Please save the file."
+          action={
+            <Fragment>
+              <IconButton
+                size="small"
+                aria-label="close"
+                color="inherit"
+                onClick={handleClose}
+              >
+                <CloseIcon fontSize="small" />
+              </IconButton>
+            </Fragment>
+          }
+        />
       </Grid>
     </div>
   );
