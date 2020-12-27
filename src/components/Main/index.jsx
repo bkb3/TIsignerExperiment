@@ -5,7 +5,6 @@ import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
-import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItem from "@material-ui/core/ListItem";
@@ -58,12 +57,12 @@ const useStyles = makeStyles((theme) => ({
   nested: {
     paddingLeft: theme.spacing(4),
   },
-  footer: {
-    position: "fixed",
-    bottom: 0,
-    paddingLeft: theme.spacing(3),
-    paddingBottom: theme.spacing(4),
-  },
+  // footer: {
+  //   position: "fixed",
+  //   bottom: 0,
+  //   paddingLeft: theme.spacing(3),
+  //   paddingBottom: theme.spacing(4),
+  // },
 }));
 
 function Main(props) {
@@ -147,7 +146,13 @@ function Main(props) {
         </ListItem>
         <Collapse in={openR} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItem button className={classes.nested} key="RLucConstructs">
+            <ListItem
+              button
+              className={classes.nested}
+              component={Link}
+              to="/RFP/Constructs"
+              key="RLucConstructs"
+            >
               <ListItemText primary="Constructs" />
             </ListItem>
           </List>
@@ -155,7 +160,13 @@ function Main(props) {
 
         <Collapse in={openR} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItem button className={classes.nested} key="RLucProtocol">
+            <ListItem
+              button
+              className={classes.nested}
+              component={Link}
+              to="/RFP/Protocol"
+              key="RLucProtocol"
+            >
               <ListItemText primary="Protocol" />
             </ListItem>
           </List>
@@ -163,7 +174,13 @@ function Main(props) {
 
         <Collapse in={openR} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItem button className={classes.nested} key="RLucResults">
+            <ListItem
+              button
+              className={classes.nested}
+              component={Link}
+              to="/RFP/Results"
+              key="RLucResults"
+            >
               <ListItemText primary="Results" />
             </ListItem>
           </List>
@@ -183,10 +200,11 @@ function Main(props) {
             <ListItem
               button
               key={text}
-              component={index === 0 ? "a" : null}
+              component={index === 0 ? "a" : Link}
               href={index === 0 ? "https://tisigner.com" : null}
               target={index === 0 ? "_blank" : null}
               rel={index === 0 ? "noopener noreferrer" : null}
+              to={index !== 0 ? "/About" : ""}
             >
               <ListItemText primary={text} />
               {index === 0 ? <LaunchIcon /> : null}
@@ -195,7 +213,6 @@ function Main(props) {
         ))}
       </List>
 
-      {/* <div className={classes.footer}> */}
       <Divider />
       <List component="div" disablePadding>
         <ListItem button disabled>
@@ -207,19 +224,12 @@ function Main(props) {
               "2020" +
               (new Date().getFullYear() === 2020
                 ? ""
-                : ` - ${new Date().getFullYear()}`) + " Authors"
+                : ` - ${new Date().getFullYear()}`) +
+              " Authors"
             }
           />
         </ListItem>
       </List>
-      {/* <Button disabled startIcon={<CopyrightIcon />}>
-          2020
-          {new Date().getFullYear() === 2020
-            ? null
-            : ` - ${new Date().getFullYear()}`}{" "}
-          Authors
-        </Button> */}
-      {/* </div> */}
     </div>
   );
 
