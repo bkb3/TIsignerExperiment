@@ -2,9 +2,7 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 // import GitHubIcon from '@material-ui/icons/GitHub';
-import Divider from "@material-ui/core/Divider";
 import "./customFade.css";
-// import { GitHub } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,8 +27,8 @@ function About() {
         Theory
       </Typography>
 
-        <ul>
-          <li>
+      <ul>
+        <li>
           <Typography variant="body1" gutterBottom>
             <a
               href="https://github.com/bkb3"
@@ -39,9 +37,9 @@ function About() {
             >
               Bikash Kumar Bhandari (bkb3)
             </a>
-            </Typography>
-          </li>
-          <li>
+          </Typography>
+        </li>
+        <li>
           <Typography variant="body1" gutterBottom>
             <a
               href="https://otago.ac.nz/biochemistry/people/profile/index.html?id=3136"
@@ -50,9 +48,9 @@ function About() {
             >
               Chun Shen Lim
             </a>
-            </Typography>
-          </li>
-          <li>
+          </Typography>
+        </li>
+        <li>
           <Typography variant="body1" gutterBottom>
             <a
               href="https://otago.ac.nz/biochemistry/people/profile/index.html?id=2817"
@@ -61,16 +59,16 @@ function About() {
             >
               Paul Gardner
             </a>
-            </Typography>
-          </li>
-        </ul>
+          </Typography>
+        </li>
+      </ul>
 
       <Typography variant="h5" gutterBottom>
         GFP experiments
       </Typography>
 
-        <ul>
-          <li>
+      <ul>
+        <li>
           <Typography variant="body1" gutterBottom>
             <a
               href="https://rd.callaghaninnovation.govt.nz/about-us/our-people/page-60/"
@@ -79,9 +77,9 @@ function About() {
             >
               Craig van Dolleweerd
             </a>
-            </Typography>
-          </li>
-          <li>
+          </Typography>
+        </li>
+        <li>
           <Typography variant="body1" gutterBottom>
             <a
               href="https://rd.callaghaninnovation.govt.nz/about-us/our-people/page-61/"
@@ -90,16 +88,16 @@ function About() {
             >
               Daniela Remus
             </a>
-            </Typography>
-          </li>
-        </ul>
+          </Typography>
+        </li>
+      </ul>
 
       <Typography variant="h5" gutterBottom>
         RFP experiments
       </Typography>
 
-        <ul>
-          <li>
+      <ul>
+        <li>
           <Typography variant="body1" gutterBottom>
             <a
               href="https://www.otago.ac.nz/biochemistry/people/profile/index.html?id=471"
@@ -108,16 +106,16 @@ function About() {
             >
               Augustine Chen
             </a>
-            </Typography>
-          </li>
-        </ul>
+          </Typography>
+        </li>
+      </ul>
 
       <Typography variant="h5" gutterBottom>
         Institutions
       </Typography>
 
-        <ul>
-          <li>
+      <ul>
+        <li>
           <Typography variant="body1" gutterBottom>
             <a
               href="https://www.callaghaninnovation.govt.nz/"
@@ -126,9 +124,9 @@ function About() {
             >
               Callaghan Innovation
             </a>
-            </Typography>
-          </li>
-          <li>
+          </Typography>
+        </li>
+        <li>
           <Typography variant="body1" gutterBottom>
             <a
               href="https://www.otago.ac.nz/biochemistry"
@@ -137,9 +135,9 @@ function About() {
             >
               Department of Biochemistry, University of Otago
             </a>
-            </Typography>
-          </li>
-          <li>
+          </Typography>
+        </li>
+        <li>
           <Typography variant="body1" gutterBottom>
             <a
               href="https://www.mbie.govt.nz/"
@@ -149,10 +147,9 @@ function About() {
               Ministry of Business, Innovation and Employment (MBIE), New
               Zealand
             </a>
-            </Typography>
-          </li>
-        </ul>
-
+          </Typography>
+        </li>
+      </ul>
 
       <Typography variant="body1" gutterBottom>
         This work was supported by MBIE grant: UOOX1709.
@@ -175,19 +172,24 @@ function About() {
       <GitHubIcon/>
       </Typography> */}
       <Typography variant="body1" gutterBottom>
-      View source on {" "}
+        View source on{" "}
         <a
           href="https://github.com/Gardner-BinfLab/"
           target="_blank"
           rel="noopener noreferrer"
         >
-            GitHub
-        </a>.
+          GitHub
+        </a>
+        .
       </Typography>
 
-      <Divider />
-      <Typography variant="caption" display="block" gutterBottom className="customFade">
-          Website written by bkb3.
+      <Typography
+        variant="caption"
+        display="block"
+        gutterBottom
+        className="customFade"
+      >
+        Website written by bkb3.
       </Typography>
     </div>
   );
