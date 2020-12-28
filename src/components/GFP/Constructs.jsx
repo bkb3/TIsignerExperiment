@@ -180,7 +180,7 @@ function GFPConstructs() {
         </code>
       </pre>
 
-    <PlotLegend />
+    <PlotLegend page='Constructs'/>
 
       <Grid container direction="row" >
         <Grid item md={6} className={classes.gridItem}>

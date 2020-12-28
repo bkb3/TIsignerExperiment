@@ -15,6 +15,7 @@ import Collapse from "@material-ui/core/Collapse";
 
 function PlotLegend(props) {
   let type = props.type;
+  let page = props.page;
   const [open, setOpen] = React.useState(true);
 
   const handleClick = () => {
@@ -41,7 +42,7 @@ function PlotLegend(props) {
               <ListItemText
                 primary="Native"
                 secondary={`This is the native ${
-                  props.type === "RFP"
+                  type === "RFP"
                     ? "Renilla Luciferase (RLuc)."
                     : "Green Fluorescent Protein (GFP)."
                 }`}
@@ -53,7 +54,7 @@ function PlotLegend(props) {
               </ListItemIcon>
               <ListItemText
                 primary="Optimised"
-                secondary="These are optimised using TISIGNER. Synonymous changes is preformed only within the first 30 nucleotides. Click on the point in plot to view the details. "
+                secondary={`These are optimised using TISIGNER. Synonymous changes is preformed only within the first 30 nucleotides. ${page === 'Constructs' ? 'Click':'Hover'} on the point to view the details.`}
               />
             </ListItem>
             {type === "RFP" ? (
@@ -63,7 +64,7 @@ function PlotLegend(props) {
                 </ListItemIcon>
                 <ListItemText
                   primary="Commercial variant"
-                  secondary="The commercial variants were obtained from several companies. Click on the point in plot to view the details. These sequences have numerous synonymous changes along the sequence."
+                  secondary={`The commercial variants were obtained from several companies. These sequences have numerous synonymous changes along the sequence. ${page === 'Constructs' ? 'Click':'Hover'} on the point to view the details.`}
                 />
               </ListItem>
             ) : null}

@@ -179,7 +179,7 @@ function RFPConstructs() {
       </pre>
 
 
-    <PlotLegend type="RFP" />
+    <PlotLegend type="RFP" page='Constructs'/>
 
       <Grid container direction="row">
         <Grid item md={6} className={classes.gridItem}>
