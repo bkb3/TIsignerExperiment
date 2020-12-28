@@ -197,7 +197,7 @@ class Results extends Component {
                 <FormControlLabel
                   control={
                     <Switch
-                      checked={this.state.showAllConstructs}
+                      checked={!this.state.showAllConstructs}
                       onChange={this.handleChangeShowAllConstructs}
                       name="ShowAllConstructs"
                     />
