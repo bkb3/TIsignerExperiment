@@ -12,6 +12,7 @@ import { Tableau10 } from "chartjs-plugin-colorschemes/src/colorschemes/colorsch
 import { sequences } from "./Data/Sequences";
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
+import PlotLegend from "../Main/PlotLegend";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -65,7 +66,15 @@ const data = {
       data: openingEnergy.map((v, i) => ({ x: v, y: expressionScore[i] })),
       pointRadius: function (context) {
         var index = context.dataIndex;
-        return index === 0 ? 5 : 2;
+        return sequences[index].Type === "Optimised" ? 2 : 5;
+      },
+      pointStyle: function (context) {
+        var index = context.dataIndex;
+        return sequences[index].Type === "Commercial"
+          ? "triangle"
+          : sequences[index].Type === "Native"
+          ? "rect"
+          : "circle";
       },
       pointHoverRadius: 7,
     },
@@ -170,6 +179,9 @@ function GFPConstructs() {
           ATGAGTAAAGGAGAAGAACTTTTCACTGGAGTTGTCCCAATTCTTGTTGAATTAGATGGTGATGTTAATGGGCACAAATTTTCTGTCAGTGGAGAGGGTGAAGGTGATGCAACATACGGAAAACTTACCCTTAAATTTATTTGCACTACTGGAAAACTACCTGTTCCATGGCCAACACTTGTCACTACTTTCTCTTATGGTGTTCAATGCTTTTCAAGATACCCAGATCATATGAAACGGCATGACTTTTTCAAGAGTGCCATGCCCGAAGGTTATGTACAGGAAAGAACTATATTTTTCAAAGATGACGGGAACTACAAGACACGTGCTGAAGTCAAGTTTGAAGGTGATACCCTTGTTAATAGAATCGAGTTAAAAGGTATTGATTTTAAAGAAGATGGAAACATTCTTGGACACAAATTGGAATACAACTATAACTCACACAATGTATACATCATGGCAGACAAACAAAAGAATGGAATCAAAGTTAACTTCAAAATTAGACACAACATTGAAGATGGAAGCGTTCAACTAGCAGACCATTATCAACAAAATACTCCAATTGGAGATGGCCCTGTCCTTTTACCAGACAACCATTACCTGTCCACACAATCTGCCCTTTCGAAAGATCCCAACGAAAAGAGAGATCACATGGTCCTTCTTGAGTTTGTAACAGCTGCTGGGATTACACATGGCATGGATGAACTATACAAATAG
         </code>
       </pre>
+
+    <PlotLegend />
+
       <Grid container direction="row" >
         <Grid item md={6} className={classes.gridItem}>
           <div style={{height:'300px'}}>
@@ -227,7 +239,7 @@ function GFPConstructs() {
                   {`Opening Energy : ${openingEnergy[clickedElementIndex]} kcal/mol`}
                 </Typography>
                 <Typography variant="caption" display="block" gutterBottom>
-                  {clickedElementIndex === "0"
+                  {sequences[clickedElementIndex]['Type'] === "Native"
                     ? null
                     : "Mismatches with respect to the native are highlighted."}
                 </Typography>

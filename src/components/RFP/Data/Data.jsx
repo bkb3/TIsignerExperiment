@@ -2280,7 +2280,8 @@ export const fluorescence = [
     ],
   },
   {
-    Type: "Optimised",
+    Type: "Commercial",
+    "Company": "IDT",
     "First 30 nt": "ATGAGCAAAGGGGAAGAATTATTTACAGGT",
     "Opening Energy": 5.56,
     "Expression Score": 97.75,
@@ -5776,7 +5777,8 @@ export const fluorescence = [
     ],
   },
   {
-    Type: "Optimised",
+    Type: "Commercial",
+    "Company":"Test Company",
     "First 30 nt": "ATGTCCAAAGGAGAAGAACTATTCACCGGA",
     "Opening Energy": 10.86,
     "Expression Score": 72.76,
@@ -5928,7 +5930,8 @@ export const fluorescence = [
     ],
   },
   {
-    Type: "Optimised",
+    Type: "Commercial",
+    "Company": "Test Company 1",
     "First 30 nt": "ATGAGCAAAGGAGAAGAACTATTCACGGGA",
     "Opening Energy": 8.45,
     "Expression Score": 91.91,
@@ -6080,7 +6083,8 @@ export const fluorescence = [
     ],
   },
   {
-    Type: "Optimised",
+    Type: "Commercial",
+    "Company": "Test Company 2",
     "First 30 nt": "ATGTCGAAGGGAGAAGAATTATTTACGGGA",
     "Opening Energy": 8.02,
     "Expression Score": 93.64,

@@ -6,8 +6,8 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Snackbar from "@material-ui/core/Snackbar";
 import Button from "@material-ui/core/Button";
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import Slider from "@material-ui/core/Slider";
 // import FormLabel from "@material-ui/core/FormLabel";
@@ -17,6 +17,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 // import FormHelperText from "@material-ui/core/FormHelperText";
 import Switch from "@material-ui/core/Switch";
 import { fluorescence, correlation } from "./Data/Data";
+import PlotLegend from "../Main/PlotLegend";
 import ScatterPlot from "./Plots/ScatterPlot";
 // import ScatterPlot from "./Plots/ScatterPlotly";
 import CorrelationPlot from "./Plots/CorrelationPlot";
@@ -97,11 +98,10 @@ class Results extends Component {
     });
   };
 
-
   handleClick = () => {
     this.setState({
-      snackbarOpen: !this.state.snackbarOpen
-    })
+      snackbarOpen: !this.state.snackbarOpen,
+    });
   };
 
   handleClose = (event, reason) => {
@@ -109,8 +109,8 @@ class Results extends Component {
       return;
     }
     this.setState({
-      snackbarOpen: !this.state.snackbarOpen
-    })
+      snackbarOpen: !this.state.snackbarOpen,
+    });
   };
 
   componentDidMount() {}
@@ -151,6 +151,8 @@ class Results extends Component {
               }
             </Typography>
           </Grid>
+
+          <PlotLegend />
 
           <Grid container direction="row" alignItems="stretch">
             {/* <Grid item md={6} sm={9} xs={9} className={classes.gridItem}> */}
@@ -199,9 +201,7 @@ class Results extends Component {
                     />
                   }
                   label={
-                    !this.state.showAllConstructs
-                      ? "Mean shown"
-                      : "Reps shown"
+                    !this.state.showAllConstructs ? "Mean shown" : "Reps shown"
                   }
                 />
                 <FormControlLabel
@@ -250,28 +250,27 @@ class Results extends Component {
             </Button>
 
             <Snackbar
-          anchorOrigin={{
-            vertical: "bottom",
-            horizontal: "center",
-          }}
-          open={this.state.snackbarOpen}
-          autoHideDuration={2000}
-          onClose={this.handleClose}
-          message="Downloaded! Please save the file."
-          action={
-            <Fragment>
-              <IconButton
-                size="small"
-                aria-label="close"
-                color="inherit"
-                onClick={this.handleClose}
-              >
-                <CloseIcon fontSize="small" />
-              </IconButton>
-            </Fragment>
-          }
-        />
-
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "center",
+              }}
+              open={this.state.snackbarOpen}
+              autoHideDuration={2000}
+              onClose={this.handleClose}
+              message="Downloaded! Please save the file."
+              action={
+                <Fragment>
+                  <IconButton
+                    size="small"
+                    aria-label="close"
+                    color="inherit"
+                    onClick={this.handleClose}
+                  >
+                    <CloseIcon fontSize="small" />
+                  </IconButton>
+                </Fragment>
+              }
+            />
           </Grid>
         </div>
       </Fragment>

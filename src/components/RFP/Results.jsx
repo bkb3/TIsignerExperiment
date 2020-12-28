@@ -17,6 +17,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 // import FormHelperText from "@material-ui/core/FormHelperText";
 import Switch from "@material-ui/core/Switch";
 import { fluorescence, correlation } from "./Data/Data";
+import PlotLegend from "../Main/PlotLegend";
 import ScatterPlot from "./Plots/ScatterPlot";
 // import ScatterPlot from "./Plots/ScatterPlotly";
 import CorrelationPlot from "./Plots/CorrelationPlot";
@@ -152,6 +153,8 @@ class Results extends Component {
               }
             </Typography>
           </Grid>
+
+              <PlotLegend type="RFP" />
 
           <Grid container direction="row" alignItems="stretch">
             {/* <Grid item md={6} sm={9} xs={9} className={classes.gridItem}> */}

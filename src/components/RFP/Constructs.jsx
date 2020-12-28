@@ -10,8 +10,9 @@ import Snackbar from "@material-ui/core/Snackbar";
 import "chartjs-plugin-colorschemes/src/plugins/plugin.colorschemes";
 import { Tableau10 } from "chartjs-plugin-colorschemes/src/colorschemes/colorschemes.tableau";
 import { sequences } from "./Data/Sequences";
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
+import PlotLegend from "../Main/PlotLegend";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -65,7 +66,15 @@ const data = {
       data: openingEnergy.map((v, i) => ({ x: v, y: expressionScore[i] })),
       pointRadius: function (context) {
         var index = context.dataIndex;
-        return index === 0 ? 5 : 2;
+        return sequences[index].Type === "Optimised" ? 2 : 5;
+      },
+      pointStyle: function (context) {
+        var index = context.dataIndex;
+        return sequences[index].Type === "Commercial"
+          ? "triangle"
+          : sequences[index].Type === "Native"
+          ? "rect"
+          : "circle";
       },
       pointHoverRadius: 7,
     },
@@ -154,7 +163,6 @@ function RFPConstructs() {
       </Typography>
       <Typography variant="body1" gutterBottom>
         The RFP constructs used in this experiment are shown in the plot below.
-        The largest dot is the native RFP.
       </Typography>
 
       <pre className={classes.sequence}>
@@ -169,6 +177,10 @@ function RFPConstructs() {
           ATGAGTAAAGGAGAAGAACTTTTCACTGGAGTTGTCCCAATTCTTGTTGAATTAGATGGTGATGTTAATGGGCACAAATTTTCTGTCAGTGGAGAGGGTGAAGGTGATGCAACATACGGAAAACTTACCCTTAAATTTATTTGCACTACTGGAAAACTACCTGTTCCATGGCCAACACTTGTCACTACTTTCTCTTATGGTGTTCAATGCTTTTCAAGATACCCAGATCATATGAAACGGCATGACTTTTTCAAGAGTGCCATGCCCGAAGGTTATGTACAGGAAAGAACTATATTTTTCAAAGATGACGGGAACTACAAGACACGTGCTGAAGTCAAGTTTGAAGGTGATACCCTTGTTAATAGAATCGAGTTAAAAGGTATTGATTTTAAAGAAGATGGAAACATTCTTGGACACAAATTGGAATACAACTATAACTCACACAATGTATACATCATGGCAGACAAACAAAAGAATGGAATCAAAGTTAACTTCAAAATTAGACACAACATTGAAGATGGAAGCGTTCAACTAGCAGACCATTATCAACAAAATACTCCAATTGGAGATGGCCCTGTCCTTTTACCAGACAACCATTACCTGTCCACACAATCTGCCCTTTCGAAAGATCCCAACGAAAAGAGAGATCACATGGTCCTTCTTGAGTTTGTAACAGCTGCTGGGATTACACATGGCATGGATGAACTATACAAATAG
         </code>
       </pre>
+
+
+    <PlotLegend type="RFP" />
+
       <Grid container direction="row">
         <Grid item md={6} className={classes.gridItem}>
           <div style={{ height: "300px" }}>
@@ -201,6 +213,17 @@ function RFPConstructs() {
                 >
                   {`RFP construct: ${types[clickedElementIndex]}`}
                 </Typography>
+
+                {sequences[clickedElementIndex].Type === "Commercial" ? (
+                  <Typography
+                    className={classes.title}
+                    color="textSecondary"
+                    gutterbottom="true"
+                  >
+                    {`Company: ${sequences[clickedElementIndex]["Company"]}`}
+                  </Typography>
+                ) : null}
+
                 <Typography variant="h6" component="h2" gutterbottom="true">
                   <p
                     dangerouslySetInnerHTML={{
@@ -227,8 +250,10 @@ function RFPConstructs() {
                   {`Opening Energy : ${openingEnergy[clickedElementIndex]} kcal/mol`}
                 </Typography>
                 <Typography variant="caption" display="block" gutterBottom>
-                  {clickedElementIndex === "0"
+                  {sequences[clickedElementIndex].Type === "Native"
                     ? null
+                    : sequences[clickedElementIndex].Type === "Commercial"
+                    ? "This is a commercial variant. This sequence has mismatches beyond the first 30 nucleotides (not shown)."
                     : "Mismatches with respect to the native are highlighted."}
                 </Typography>
               </Fragment>

@@ -41,7 +41,15 @@ function ScatterPlot(props) {
             })),
             pointRadius: function (context) {
               var index = context.dataIndex;
-              return index === 0 ? 5 : 2;
+              return props.fluorescence[index].Type === "Optimised" ? 2 : 5;
+            },
+            pointStyle: function (context) {
+              var index = context.dataIndex;
+              return props.fluorescence[index].Type === "Commercial"
+                ? "triangle"
+                : props.fluorescence[index].Type === "Native"
+                ? "rect"
+                : "circle";
             },
             pointHoverRadius: 7,
           },
@@ -53,7 +61,15 @@ function ScatterPlot(props) {
             })),
             pointRadius: function (context) {
               var index = context.dataIndex;
-              return index === 0 ? 1 : 0.5;
+              return props.fluorescence[index].Type === "Optimised" ? 0.5 : 1;
+            },
+            pointStyle: function (context) {
+              var index = context.dataIndex;
+              return props.fluorescence[index].Type === "Commercial"
+                ? "triangle"
+                : props.fluorescence[index].Type === "Native"
+                ? "rect"
+                : "circle";
             },
             pointHoverRadius: 1,
           },
@@ -65,7 +81,15 @@ function ScatterPlot(props) {
             })),
             pointRadius: function (context) {
               var index = context.dataIndex;
-              return index === 0 ? 1 : 0.5;
+              return props.fluorescence[index].Type === "Optimised" ? 0.5 : 1;
+            },
+            pointStyle: function (context) {
+              var index = context.dataIndex;
+              return props.fluorescence[index].Type === "Commercial"
+                ? "triangle"
+                : props.fluorescence[index].Type === "Native"
+                ? "rect"
+                : "circle";
             },
             pointHoverRadius: 1,
           },
@@ -77,7 +101,15 @@ function ScatterPlot(props) {
             })),
             pointRadius: function (context) {
               var index = context.dataIndex;
-              return index === 0 ? 1 : 0.5;
+              return props.fluorescence[index].Type === "Optimised" ? 0.5 : 1;
+            },
+            pointStyle: function (context) {
+              var index = context.dataIndex;
+              return props.fluorescence[index].Type === "Commercial"
+                ? "triangle"
+                : props.fluorescence[index].Type === "Native"
+                ? "rect"
+                : "circle";
             },
             pointHoverRadius: 1,
           },
@@ -89,7 +121,15 @@ function ScatterPlot(props) {
             })),
             pointRadius: function (context) {
               var index = context.dataIndex;
-              return index === 0 ? 1 : 0.5;
+              return props.fluorescence[index].Type === "Optimised" ? 0.5 : 1;
+            },
+            pointStyle: function (context) {
+              var index = context.dataIndex;
+              return props.fluorescence[index].Type === "Commercial"
+                ? "triangle"
+                : props.fluorescence[index].Type === "Native"
+                ? "rect"
+                : "circle";
             },
             pointHoverRadius: 1,
           },
@@ -101,7 +141,15 @@ function ScatterPlot(props) {
             })),
             pointRadius: function (context) {
               var index = context.dataIndex;
-              return index === 0 ? 1 : 0.5;
+              return props.fluorescence[index].Type === "Optimised" ? 0.5 : 1;
+            },
+            pointStyle: function (context) {
+              var index = context.dataIndex;
+              return props.fluorescence[index].Type === "Commercial"
+                ? "triangle"
+                : props.fluorescence[index].Type === "Native"
+                ? "rect"
+                : "circle";
             },
             pointHoverRadius: 1,
           },
@@ -135,7 +183,15 @@ function ScatterPlot(props) {
             })),
             pointRadius: function (context) {
               var index = context.dataIndex;
-              return index === 0 ? 5 : 2;
+              return props.fluorescence[index].Type === "Optimised" ? 2 : 5;
+            },
+            pointStyle: function (context) {
+              var index = context.dataIndex;
+              return props.fluorescence[index].Type === "Commercial"
+                ? "triangle"
+                : props.fluorescence[index].Type === "Native"
+                ? "rect"
+                : "circle";
             },
             pointHoverRadius: 7,
           },
@@ -147,7 +203,15 @@ function ScatterPlot(props) {
             })),
             pointRadius: function (context) {
               var index = context.dataIndex;
-              return index === 0 ? 5 : 2;
+              return props.fluorescence[index].Type === "Optimised" ? 2 : 5;
+            },
+            pointStyle: function (context) {
+              var index = context.dataIndex;
+              return props.fluorescence[index].Type === "Commercial"
+                ? "triangle"
+                : props.fluorescence[index].Type === "Native"
+                ? "rect"
+                : "circle";
             },
             pointHoverRadius: 7,
           },
@@ -159,7 +223,15 @@ function ScatterPlot(props) {
             })),
             pointRadius: function (context) {
               var index = context.dataIndex;
-              return index === 0 ? 5 : 2;
+              return props.fluorescence[index].Type === "Optimised" ? 2 : 5;
+            },
+            pointStyle: function (context) {
+              var index = context.dataIndex;
+              return props.fluorescence[index].Type === "Commercial"
+                ? "triangle"
+                : props.fluorescence[index].Type === "Native"
+                ? "rect"
+                : "circle";
             },
             pointHoverRadius: 7,
           },
@@ -171,7 +243,15 @@ function ScatterPlot(props) {
             })),
             pointRadius: function (context) {
               var index = context.dataIndex;
-              return index === 0 ? 5 : 2;
+              return props.fluorescence[index].Type === "Optimised" ? 2 : 5;
+            },
+            pointStyle: function (context) {
+              var index = context.dataIndex;
+              return props.fluorescence[index].Type === "Commercial"
+                ? "triangle"
+                : props.fluorescence[index].Type === "Native"
+                ? "rect"
+                : "circle";
             },
             pointHoverRadius: 7,
           },
@@ -183,7 +263,15 @@ function ScatterPlot(props) {
             })),
             pointRadius: function (context) {
               var index = context.dataIndex;
-              return index === 0 ? 5 : 2;
+              return props.fluorescence[index].Type === "Optimised" ? 2 : 5;
+            },
+            pointStyle: function (context) {
+              var index = context.dataIndex;
+              return props.fluorescence[index].Type === "Commercial"
+                ? "triangle"
+                : props.fluorescence[index].Type === "Native"
+                ? "rect"
+                : "circle";
             },
             pointHoverRadius: 7,
           },
