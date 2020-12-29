@@ -1,7 +1,7 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import ListItemText from "@material-ui/core/ListItemText";
+// import ListItemText from "@material-ui/core/ListItemText";
 // import GitHubIcon from '@material-ui/icons/GitHub';
 import "./customFade.css";
 
@@ -24,46 +24,7 @@ function About() {
       <Typography variant="h4" gutterBottom>
         About us
       </Typography>
-      <ListItemText secondary="In no particular order" />
-      <Typography variant="h5" gutterBottom>
-        Theory
-      </Typography>
-
-      <ul>
-        <li>
-          <Typography variant="body1" gutterBottom>
-            <a
-              href="https://github.com/bkb3"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Bikash Kumar Bhandari (bkb3)
-            </a>
-          </Typography>
-        </li>
-        <li>
-          <Typography variant="body1" gutterBottom>
-            <a
-              href="https://otago.ac.nz/biochemistry/people/profile/index.html?id=3136"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Chun Shen Lim
-            </a>
-          </Typography>
-        </li>
-        <li>
-          <Typography variant="body1" gutterBottom>
-            <a
-              href="https://otago.ac.nz/biochemistry/people/profile/index.html?id=2817"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Paul Gardner
-            </a>
-          </Typography>
-        </li>
-      </ul>
+      {/* <ListItemText secondary="In no particular order" /> */}
 
       <Typography variant="h5" gutterBottom>
         GFP experiments
@@ -107,6 +68,46 @@ function About() {
               rel="noopener noreferrer"
             >
               Augustine Chen
+            </a>
+          </Typography>
+        </li>
+      </ul>
+
+      <Typography variant="h5" gutterBottom>
+        Theory
+      </Typography>
+
+      <ul>
+        <li>
+          <Typography variant="body1" gutterBottom>
+            <a
+              href="https://github.com/bkb3"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Bikash Kumar Bhandari (bkb3)
+            </a>
+          </Typography>
+        </li>
+        <li>
+          <Typography variant="body1" gutterBottom>
+            <a
+              href="https://otago.ac.nz/biochemistry/people/profile/index.html?id=3136"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Chun Shen Lim
+            </a>
+          </Typography>
+        </li>
+        <li>
+          <Typography variant="body1" gutterBottom>
+            <a
+              href="https://otago.ac.nz/biochemistry/people/profile/index.html?id=2817"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Paul Gardner
             </a>
           </Typography>
         </li>

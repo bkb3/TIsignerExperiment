@@ -241,7 +241,7 @@ function GFPConstructs() {
                 <Typography variant="caption" display="block" gutterBottom>
                   {sequences[clickedElementIndex]['Type'] === "Native"
                     ? null
-                    : "Mismatches with respect to the native are highlighted."}
+                    : "Changes with respect to the native are highlighted."}
                 </Typography>
               </Fragment>
             )}
