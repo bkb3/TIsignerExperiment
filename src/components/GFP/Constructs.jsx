@@ -57,7 +57,7 @@ let types = sequences.map((a) => a["Type"]);
 let openingEnergy = sequences.map((a) => a["Opening Energy"]);
 let expressionScore = sequences.map((a) => a["Expression Score"]);
 let nucleotideSequence = sequences.map((a) => a["First 30 nt"]);
-let nativeGFP = nucleotideSequence[0];
+let nativeGFP = sequences[sequences.map(a => a.Type === 'Native').indexOf(true)]['First 30 nt'];
 
 const data = {
   datasets: [
