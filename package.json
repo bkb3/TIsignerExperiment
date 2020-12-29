@@ -1,5 +1,6 @@
 {
   "name": "tisigner_experiment",
+  "homepage": "https://bkb3.github.io/TIsignerExperiment/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

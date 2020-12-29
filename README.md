@@ -1,4 +1,7 @@
-### TIsigner experiment
+### TIsigner experiment 
+[![Build Status](https://travis-ci.com/bkb3/TIsignerExperiment.svg?branch=master)](https://travis-ci.com/bkb3/TIsignerExperiment)
+
+
 Results from the experiments done on constructs designed using [TIsigner](https://TISIGNER.com/tisigner) presented in an interactive way!
 
 #### Installation
