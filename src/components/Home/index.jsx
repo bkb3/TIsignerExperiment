@@ -25,6 +25,10 @@ function Home() {
       <Typography variant="h5" gutterBottom>
         About the experiment
       </Typography>
+      <Typography variant="h6" gutterBottom>
+        This is an experimental release for testing purposes. Mock data is used
+        currently.
+      </Typography>
       <Typography variant="body1" gutterBottom>
         This is a series of experiments set up to demonstrate that the protein
         expression can be tuned using the accesibility of the translation
@@ -75,7 +79,8 @@ function Home() {
         . The experiment was preformed in <em>Escherichia coli</em>. The details
         such as constructs, protocol and the results for each protein can be
         viewed by using the menu on the left. On mobile devices, the menu can be
-        accessed by tapping <MenuIcon fontSize="small"/> button on the top left.
+        accessed by tapping <MenuIcon fontSize="small" /> button on the top
+        left.
       </Typography>
     </div>
   );

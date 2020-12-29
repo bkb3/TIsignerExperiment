@@ -27,6 +27,24 @@ function About() {
       {/* <ListItemText secondary="In no particular order" /> */}
 
       <Typography variant="h5" gutterBottom>
+        Constructs
+      </Typography>
+
+      <ul>
+        <li>
+          <Typography variant="body1" gutterBottom>
+            <a
+              href="https://rd.callaghaninnovation.govt.nz/about-us/our-people/page-60/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Craig van Dolleweerd
+            </a>
+          </Typography>
+        </li>
+      </ul>
+
+      <Typography variant="h5" gutterBottom>
         GFP experiments
       </Typography>
 
@@ -39,17 +57,6 @@ function About() {
               rel="noopener noreferrer"
             >
               Daniela Remus
-            </a>
-          </Typography>
-        </li>
-        <li>
-          <Typography variant="body1" gutterBottom>
-            <a
-              href="https://rd.callaghaninnovation.govt.nz/about-us/our-people/page-60/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Craig van Dolleweerd
             </a>
           </Typography>
         </li>
