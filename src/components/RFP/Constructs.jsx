@@ -54,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 let types = sequences.map((a) => a["Type"]);
+let company = sequences.map((a) => a["Company"]);
 let openingEnergy = sequences.map((a) => a["Opening Energy"]);
 let expressionScore = sequences.map((a) => a["Expression Score"]);
 let nucleotideSequence = sequences.map((a) => a["First 30 nt"]);
@@ -120,9 +121,11 @@ const options = {
     callbacks: {
       label: function (tooltipItem, data) {
         let constructType = types[tooltipItem.index];
+        let comp = company[tooltipItem.index];
         let datasetLabel = data.datasets[tooltipItem.datasetIndex].label || "";
         return [
           `${datasetLabel} : ${constructType}`,
+          `Company : ${comp === null? 'N/A':comp}`,
           `Expression Score: ${tooltipItem.value}`,
           `Opening Energy: ${tooltipItem.label} kcal/mol`,
         ];

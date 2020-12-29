@@ -12,6 +12,7 @@ const minYaxis = 15;
 function ScatterPlot(props) {
   let i = props.sliderCurrentPosition;
   let types = props.fluorescence.map((a) => a["Type"]);
+  let company = props.fluorescence.map((a) => a["Company"]);
   // let openingEnergy = fluorescence.map((a) => a["Opening Energy"]);
   let expressionScore = props.fluorescence.map((a) => a["Expression Score"]);
   // let nucleotideSequence = props.fluorescence.map((a) => a["First 30 nt"]);
@@ -322,10 +323,12 @@ function ScatterPlot(props) {
       callbacks: {
         label: function (tooltipItem, data) {
           let constructType = types[tooltipItem.index];
+          let comp = company[tooltipItem.index];
           let datasetLabel =
             data.datasets[tooltipItem.datasetIndex].label || "";
           return [
             `${datasetLabel}`,
+            `Company : ${comp === null? 'N/A':comp}`,
             `Type : ${constructType}`,
             `Expression Score: ${tooltipItem.label}`,
             `Normalised Fluorescence: ${tooltipItem.value}`,
