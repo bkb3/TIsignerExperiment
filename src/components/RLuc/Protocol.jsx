@@ -9,15 +9,15 @@ const useStyles = makeStyles({
   },
 });
 
-function GFPProtocol() {
+function RLucProtocol() {
     const classes = useStyles();
   return (
     <div className={classes.root}>
       <Typography variant="h5" gutterBottom>
-        GFP Protocol
+        RLuc Protocol
       </Typography>
     </div>
   );
 }
 
-export default GFPProtocol;
+export default RLucProtocol;

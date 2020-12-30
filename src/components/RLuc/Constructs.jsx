@@ -5,14 +5,18 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import GetAppIcon from "@material-ui/icons/GetApp";
+import Snackbar from "@material-ui/core/Snackbar";
+// import MuiAlert from '@material-ui/lab/Alert';
 import "chartjs-plugin-colorschemes/src/plugins/plugin.colorschemes";
 import { Tableau10 } from "chartjs-plugin-colorschemes/src/colorschemes/colorschemes.tableau";
 import { sequences } from "./Data/Sequences";
-
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
+import PlotLegend from "../Main/PlotLegend";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // flexGrow: 1,
+    flexGrow: 1,
   },
   paper: {
     padding: theme.spacing(2),
@@ -49,20 +53,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-let types = sequences.map(a => a["Type"]);
-let openingEnergy = sequences.map(a => a["Opening Energy"]);
-let expressionScore = sequences.map(a => a["Expression Score"]);
-let nucleotideSequence = sequences.map(a => a["First 30 nt"]);
-let nativeGFP = nucleotideSequence[0]
+let types = sequences.map((a) => a["Type"]);
+let company = sequences.map((a) => a["Company"]);
+let openingEnergy = sequences.map((a) => a["Opening Energy"]);
+let expressionScore = sequences.map((a) => a["Expression Score"]);
+let nucleotideSequence = sequences.map((a) => a["First 30 nt"]);
+let nativeRLuc = sequences[sequences.map(a => a.Type === 'Native').indexOf(true)]['First 30 nt'];
 
 const data = {
   datasets: [
     {
-      label: "GFP construct",
+      label: "RLuc construct",
       data: openingEnergy.map((v, i) => ({ x: v, y: expressionScore[i] })),
       pointRadius: function (context) {
         var index = context.dataIndex;
-        return index === 0 ? 5 : 2;
+        return sequences[index].Type === "Optimised" ? 2 : 5;
+      },
+      pointStyle: function (context) {
+        var index = context.dataIndex;
+        return sequences[index].Type === "Commercial"
+          ? "triangle"
+          : sequences[index].Type === "Native"
+          ? "rect"
+          : "circle";
       },
       pointHoverRadius: 7,
     },
@@ -108,12 +121,13 @@ const options = {
     callbacks: {
       label: function (tooltipItem, data) {
         let constructType = types[tooltipItem.index];
+        let comp = company[tooltipItem.index];
         let datasetLabel = data.datasets[tooltipItem.datasetIndex].label || "";
         return [
           `${datasetLabel} : ${constructType}`,
+          `Company : ${comp === null? 'N/A':comp}`,
           `Expression Score: ${tooltipItem.value}`,
           `Opening Energy: ${tooltipItem.label} kcal/mol`,
-
         ];
       },
     },
@@ -121,25 +135,37 @@ const options = {
   },
 };
 
-function GFPConstructs() {
+function RLucConstructs() {
   const classes = useStyles();
   const [clickedElementIndex, setClickedElementIndex] = useState("");
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   const getElementAtEvent = (element) => {
     if (!element.length) return;
 
-    const {_index: index } = element[0];
+    const { _index: index } = element[0];
     setClickedElementIndex(`${index}`);
   };
 
   return (
     <div className={classes.root}>
       <Typography variant="h5" gutterBottom>
-        GFP constructs
+        RLuc constructs
       </Typography>
       <Typography variant="body1" gutterBottom>
-        The GFP constructs used in this experiment are shown in the plot below.
-        The largest dot is the native GFP.
+        The RLuc constructs used in this experiment are shown in the plot below.
       </Typography>
 
       <pre className={classes.sequence}>
@@ -147,23 +173,26 @@ function GFPConstructs() {
           <br />
           >T7lac
           <br />
-          AGGGGAATTGTGAGCGGATAACAATTCCCCTCTAGAAATAATTTTGTTTAACTTTAAGAAGGAGATATACC
+          GGGGAATTGTGAGCGGATAACAATTCCCCTCTAGAAATAATTTTGTTTAACTTTAAGAAGGAGATATACC
           <br />
-          >GFP (Native)
+          >RLuc (Native)
           <br />
-          ATGAGTAAAGGAGAAGAACTTTTCACTGGAGTTGTCCCAATTCTTGTTGAATTAGATGGTGATGTTAATGGGCACAAATTTTCTGTCAGTGGAGAGGGTGAAGGTGATGCAACATACGGAAAACTTACCCTTAAATTTATTTGCACTACTGGAAAACTACCTGTTCCATGGCCAACACTTGTCACTACTTTCTCTTATGGTGTTCAATGCTTTTCAAGATACCCAGATCATATGAAACGGCATGACTTTTTCAAGAGTGCCATGCCCGAAGGTTATGTACAGGAAAGAACTATATTTTTCAAAGATGACGGGAACTACAAGACACGTGCTGAAGTCAAGTTTGAAGGTGATACCCTTGTTAATAGAATCGAGTTAAAAGGTATTGATTTTAAAGAAGATGGAAACATTCTTGGACACAAATTGGAATACAACTATAACTCACACAATGTATACATCATGGCAGACAAACAAAAGAATGGAATCAAAGTTAACTTCAAAATTAGACACAACATTGAAGATGGAAGCGTTCAACTAGCAGACCATTATCAACAAAATACTCCAATTGGAGATGGCCCTGTCCTTTTACCAGACAACCATTACCTGTCCACACAATCTGCCCTTTCGAAAGATCCCAACGAAAAGAGAGATCACATGGTCCTTCTTGAGTTTGTAACAGCTGCTGGGATTACACATGGCATGGATGAACTATACAAATAG
-
+          ATGACTTCGAAAGTTTATGATCCAGAACAAAGGAAACGGATGATAACTGGTCCGCAGTGGTGGGCCAGATGTAAACAAATGAATGTTCTTGATTCATTTATTAATTATTATGATTCAGAAAAACATGCAGAAAATGCTGTTATTTTTTTACATGGTAACGCGGCCTCTTCTTATTTATGGCGACATGTTGTGCCACATATTGAGCCAGTAGCGCGGTGTATTATACCAGATCTTATTGGTATGGGCAAATCAGGCAAATCTGGTAATGGTTCTTATAGGTTACTTGATCATTACAAATATCTTACTGCATGGTTTGAACTTCTTAATTTACCAAAGAAGATCATTTTTGTCGGCCATGATTGGGGTGCTTGTTTGGCATTTCATTATAGCTATGAGCATCAAGATAAGATCAAAGCAATAGTTCACGCTGAAAGTGTAGTAGATGTGATTGAATCATGGGATGAATGGCCTGATATTGAAGAAGATATTGCGTTGATCAAATCTGAAGAAGGAGAAAAAATGGTTTTGGAGAATAACTTCTTCGTGGAAACCATGTTGCCATCAAAAATCATGAGAAAGTTAGAACCAGAAGAATTTGCAGCATATCTTGAACCATTCAAAGAGAAAGGTGAAGTTCGTCGTCCAACATTATCATGGCCTCGTGAAATCCCGTTAGTAAAAGGTGGTAAACCTGACGTTGTACAAATTGTTAGGAATTATAATGCTTATCTACGTGCAAGTGATGATTTACCAAAAATGTTTATTGAATCGGATCCAGGATTCTTTTCCAATGCTATTGTTGAAGGCGCCAAGAAGTTTCCTAATACTGAATTTGTCAAAGTAAAAGGTCTTCATTTTTCGCAAGAAGATGCACCTGATGAAATGGGAAAATATATCAAATCGTTCGTTGAGCGAGTTCTCAAAAATGAACAATAA
         </code>
       </pre>
-      <Grid container direction="row" justify="center">
+
+
+    <PlotLegend type="RLuc" page='Constructs'/>
+
+      <Grid container direction="row">
         <Grid item md={6} className={classes.gridItem}>
-          <div className={classes.paper}>
+          <div style={{ height: "300px" }}>
             <Scatter
               data={data}
               options={options}
               getElementAtEvent={getElementAtEvent}
-              width={400}
-              height={400}
+              // width={350}
+              // height={350}
             />
           </div>
         </Grid>
@@ -185,12 +214,23 @@ function GFPConstructs() {
                   color="textSecondary"
                   gutterbottom="true"
                 >
-                  {`GFP construct: ${types[clickedElementIndex]}`}
+                  {`RLuc construct: ${types[clickedElementIndex]}`}
                 </Typography>
+
+                {sequences[clickedElementIndex].Type === "Commercial" ? (
+                  <Typography
+                    className={classes.title}
+                    color="textSecondary"
+                    gutterbottom="true"
+                  >
+                    {`Company: ${sequences[clickedElementIndex]["Company"]}`}
+                  </Typography>
+                ) : null}
+
                 <Typography variant="h6" component="h2" gutterbottom="true">
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: nativeGFP
+                      __html: nativeRLuc
                         .split("")
                         .map(function (val, idx) {
                           return nucleotideSequence[clickedElementIndex][
@@ -201,6 +241,7 @@ function GFPConstructs() {
                         })
                         .join(""),
                     }}
+                    className={classes.sequence}
                   />
                   {/* Showing the difference in sequence w.r.to native */}
                 </Typography>
@@ -212,10 +253,11 @@ function GFPConstructs() {
                   {`Opening Energy : ${openingEnergy[clickedElementIndex]} kcal/mol`}
                 </Typography>
                 <Typography variant="caption" display="block" gutterBottom>
-                {clickedElementIndex === '0'
-                ? null
-                : "Mismatches with respect to the native are highlighted."}
-                 
+                  {sequences[clickedElementIndex].Type === "Native"
+                    ? null
+                    : sequences[clickedElementIndex].Type === "Commercial"
+                    ? "This is a commercial variant. This sequence has changes beyond the first 30 nucleotides (not shown)."
+                    : "Changes with respect to the native are highlighted."}
                 </Typography>
               </Fragment>
             )}
@@ -231,13 +273,38 @@ function GFPConstructs() {
           href={`data:text/json;charset=utf-8,${encodeURIComponent(
             JSON.stringify(sequences)
           )}`}
-          download="TIsigner_GFP_constructs.json"
+          download="TIsigner_RLuc_constructs.json"
+          key="Download Constructs (JSON)"
+          onClick={handleClick}
         >
           Download Constructs (JSON)
         </Button>
+
+        <Snackbar
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "center",
+          }}
+          open={open}
+          autoHideDuration={2000}
+          onClose={handleClose}
+          message="Downloaded! Please save the file."
+          action={
+            <Fragment>
+              <IconButton
+                size="small"
+                aria-label="close"
+                color="inherit"
+                onClick={handleClose}
+              >
+                <CloseIcon fontSize="small" />
+              </IconButton>
+            </Fragment>
+          }
+        />
       </Grid>
     </div>
   );
 }
 
-export default GFPConstructs;
+export default RLucConstructs;

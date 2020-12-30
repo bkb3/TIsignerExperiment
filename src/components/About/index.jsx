@@ -70,7 +70,7 @@ function About() {
       </ul>
 
       <Typography variant="h5" gutterBottom>
-        RFP experiments
+        RLuc experiments
       </Typography>
 
       <ul>

@@ -9,9 +9,9 @@ const GFPConstructs = lazy(() => import( "./GFP/Constructs"));
 const GFPProtocol = lazy(() => import( "./GFP/Protocol"));
 const GFPResults = lazy(() => import("./GFP/Results"));
 
-const RFPConstructs = lazy(() => import( "./RFP/Constructs"));
-const RFPProtocol = lazy(() => import( "./RFP/Protocol"));
-const RFPResults = lazy(() => import("./RFP/Results"));
+const RLucConstructs = lazy(() => import( "./RLuc/Constructs"));
+const RLucProtocol = lazy(() => import( "./RLuc/Protocol"));
+const RLucResults = lazy(() => import("./RLuc/Results"));
 
 
 
@@ -50,9 +50,9 @@ function App() {
         <Route exact path="/GFP/Constructs" render={props => <Main page={<GFPConstructs />}{...props} />} />
         <Route exact path="/GFP/Protocol" render={props => <Main page={<GFPProtocol />}{...props} />} />
         <Route exact path="/GFP/Results" render={props => <Main page={<GFPResults />}{...props} />} />
-        <Route exact path="/RFP/Constructs" render={props => <Main page={<RFPConstructs />}{...props} />} />
-        <Route exact path="/RFP/Protocol" render={props => <Main page={<RFPProtocol />}{...props} />} />
-        <Route exact path="/RFP/Results" render={props => <Main page={<RFPResults />}{...props} />} />
+        <Route exact path="/RLuc/Constructs" render={props => <Main page={<RLucConstructs />}{...props} />} />
+        <Route exact path="/RLuc/Protocol" render={props => <Main page={<RLucProtocol />}{...props} />} />
+        <Route exact path="/RLuc/Results" render={props => <Main page={<RLucResults />}{...props} />} />
         <Route exact path="/About" render={props => <Main page={<About />}{...props} />} />
         <Route render={props =><Main page={<Loader message={notFoundMessage}/>}{...props} />} />
       </Switch>

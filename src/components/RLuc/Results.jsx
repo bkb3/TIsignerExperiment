@@ -122,7 +122,7 @@ class Results extends Component {
       <Fragment>
         <div className={classes.root}>
           <Typography variant="h5" gutterBottom>
-            RFP results
+            RLuc results
           </Typography>
 
           {/* <Typography variant="body1" gutterBottom>
@@ -167,7 +167,7 @@ class Results extends Component {
             max={23}
             onChange={this.handleSliderChange}
             valueLabelDisplay="auto"
-            key="RFP Slider"
+            key="RLuc Slider"
           /> */}
 
           {/* <Grid container direction="row" justify="center">
@@ -181,7 +181,7 @@ class Results extends Component {
             </Typography>
           </Grid> */}
 
-          <PlotLegend type="RFP" />
+          <PlotLegend type="RLuc" />
 
           <Grid container direction="row" alignItems="stretch">
             {/* <Grid item md={6} sm={9} xs={9} className={classes.gridItem}> */}
@@ -247,7 +247,7 @@ class Results extends Component {
                 <FormControlLabel
                   control={
                     <Switch
-                      checked={this.state.showNative}
+                      checked={!this.state.showNative}
                       onChange={this.handleChangeshowNative}
                       name="ToggleNative"
                     />
@@ -269,7 +269,7 @@ class Results extends Component {
               href={`data:text/json;charset=utf-8,${encodeURIComponent(
                 JSON.stringify(fluorescence)
               )}`}
-              download="TIsigner_RFP_Luminescence.json"
+              download="TIsigner_RLuc_Luminescence.json"
               onClick={this.handleClick}
             >
               Download Luminescence (JSON)
@@ -281,7 +281,7 @@ class Results extends Component {
               href={`data:text/json;charset=utf-8,${encodeURIComponent(
                 JSON.stringify(correlation)
               )}`}
-              download="TIsigner_RFP_Correlation.json"
+              download="TIsigner_RLuc_Correlation.json"
               onClick={this.handleClick}
             >
               Download Correlation (JSON)

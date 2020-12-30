@@ -150,7 +150,7 @@ function Main(props) {
               button
               className={classes.nested}
               component={Link}
-              to="/RFP/Constructs"
+              to="/RLuc/Constructs"
               key="RLucConstructs"
             >
               <ListItemText primary="Constructs" />
@@ -164,7 +164,7 @@ function Main(props) {
               button
               className={classes.nested}
               component={Link}
-              to="/RFP/Protocol"
+              to="/RLuc/Protocol"
               key="RLucProtocol"
             >
               <ListItemText primary="Protocol" />
@@ -178,7 +178,7 @@ function Main(props) {
               button
               className={classes.nested}
               component={Link}
-              to="/RFP/Results"
+              to="/RLuc/Results"
               key="RLucResults"
             >
               <ListItemText primary="Results" />
