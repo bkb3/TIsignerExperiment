@@ -3,29 +3,35 @@ import { Scatter } from "@reactchartjs/react-chart.js";
 import "chartjs-plugin-colorschemes/src/plugins/plugin.colorschemes";
 import { Tableau10 } from "chartjs-plugin-colorschemes/src/colorschemes/colorschemes.tableau";
 
-
-
-
 function ScatterPlot(props) {
-  let maxYaxis = props.maxYaxis
-  let minYaxis = props.minYaxis
-  let i = props.IndUnind === 'Induced' ? 0 : 1;
-  let types = props.fluorescence.map((a) => a["Type"]);
-  let company = props.fluorescence.map((a) => a["Company"]);
+  let maxYaxis = props.maxYaxis;
+  let minYaxis = props.minYaxis;
+  let i = props.IndUnind === "Induced" ? 0 : 1;
+
+  // let fluorescence = !props.showNative
+  //   ? props.fluorescence.filter(function (x) {
+  //       return x.Type !== "Native";
+  //     })
+  //   : props.fluorescence;
+  let fluorescence = props.fluorescence;
+
+  
+  let types = fluorescence.map((a) => a["Type"]);
+  let company = fluorescence.map((a) => a["Company"]);
   // let openingEnergy = fluorescence.map((a) => a["Opening Energy"]);
-  let expressionScore = props.fluorescence.map((a) => a["Expression Score"]);
+  let expressionScore = fluorescence.map((a) => a["Expression Score"]);
   // let nucleotideSequence = props.fluorescence.map((a) => a["First 30 nt"]);
   // let nativeGFP = nucleotideSequence[0];
 
-  let currentFluorescence = props.fluorescence.map(
+  let currentFluorescence = fluorescence.map(
     (a) => a["Data"][i]["All Fluorescence"]
   );
 
-  let currentMeanFluorescence = props.fluorescence.map(
+  let currentMeanFluorescence = fluorescence.map(
     (a) => a["Data"][i]["Mean Fluorescence"]
   );
 
-  let currentStdFluorescence = props.fluorescence.map(
+  let currentStdFluorescence = fluorescence.map(
     (a) => a["Data"][i]["Std Fluorescence"]
   );
 
@@ -44,13 +50,13 @@ function ScatterPlot(props) {
             })),
             pointRadius: function (context) {
               var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Optimised" ? 2 : 5;
+              return fluorescence[index].Type === "Optimised" ? 2 : 5;
             },
             pointStyle: function (context) {
               var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Commercial"
+              return fluorescence[index].Type === "Commercial"
                 ? "triangle"
-                : props.fluorescence[index].Type === "Native"
+                : fluorescence[index].Type === "Native"
                 ? "rect"
                 : "circle";
             },
@@ -64,13 +70,13 @@ function ScatterPlot(props) {
             })),
             pointRadius: function (context) {
               var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Optimised" ? 0.5 : 1;
+              return fluorescence[index].Type === "Optimised" ? 0.5 : 1;
             },
             pointStyle: function (context) {
               var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Commercial"
+              return fluorescence[index].Type === "Commercial"
                 ? "triangle"
-                : props.fluorescence[index].Type === "Native"
+                : fluorescence[index].Type === "Native"
                 ? "rect"
                 : "circle";
             },
@@ -84,13 +90,13 @@ function ScatterPlot(props) {
             })),
             pointRadius: function (context) {
               var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Optimised" ? 0.5 : 1;
+              return fluorescence[index].Type === "Optimised" ? 0.5 : 1;
             },
             pointStyle: function (context) {
               var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Commercial"
+              return fluorescence[index].Type === "Commercial"
                 ? "triangle"
-                : props.fluorescence[index].Type === "Native"
+                : fluorescence[index].Type === "Native"
                 ? "rect"
                 : "circle";
             },
@@ -104,13 +110,13 @@ function ScatterPlot(props) {
             })),
             pointRadius: function (context) {
               var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Optimised" ?  0.5 : 1;
+              return fluorescence[index].Type === "Optimised" ? 0.5 : 1;
             },
             pointStyle: function (context) {
               var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Commercial"
+              return fluorescence[index].Type === "Commercial"
                 ? "triangle"
-                : props.fluorescence[index].Type === "Native"
+                : fluorescence[index].Type === "Native"
                 ? "rect"
                 : "circle";
             },
@@ -124,13 +130,13 @@ function ScatterPlot(props) {
           //   })),
           //   pointRadius: function (context) {
           //     var index = context.dataIndex;
-          //     return props.fluorescence[index].Type === "Optimised" ?  0.5 : 1;
+          //     return fluorescence[index].Type === "Optimised" ?  0.5 : 1;
           //   },
           //   pointStyle: function (context) {
           //     var index = context.dataIndex;
-          //     return props.fluorescence[index].Type === "Commercial"
+          //     return fluorescence[index].Type === "Commercial"
           //       ? "triangle"
-          //       : props.fluorescence[index].Type === "Native"
+          //       : fluorescence[index].Type === "Native"
           //       ? "rect"
           //       : "circle";
           //   },
@@ -144,13 +150,13 @@ function ScatterPlot(props) {
           //   })),
           //   pointRadius: function (context) {
           //     var index = context.dataIndex;
-          //     return props.fluorescence[index].Type === "Optimised" ?  0.5 : 1;
+          //     return fluorescence[index].Type === "Optimised" ?  0.5 : 1;
           //   },
           //   pointStyle: function (context) {
           //     var index = context.dataIndex;
-          //     return props.fluorescence[index].Type === "Commercial"
+          //     return fluorescence[index].Type === "Commercial"
           //       ? "triangle"
-          //       : props.fluorescence[index].Type === "Native"
+          //       : fluorescence[index].Type === "Native"
           //       ? "rect"
           //       : "circle";
           //   },
@@ -186,13 +192,13 @@ function ScatterPlot(props) {
             })),
             pointRadius: function (context) {
               var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Optimised" ? 2 : 5;
+              return fluorescence[index].Type === "Optimised" ? 2 : 5;
             },
             pointStyle: function (context) {
               var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Commercial"
+              return fluorescence[index].Type === "Commercial"
                 ? "triangle"
-                : props.fluorescence[index].Type === "Native"
+                : fluorescence[index].Type === "Native"
                 ? "rect"
                 : "circle";
             },
@@ -206,13 +212,13 @@ function ScatterPlot(props) {
             })),
             pointRadius: function (context) {
               var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Optimised" ? 2 : 5;
+              return fluorescence[index].Type === "Optimised" ? 2 : 5;
             },
             pointStyle: function (context) {
               var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Commercial"
+              return fluorescence[index].Type === "Commercial"
                 ? "triangle"
-                : props.fluorescence[index].Type === "Native"
+                : fluorescence[index].Type === "Native"
                 ? "rect"
                 : "circle";
             },
@@ -226,13 +232,13 @@ function ScatterPlot(props) {
             })),
             pointRadius: function (context) {
               var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Optimised" ? 2 : 5;
+              return fluorescence[index].Type === "Optimised" ? 2 : 5;
             },
             pointStyle: function (context) {
               var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Commercial"
+              return fluorescence[index].Type === "Commercial"
                 ? "triangle"
-                : props.fluorescence[index].Type === "Native"
+                : fluorescence[index].Type === "Native"
                 ? "rect"
                 : "circle";
             },
@@ -246,13 +252,13 @@ function ScatterPlot(props) {
           //   })),
           //   pointRadius: function (context) {
           //     var index = context.dataIndex;
-          //     return props.fluorescence[index].Type === "Optimised" ? 2 : 5;
+          //     return fluorescence[index].Type === "Optimised" ? 2 : 5;
           //   },
           //   pointStyle: function (context) {
           //     var index = context.dataIndex;
-          //     return props.fluorescence[index].Type === "Commercial"
+          //     return fluorescence[index].Type === "Commercial"
           //       ? "triangle"
-          //       : props.fluorescence[index].Type === "Native"
+          //       : fluorescence[index].Type === "Native"
           //       ? "rect"
           //       : "circle";
           //   },
@@ -266,13 +272,13 @@ function ScatterPlot(props) {
           //   })),
           //   pointRadius: function (context) {
           //     var index = context.dataIndex;
-          //     return props.fluorescence[index].Type === "Optimised" ? 2 : 5;
+          //     return fluorescence[index].Type === "Optimised" ? 2 : 5;
           //   },
           //   pointStyle: function (context) {
           //     var index = context.dataIndex;
-          //     return props.fluorescence[index].Type === "Commercial"
+          //     return fluorescence[index].Type === "Commercial"
           //       ? "triangle"
-          //       : props.fluorescence[index].Type === "Native"
+          //       : fluorescence[index].Type === "Native"
           //       ? "rect"
           //       : "circle";
           //   },
@@ -302,6 +308,8 @@ function ScatterPlot(props) {
         {
           ticks: {
             beginAtZero: false,
+            max: props.showNative ? 100 : 98,
+            min: props.showNative ? 40 : 68,
           },
           scaleLabel: {
             display: true,
@@ -328,7 +336,7 @@ function ScatterPlot(props) {
           return [
             `${datasetLabel}`,
             `Type : ${constructType}`,
-            `Company : ${comp === null? 'N/A':comp}`,
+            `Company : ${comp === null ? "N/A" : comp}`,
             `Expression Score: ${tooltipItem.label}`,
             `Normalised Fluorescence: ${tooltipItem.value}`,
           ];

@@ -69,7 +69,7 @@ class Results extends Component {
       // sliderCurrentPosition: 15,
       fixYAxis: true,
       showAllConstructs: false,
-      showCorrelationAnnotation: true,
+      showNative: false,
       snackbarOpen: false,
     };
   }
@@ -92,11 +92,11 @@ class Results extends Component {
     });
   };
 
-  // handleChangeCorrelationAnnotation = (e) => {
-  //   this.setState({
-  //     showCorrelationAnnotation: !this.state.showCorrelationAnnotation,
-  //   });
-  // };
+  handleChangeshowNative = (e) => {
+    this.setState({
+      showNative: !this.state.showNative,
+    });
+  };
 
   handleClick = () => {
     this.setState({
@@ -137,14 +137,21 @@ class Results extends Component {
           <ul>
             <li>
               <Typography variant="body2" gutterBottom>
-                <em>Scale Y-axis</em> gives the best view of the plot. Turning this off will start Y-axis at 0.
+                <em>Scale Y-axis</em> gives the best view of the plot. Turning
+                this off will start Y-axis at 0.
               </Typography>
             </li>
             <li>
               <Typography variant="body2" gutterBottom>
-                <em>Mean shown</em> shows the mean as larger points. Individual
+                <em>Mean switch</em> shows the mean as larger points. Individual
                 replicates appear as smaller dots around mean. If this is
                 switched off, the replicates are shown as larger dots.
+              </Typography>
+            </li>
+            <li>
+              <Typography variant="body2" gutterBottom>
+                <em>Native switch</em> shows/hides the native, which is always 1
+                due to normalisation. Hiding native allows a better view.
               </Typography>
             </li>
           </ul>
@@ -188,7 +195,8 @@ class Results extends Component {
                   fixYAxis={this.state.fixYAxis}
                   showAllConstructs={this.state.showAllConstructs}
                   maxYaxis={1.8}
-                  minYaxis={0.5}
+                  minYaxis={0.7}
+                  showNative={this.state.showNative}
                 />
               </div>
             </Grid>
@@ -204,6 +212,7 @@ class Results extends Component {
                   showAllConstructs={this.state.showAllConstructs}
                   maxYaxis={7.5}
                   minYaxis={0.5}
+                  showNative={this.state.showNative}
                 />
               </div>
             </Grid>
@@ -234,20 +243,18 @@ class Results extends Component {
                     !this.state.showAllConstructs ? "Mean shown" : "Reps shown"
                   }
                 />
-                {/* <FormControlLabel
+                <FormControlLabel
                   control={
                     <Switch
-                      checked={this.state.showCorrelationAnnotation}
-                      onChange={this.handleChangeCorrelationAnnotation}
-                      name="ToggleCorrelationAnnotation"
+                      checked={this.state.showNative}
+                      onChange={this.handleChangeshowNative}
+                      name="ToggleNative"
                     />
                   }
                   label={
-                    !this.state.showCorrelationAnnotation
-                      ? "Annotation line hidden"
-                      : "Annotation line shown"
+                    !this.state.showNative ? "Native hidden" : "Native shown"
                   }
-                /> */}
+                />
               </FormGroup>
               {/* <FormHelperText>Help text</FormHelperText> */}
             </FormControl>
