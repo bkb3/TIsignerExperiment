@@ -11,7 +11,6 @@ import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import Collapse from "@material-ui/core/Collapse";
 
-// + {type === 'RFP'? 'Renilla Luciferase (RLuc).': 'Green Fluorescent Protein (GFP)'}
 
 function PlotLegend(props) {
   let type = props.type;
@@ -42,7 +41,7 @@ function PlotLegend(props) {
               <ListItemText
                 primary="Native"
                 secondary={`This is the native ${
-                  type === "RFP"
+                  type === "RLuc"
                     ? "Renilla Luciferase (RLuc)."
                     : "Green Fluorescent Protein (GFP)."
                 }`}
@@ -57,7 +56,7 @@ function PlotLegend(props) {
                 secondary={`These are optimised using TISIGNER. Synonymous changes is preformed only within the first 30 nucleotides. ${page === 'Constructs' ? 'Click':'Hover'} on the point to view the details.`}
               />
             </ListItem>
-            {type === "RFP" ? (
+            {type === "RLuc" ? (
               <ListItem>
                 <ListItemIcon>
                   <ChangeHistoryIcon />
