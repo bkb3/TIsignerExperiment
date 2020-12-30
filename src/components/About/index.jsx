@@ -198,7 +198,6 @@ function About() {
           <GitHubIcon />
         </IconButton>
         <Button
-          rel="noopener noreferrer"
           color="primary"
           href="https://travis-ci.com/github/bkb3/TIsignerExperiment"
           target="_blank"

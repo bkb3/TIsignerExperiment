@@ -22,9 +22,9 @@ function ScatterPlot(props) {
     (a) => a["Data"][i]["Mean Fluorescence"]
   );
 
-  let currentStdFluorescence = props.fluorescence.map(
-    (a) => a["Data"][i]["Std Fluorescence"]
-  );
+  // let currentStdFluorescence = props.fluorescence.map(
+  //   (a) => a["Data"][i]["Std Fluorescence"]
+  // );
 
   // let currentTime = props.fluorescence.map((a) => a["Data"][i]["Time"]);
 
