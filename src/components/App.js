@@ -42,7 +42,7 @@ const notFoundMessage = "We did not find anything here!"
 
 function App() {
   return (
-    <Router basename="/TIsignerExperiment">
+    <Router basename="/">
       <ErrorBoundary>
       <Suspense fallback={<Main page={<Loader />}/>}>
       <Switch>
