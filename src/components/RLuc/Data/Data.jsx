@@ -8,13 +8,13 @@ export const fluorescence = [
     Data: [
       {
         "Ind/Unind": "Induced",
-        "All Fluorescence": [0.93, 0.94, 1.12, 1.02],
-        "Mean Fluorescence": 1.0,
+        "All Luminescence": [0.93, 0.94, 1.12, 1.02],
+        "Mean Luminescence": 1.0,
       },
       {
         "Ind/Unind": "Uninduced",
-        "All Fluorescence": [1.3, 1.1, 1.49, 1.18],
-        "Mean Fluorescence": 1.27,
+        "All Luminescence": [1.3, 1.1, 1.49, 1.18],
+        "Mean Luminescence": 1.27,
       },
     ],
   },
@@ -27,13 +27,13 @@ export const fluorescence = [
     Data: [
       {
         "Ind/Unind": "Induced",
-        "All Fluorescence": [0.98, 1.32, 1.07],
-        "Mean Fluorescence": 1.12,
+        "All Luminescence": [0.98, 1.32, 1.07],
+        "Mean Luminescence": 1.12,
       },
       {
         "Ind/Unind": "Uninduced",
-        "All Fluorescence": [1.2, 1.14, 1.54],
-        "Mean Fluorescence": 1.29,
+        "All Luminescence": [1.2, 1.14, 1.54],
+        "Mean Luminescence": 1.29,
       },
     ],
   },
@@ -46,13 +46,13 @@ export const fluorescence = [
     Data: [
       {
         "Ind/Unind": "Induced",
-        "All Fluorescence": [0.87, 1.1, 0.97],
-        "Mean Fluorescence": 0.98,
+        "All Luminescence": [0.87, 1.1, 0.97],
+        "Mean Luminescence": 0.98,
       },
       {
         "Ind/Unind": "Uninduced",
-        "All Fluorescence": [0.82, 1.41, 1.44],
-        "Mean Fluorescence": 1.22,
+        "All Luminescence": [0.82, 1.41, 1.44],
+        "Mean Luminescence": 1.22,
       },
     ],
   },
@@ -65,13 +65,13 @@ export const fluorescence = [
     Data: [
       {
         "Ind/Unind": "Induced",
-        "All Fluorescence": [0.8, 0.89, 0.95],
-        "Mean Fluorescence": 0.88,
+        "All Luminescence": [0.8, 0.89, 0.95],
+        "Mean Luminescence": 0.88,
       },
       {
         "Ind/Unind": "Uninduced",
-        "All Fluorescence": [1.11, 0.96, 1.16],
-        "Mean Fluorescence": 1.07,
+        "All Luminescence": [1.11, 0.96, 1.16],
+        "Mean Luminescence": 1.07,
       },
     ],
   },
@@ -84,13 +84,13 @@ export const fluorescence = [
     Data: [
       {
         "Ind/Unind": "Induced",
-        "All Fluorescence": [0.86, 1.27, 0.9],
-        "Mean Fluorescence": 1.01,
+        "All Luminescence": [0.86, 1.27, 0.9],
+        "Mean Luminescence": 1.01,
       },
       {
         "Ind/Unind": "Uninduced",
-        "All Fluorescence": [0.8, 1.4, 1.23],
-        "Mean Fluorescence": 1.14,
+        "All Luminescence": [0.8, 1.4, 1.23],
+        "Mean Luminescence": 1.14,
       },
     ],
   },
@@ -103,13 +103,13 @@ export const fluorescence = [
     Data: [
       {
         "Ind/Unind": "Induced",
-        "All Fluorescence": [0.95, 1.06, 0.73],
-        "Mean Fluorescence": 0.92,
+        "All Luminescence": [0.95, 1.06, 0.73],
+        "Mean Luminescence": 0.92,
       },
       {
         "Ind/Unind": "Uninduced",
-        "All Fluorescence": [0.69, 1.36, 1.41],
-        "Mean Fluorescence": 1.16,
+        "All Luminescence": [0.69, 1.36, 1.41],
+        "Mean Luminescence": 1.16,
       },
     ],
   },
@@ -122,13 +122,13 @@ export const fluorescence = [
     Data: [
       {
         "Ind/Unind": "Induced",
-        "All Fluorescence": [1.16, 1.42, 1.33],
-        "Mean Fluorescence": 1.3,
+        "All Luminescence": [1.16, 1.42, 1.33],
+        "Mean Luminescence": 1.3,
       },
       {
         "Ind/Unind": "Uninduced",
-        "All Fluorescence": [0.67, 1.39, 1.41],
-        "Mean Fluorescence": 1.16,
+        "All Luminescence": [0.67, 1.39, 1.41],
+        "Mean Luminescence": 1.16,
       },
     ],
   },
@@ -141,13 +141,13 @@ export const fluorescence = [
     Data: [
       {
         "Ind/Unind": "Induced",
-        "All Fluorescence": [0.86, 1.14, 0.91],
-        "Mean Fluorescence": 0.97,
+        "All Luminescence": [0.86, 1.14, 0.91],
+        "Mean Luminescence": 0.97,
       },
       {
         "Ind/Unind": "Uninduced",
-        "All Fluorescence": [0.9, 1.23, 0.83],
-        "Mean Fluorescence": 0.98,
+        "All Luminescence": [0.9, 1.23, 0.83],
+        "Mean Luminescence": 0.98,
       },
     ],
   },
@@ -160,13 +160,13 @@ export const fluorescence = [
     Data: [
       {
         "Ind/Unind": "Induced",
-        "All Fluorescence": [0.74, 1.33, 0.76],
-        "Mean Fluorescence": 0.94,
+        "All Luminescence": [0.74, 1.33, 0.76],
+        "Mean Luminescence": 0.94,
       },
       {
         "Ind/Unind": "Uninduced",
-        "All Fluorescence": [0.88, 0.94, 0.81],
-        "Mean Fluorescence": 0.88,
+        "All Luminescence": [0.88, 0.94, 0.81],
+        "Mean Luminescence": 0.88,
       },
     ],
   },
@@ -179,13 +179,13 @@ export const fluorescence = [
     Data: [
       {
         "Ind/Unind": "Induced",
-        "All Fluorescence": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
-        "Mean Fluorescence": 1.0,
+        "All Luminescence": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+        "Mean Luminescence": 1.0,
       },
       {
         "Ind/Unind": "Uninduced",
-        "All Fluorescence": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
-        "Mean Fluorescence": 1.0,
+        "All Luminescence": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+        "Mean Luminescence": 1.0,
       },
     ],
   },
@@ -198,13 +198,13 @@ export const fluorescence = [
     Data: [
       {
         "Ind/Unind": "Induced",
-        "All Fluorescence": [1.25, 1.36, 1.38],
-        "Mean Fluorescence": 1.33,
+        "All Luminescence": [1.25, 1.36, 1.38],
+        "Mean Luminescence": 1.33,
       },
       {
         "Ind/Unind": "Uninduced",
-        "All Fluorescence": [2.67, 2.3, 3.44],
-        "Mean Fluorescence": 2.8,
+        "All Luminescence": [2.67, 2.3, 3.44],
+        "Mean Luminescence": 2.8,
       },
     ],
   },
@@ -217,13 +217,13 @@ export const fluorescence = [
     Data: [
       {
         "Ind/Unind": "Induced",
-        "All Fluorescence": [1.4, 1.52, 1.93],
-        "Mean Fluorescence": 1.62,
+        "All Luminescence": [1.4, 1.52, 1.93],
+        "Mean Luminescence": 1.62,
       },
       {
         "Ind/Unind": "Uninduced",
-        "All Fluorescence": [2.78, 2.57, 3.78],
-        "Mean Fluorescence": 3.04,
+        "All Luminescence": [2.78, 2.57, 3.78],
+        "Mean Luminescence": 3.04,
       },
     ],
   },
@@ -236,13 +236,13 @@ export const fluorescence = [
     Data: [
       {
         "Ind/Unind": "Induced",
-        "All Fluorescence": [1.16, 1.54, 1.41],
-        "Mean Fluorescence": 1.37,
+        "All Luminescence": [1.16, 1.54, 1.41],
+        "Mean Luminescence": 1.37,
       },
       {
         "Ind/Unind": "Uninduced",
-        "All Fluorescence": [1.62, 1.78, 2.11],
-        "Mean Fluorescence": 1.84,
+        "All Luminescence": [1.62, 1.78, 2.11],
+        "Mean Luminescence": 1.84,
       },
     ],
   },
@@ -255,13 +255,13 @@ export const fluorescence = [
     Data: [
       {
         "Ind/Unind": "Induced",
-        "All Fluorescence": [1.29, 1.37, 1.48],
-        "Mean Fluorescence": 1.38,
+        "All Luminescence": [1.29, 1.37, 1.48],
+        "Mean Luminescence": 1.38,
       },
       {
         "Ind/Unind": "Uninduced",
-        "All Fluorescence": [2.67, 2.7, 4.23],
-        "Mean Fluorescence": 3.2,
+        "All Luminescence": [2.67, 2.7, 4.23],
+        "Mean Luminescence": 3.2,
       },
     ],
   },
@@ -274,13 +274,13 @@ export const fluorescence = [
     Data: [
       {
         "Ind/Unind": "Induced",
-        "All Fluorescence": [1.32, 1.46, 1.53],
-        "Mean Fluorescence": 1.44,
+        "All Luminescence": [1.32, 1.46, 1.53],
+        "Mean Luminescence": 1.44,
       },
       {
         "Ind/Unind": "Uninduced",
-        "All Fluorescence": [3.9, 4.57, 6.91],
-        "Mean Fluorescence": 5.12,
+        "All Luminescence": [3.9, 4.57, 6.91],
+        "Mean Luminescence": 5.12,
       },
     ],
   },

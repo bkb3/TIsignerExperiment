@@ -24,11 +24,11 @@ function ScatterPlot(props) {
   // let nativeGFP = nucleotideSequence[0];
 
   let currentFluorescence = fluorescence.map(
-    (a) => a["Data"][i]["All Fluorescence"]
+    (a) => a["Data"][i]["All Luminescence"]
   );
 
   let currentMeanFluorescence = fluorescence.map(
-    (a) => a["Data"][i]["Mean Fluorescence"]
+    (a) => a["Data"][i]["Mean Luminescence"]
   );
 
   // let currentStdFluorescence = fluorescence.map(
@@ -41,7 +41,7 @@ function ScatterPlot(props) {
     datasets: !props.showAllConstructs
       ? [
           {
-            label: "Mean Fluorescence",
+            label: "Mean Luminescence",
             data: expressionScore.map((v, j) => ({
               x: v,
               y: currentMeanFluorescence[j],
@@ -352,7 +352,7 @@ function ScatterPlot(props) {
             `Type : ${constructType}`,
             `Company : ${comp === null ? "N/A" : comp}`,
             `Expression Score: ${tooltipItem.label}`,
-            `Normalised Fluorescence: ${tooltipItem.value}`,
+            `Normalised Luminescence: ${tooltipItem.value}`,
           ];
         },
       },
