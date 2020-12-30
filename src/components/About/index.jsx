@@ -2,13 +2,20 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 // import ListItemText from "@material-ui/core/ListItemText";
-// import GitHubIcon from '@material-ui/icons/GitHub';
+import GitHubIcon from "@material-ui/icons/GitHub";
 import "./customFade.css";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     // maxWidth: 500,
+  },
+  buttons: {
+    "& > *": {
+      margin: theme.spacing(1),
+    },
   },
   //   paper: {
   //     padding: theme.spacing(2),
@@ -178,20 +185,31 @@ function About() {
         </a>
       </Typography>
 
-      {/* <Typography variant="h5" gutterBottom>
-      <GitHubIcon/>
-      </Typography> */}
-      <Typography variant="body1" gutterBottom>
-        View source on{" "}
-        <a
-          href="https://github.com/Gardner-BinfLab/"
+      <Typography variant="h5" gutterBottom>
+        GitHub | Build status (Travis CI)
+      </Typography>
+
+      <div className={classes.buttons}>
+        <IconButton
+          href="https://github.com/bkb3/TIsignerExperiment"
           target="_blank"
           rel="noopener noreferrer"
         >
-          GitHub
-        </a>
-        .
-      </Typography>
+          <GitHubIcon />
+        </IconButton>
+        <Button
+          rel="noopener noreferrer"
+          color="primary"
+          href="https://travis-ci.com/github/bkb3/TIsignerExperiment"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://travis-ci.com/bkb3/TIsignerExperiment.svg?branch=master"
+            alt="Travis CI build status"
+          />
+        </Button>
+      </div>
 
       <Typography
         variant="caption"
