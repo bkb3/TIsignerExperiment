@@ -164,7 +164,6 @@ function GFPConstructs() {
       </Typography>
       <Typography variant="body1" gutterBottom>
         The GFP constructs used in this experiment are shown in the plot below.
-        The largest dot is the native GFP.
       </Typography>
 
       <pre className={classes.sequence}>

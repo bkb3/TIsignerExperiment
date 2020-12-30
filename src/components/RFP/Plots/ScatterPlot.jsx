@@ -328,8 +328,8 @@ function ScatterPlot(props) {
             data.datasets[tooltipItem.datasetIndex].label || "";
           return [
             `${datasetLabel}`,
-            `Company : ${comp === null? 'N/A':comp}`,
             `Type : ${constructType}`,
+            `Company : ${comp === null? 'N/A':comp}`,
             `Expression Score: ${tooltipItem.label}`,
             `Normalised Fluorescence: ${tooltipItem.value}`,
           ];
