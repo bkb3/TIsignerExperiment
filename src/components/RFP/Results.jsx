@@ -6,10 +6,10 @@ import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Snackbar from "@material-ui/core/Snackbar";
 import Button from "@material-ui/core/Button";
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
 import GetAppIcon from "@material-ui/icons/GetApp";
-import Slider from "@material-ui/core/Slider";
+// import Slider from "@material-ui/core/Slider";
 // import FormLabel from "@material-ui/core/FormLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormGroup from "@material-ui/core/FormGroup";
@@ -20,7 +20,7 @@ import { fluorescence, correlation } from "./Data/Data";
 import PlotLegend from "../Main/PlotLegend";
 import ScatterPlot from "./Plots/ScatterPlot";
 // import ScatterPlot from "./Plots/ScatterPlotly";
-import CorrelationPlot from "./Plots/CorrelationPlot";
+// import CorrelationPlot from "./Plots/CorrelationPlot";
 
 const useStyles = (theme) => ({
   root: {
@@ -65,8 +65,8 @@ class Results extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sliderDefaultPosition: 15,
-      sliderCurrentPosition: 15,
+      // sliderDefaultPosition: 15,
+      // sliderCurrentPosition: 15,
       fixYAxis: true,
       showAllConstructs: false,
       showCorrelationAnnotation: true,
@@ -74,11 +74,11 @@ class Results extends Component {
     };
   }
 
-  handleSliderChange = (e, newValue) => {
-    this.setState({
-      sliderCurrentPosition: newValue,
-    });
-  };
+  // handleSliderChange = (e, newValue) => {
+  //   this.setState({
+  //     sliderCurrentPosition: newValue,
+  //   });
+  // };
 
   handleChangeFixYAxisSwitch = (e) => {
     this.setState({
@@ -92,17 +92,16 @@ class Results extends Component {
     });
   };
 
-  handleChangeCorrelationAnnotation = (e) => {
-    this.setState({
-      showCorrelationAnnotation: !this.state.showCorrelationAnnotation,
-    });
-  };
-
+  // handleChangeCorrelationAnnotation = (e) => {
+  //   this.setState({
+  //     showCorrelationAnnotation: !this.state.showCorrelationAnnotation,
+  //   });
+  // };
 
   handleClick = () => {
     this.setState({
-      snackbarOpen: !this.state.snackbarOpen
-    })
+      snackbarOpen: !this.state.snackbarOpen,
+    });
   };
 
   handleClose = (event, reason) => {
@@ -110,10 +109,9 @@ class Results extends Component {
       return;
     }
     this.setState({
-      snackbarOpen: !this.state.snackbarOpen
-    })
+      snackbarOpen: !this.state.snackbarOpen,
+    });
   };
-
 
   componentDidMount() {}
 
@@ -126,14 +124,35 @@ class Results extends Component {
             RFP results
           </Typography>
 
-          <Typography variant="body1" gutterBottom>
+          {/* <Typography variant="body1" gutterBottom>
             Use the slider
-          </Typography>
-          <Typography variant="body2" gutterBottom>
-          Luminescence is normalised by ....
+          </Typography> */}
+          <Typography variant="body1" gutterBottom>
+            Luminescence is normalised by the native.
           </Typography>
 
-          <Slider
+          <Typography variant="body1" gutterBottom>
+            Options:
+          </Typography>
+          <ul>
+            <li>
+              <Typography variant="body2" gutterBottom>
+                <em>Scale Y-axis</em> gives the best view of the plot. Turning this off will start Y-axis at 0.
+              </Typography>
+            </li>
+            <li>
+              <Typography variant="body2" gutterBottom>
+                <em>Mean shown</em> shows the mean as larger points. Individual
+                replicates appear as smaller dots around mean. If this is
+                switched off, the replicates are shown as larger dots.
+              </Typography>
+            </li>
+          </ul>
+          <Typography variant="body2" gutterBottom>
+            Hovering on points will show the details.
+          </Typography>
+
+          {/* <Slider
             defaultValue={this.state.sliderDefaultPosition}
             step={1}
             min={0}
@@ -141,9 +160,9 @@ class Results extends Component {
             onChange={this.handleSliderChange}
             valueLabelDisplay="auto"
             key="RFP Slider"
-          />
+          /> */}
 
-          <Grid container direction="row" justify="center">
+          {/* <Grid container direction="row" justify="center">
             <Typography variant="h6" component="h2" gutterBottom>
               Time:{" "}
               {
@@ -152,30 +171,39 @@ class Results extends Component {
                 )[0]
               }
             </Typography>
-          </Grid>
+          </Grid> */}
 
-              <PlotLegend type="RFP" />
+          <PlotLegend type="RFP" />
 
           <Grid container direction="row" alignItems="stretch">
             {/* <Grid item md={6} sm={9} xs={9} className={classes.gridItem}> */}
             <Grid item md={6} sm={9} xs={9} className={classes.gridItem}>
               <div className={classes.paper}>
+                <Typography variant="h6" component="h2" gutterBottom>
+                  Induced
+                </Typography>
                 <ScatterPlot
-                  sliderCurrentPosition={this.state.sliderCurrentPosition}
+                  IndUnind={"Induced"}
                   fluorescence={fluorescence}
                   fixYAxis={this.state.fixYAxis}
                   showAllConstructs={this.state.showAllConstructs}
+                  maxYaxis={1.8}
+                  minYaxis={0.5}
                 />
               </div>
             </Grid>
             <Grid item md={6} sm={9} xs={9} className={classes.gridItem}>
               <div className={classes.paper}>
-                <CorrelationPlot
-                  sliderCurrentPosition={this.state.sliderCurrentPosition}
-                  correlation={correlation}
+                <Typography variant="h6" component="h2" gutterBottom>
+                  Uninduced
+                </Typography>
+                <ScatterPlot
+                  IndUnind={"Uninduced"}
+                  fluorescence={fluorescence}
                   fixYAxis={this.state.fixYAxis}
                   showAllConstructs={this.state.showAllConstructs}
-                  showAnnotation={this.state.showCorrelationAnnotation}
+                  maxYaxis={7.5}
+                  minYaxis={0.5}
                 />
               </div>
             </Grid>
@@ -192,7 +220,7 @@ class Results extends Component {
                       name="fixYAxis"
                     />
                   }
-                  label="Fix Y-axis"
+                  label="Scale Y-axis"
                 />
                 <FormControlLabel
                   control={
@@ -203,12 +231,10 @@ class Results extends Component {
                     />
                   }
                   label={
-                    !this.state.showAllConstructs
-                      ? "Mean shown"
-                      : "Reps shown"
+                    !this.state.showAllConstructs ? "Mean shown" : "Reps shown"
                   }
                 />
-                <FormControlLabel
+                {/* <FormControlLabel
                   control={
                     <Switch
                       checked={this.state.showCorrelationAnnotation}
@@ -221,7 +247,7 @@ class Results extends Component {
                       ? "Annotation line hidden"
                       : "Annotation line shown"
                   }
-                />
+                /> */}
               </FormGroup>
               {/* <FormHelperText>Help text</FormHelperText> */}
             </FormControl>
@@ -240,7 +266,7 @@ class Results extends Component {
             >
               Download Luminescence (JSON)
             </Button>
-            <Button
+            {/* <Button
               color="default"
               className={classes.button}
               startIcon={<GetAppIcon />}
@@ -251,31 +277,30 @@ class Results extends Component {
               onClick={this.handleClick}
             >
               Download Correlation (JSON)
-            </Button>
+            </Button> */}
 
             <Snackbar
-          anchorOrigin={{
-            vertical: "bottom",
-            horizontal: "center",
-          }}
-          open={this.state.snackbarOpen}
-          autoHideDuration={2000}
-          onClose={this.handleClose}
-          message="Downloaded! Please save the file."
-          action={
-            <Fragment>
-              <IconButton
-                size="small"
-                aria-label="close"
-                color="inherit"
-                onClick={this.handleClose}
-              >
-                <CloseIcon fontSize="small" />
-              </IconButton>
-            </Fragment>
-          }
-        />
-
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "center",
+              }}
+              open={this.state.snackbarOpen}
+              autoHideDuration={2000}
+              onClose={this.handleClose}
+              message="Downloaded! Please save the file."
+              action={
+                <Fragment>
+                  <IconButton
+                    size="small"
+                    aria-label="close"
+                    color="inherit"
+                    onClick={this.handleClose}
+                  >
+                    <CloseIcon fontSize="small" />
+                  </IconButton>
+                </Fragment>
+              }
+            />
           </Grid>
         </div>
       </Fragment>

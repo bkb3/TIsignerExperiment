@@ -3,14 +3,13 @@ import { Scatter } from "@reactchartjs/react-chart.js";
 import "chartjs-plugin-colorschemes/src/plugins/plugin.colorschemes";
 import { Tableau10 } from "chartjs-plugin-colorschemes/src/colorschemes/colorschemes.tableau";
 
-const maxYaxis = 50;
-const minYaxis = 15;
-
 
 
 
 function ScatterPlot(props) {
-  let i = props.sliderCurrentPosition;
+  let maxYaxis = props.maxYaxis
+  let minYaxis = props.minYaxis
+  let i = props.IndUnind === 'Induced' ? 0 : 1;
   let types = props.fluorescence.map((a) => a["Type"]);
   let company = props.fluorescence.map((a) => a["Company"]);
   // let openingEnergy = fluorescence.map((a) => a["Opening Energy"]);
@@ -117,46 +116,46 @@ function ScatterPlot(props) {
             },
             pointHoverRadius: 1,
           },
-          {
-            label: "Replicate 4",
-            data: expressionScore.map((v, j) => ({
-              x: v,
-              y: currentFluorescence[j][3],
-            })),
-            pointRadius: function (context) {
-              var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Optimised" ?  0.5 : 1;
-            },
-            pointStyle: function (context) {
-              var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Commercial"
-                ? "triangle"
-                : props.fluorescence[index].Type === "Native"
-                ? "rect"
-                : "circle";
-            },
-            pointHoverRadius: 1,
-          },
-          {
-            label: "Replicate 5",
-            data: expressionScore.map((v, j) => ({
-              x: v,
-              y: currentFluorescence[j][4],
-            })),
-            pointRadius: function (context) {
-              var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Optimised" ?  0.5 : 1;
-            },
-            pointStyle: function (context) {
-              var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Commercial"
-                ? "triangle"
-                : props.fluorescence[index].Type === "Native"
-                ? "rect"
-                : "circle";
-            },
-            pointHoverRadius: 1,
-          },
+          // {
+          //   label: "Replicate 4",
+          //   data: expressionScore.map((v, j) => ({
+          //     x: v,
+          //     y: currentFluorescence[j][3],
+          //   })),
+          //   pointRadius: function (context) {
+          //     var index = context.dataIndex;
+          //     return props.fluorescence[index].Type === "Optimised" ?  0.5 : 1;
+          //   },
+          //   pointStyle: function (context) {
+          //     var index = context.dataIndex;
+          //     return props.fluorescence[index].Type === "Commercial"
+          //       ? "triangle"
+          //       : props.fluorescence[index].Type === "Native"
+          //       ? "rect"
+          //       : "circle";
+          //   },
+          //   pointHoverRadius: 1,
+          // },
+          // {
+          //   label: "Replicate 5",
+          //   data: expressionScore.map((v, j) => ({
+          //     x: v,
+          //     y: currentFluorescence[j][4],
+          //   })),
+          //   pointRadius: function (context) {
+          //     var index = context.dataIndex;
+          //     return props.fluorescence[index].Type === "Optimised" ?  0.5 : 1;
+          //   },
+          //   pointStyle: function (context) {
+          //     var index = context.dataIndex;
+          //     return props.fluorescence[index].Type === "Commercial"
+          //       ? "triangle"
+          //       : props.fluorescence[index].Type === "Native"
+          //       ? "rect"
+          //       : "circle";
+          //   },
+          //   pointHoverRadius: 1,
+          // },
         ]
       : // [
         //   currentFluorescence[0].map(
@@ -239,46 +238,46 @@ function ScatterPlot(props) {
             },
             pointHoverRadius: 7,
           },
-          {
-            label: "Replicate 4",
-            data: expressionScore.map((v, j) => ({
-              x: v,
-              y: currentFluorescence[j][3],
-            })),
-            pointRadius: function (context) {
-              var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Optimised" ? 2 : 5;
-            },
-            pointStyle: function (context) {
-              var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Commercial"
-                ? "triangle"
-                : props.fluorescence[index].Type === "Native"
-                ? "rect"
-                : "circle";
-            },
-            pointHoverRadius: 7,
-          },
-          {
-            label: "Replicate 5",
-            data: expressionScore.map((v, j) => ({
-              x: v,
-              y: currentFluorescence[j][4],
-            })),
-            pointRadius: function (context) {
-              var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Optimised" ? 2 : 5;
-            },
-            pointStyle: function (context) {
-              var index = context.dataIndex;
-              return props.fluorescence[index].Type === "Commercial"
-                ? "triangle"
-                : props.fluorescence[index].Type === "Native"
-                ? "rect"
-                : "circle";
-            },
-            pointHoverRadius: 7,
-          },
+          // {
+          //   label: "Replicate 4",
+          //   data: expressionScore.map((v, j) => ({
+          //     x: v,
+          //     y: currentFluorescence[j][3],
+          //   })),
+          //   pointRadius: function (context) {
+          //     var index = context.dataIndex;
+          //     return props.fluorescence[index].Type === "Optimised" ? 2 : 5;
+          //   },
+          //   pointStyle: function (context) {
+          //     var index = context.dataIndex;
+          //     return props.fluorescence[index].Type === "Commercial"
+          //       ? "triangle"
+          //       : props.fluorescence[index].Type === "Native"
+          //       ? "rect"
+          //       : "circle";
+          //   },
+          //   pointHoverRadius: 7,
+          // },
+          // {
+          //   label: "Replicate 5",
+          //   data: expressionScore.map((v, j) => ({
+          //     x: v,
+          //     y: currentFluorescence[j][4],
+          //   })),
+          //   pointRadius: function (context) {
+          //     var index = context.dataIndex;
+          //     return props.fluorescence[index].Type === "Optimised" ? 2 : 5;
+          //   },
+          //   pointStyle: function (context) {
+          //     var index = context.dataIndex;
+          //     return props.fluorescence[index].Type === "Commercial"
+          //       ? "triangle"
+          //       : props.fluorescence[index].Type === "Native"
+          //       ? "rect"
+          //       : "circle";
+          //   },
+          //   pointHoverRadius: 7,
+          // },
         ],
   };
 
