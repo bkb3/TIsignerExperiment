@@ -217,7 +217,7 @@ function About() {
           rel="noopener noreferrer"
           target="_blank"
         >
-          {process.env.REACT_APP_GIT_SHA_LONG}
+          {process.env.REACT_APP_GIT_SHA_SHORT}
         </a>
       </Typography>
 
