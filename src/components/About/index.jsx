@@ -215,9 +215,8 @@ function About() {
           href={`https://github.com/bkb3/TIsignerExperiment/commit/${process.env.REACT_APP_GIT_SHA_LONG}`}
           target="_blank"
           rel="noopener noreferrer"
-          target="_blank"
         >
-          {process.env.REACT_APP_GIT_SHA_SHORT}
+          {`${process.env.REACT_APP_GIT_SHA_SHORT}`}
         </a>
       </Typography>
 
