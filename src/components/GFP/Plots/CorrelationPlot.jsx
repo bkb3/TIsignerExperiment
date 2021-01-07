@@ -108,7 +108,7 @@ function CorrelationPlot(props) {
           return [
             `${datasetLabel}`,
             `Spearman's ρ: ${tooltipItem.value}`,
-            `P value: ${pval}`,
+            `P-value: ${pval}`,
           ];
         },
       },
