@@ -17,7 +17,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 // import FormHelperText from "@material-ui/core/FormHelperText";
 import Switch from "@material-ui/core/Switch";
 import { fluorescence, correlation } from "./Data/Data";
-import PlotLegend from "../Main/PlotLegend";
+// import PlotLegend from "../Main/PlotLegend";
 import ScatterPlot from "./Plots/ScatterPlot";
 // import ScatterPlot from "./Plots/ScatterPlotly";
 import CorrelationPlot from "./Plots/CorrelationPlot";

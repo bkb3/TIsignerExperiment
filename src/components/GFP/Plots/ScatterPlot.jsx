@@ -285,9 +285,9 @@ function ScatterPlot(props) {
       yAxes: [
         {
           ticks: {
-            // beginAtZero: true,
+            // beginAtZero: false,
             suggestedMax: props.fixYAxis ? maxYaxis : null,
-            suggestedMin: props.fixYAxis ? minYaxis : null,
+            suggestedMin: props.fixYAxis ? minYaxis : 40,
           },
           scaleLabel: {
             display: true,
