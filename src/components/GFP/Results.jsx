@@ -65,9 +65,9 @@ class Results extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sliderDefaultPosition: 15,
-      sliderCurrentPosition: 15,
-      fixYAxis: true,
+      sliderDefaultPosition: 32, //corresponds to 5h 20min
+      sliderCurrentPosition: 32,
+      fixYAxis: false,
       showAllConstructs: false,
       showCorrelationAnnotation: true,
       snackbarOpen: false,
@@ -125,17 +125,46 @@ class Results extends Component {
           </Typography>
 
           <Typography variant="body1" gutterBottom>
-            Use the slider
+          Since this is a dual reporter system (GFP/RFP), GFP fluorescence is normalised by the RFP fluorescence.
           </Typography>
+
+          <Typography variant="body1" gutterBottom>
+            Options:
+          </Typography>
+          <ul>
+          {/* <li>
+              <Typography variant="body2" gutterBottom>
+                <em>Slider</em> can be used to view the data at different time points.
+              </Typography>
+            </li> */}
+            <li>
+              <Typography variant="body2" gutterBottom>
+                <em>Fix Y-axis</em> gives zoomed out view of the plot. Turning
+                this off will zoom in the plot.
+              </Typography>
+            </li>
+            <li>
+              <Typography variant="body2" gutterBottom>
+                <em>Mean switch</em> shows the mean as larger points. Individual
+                replicates appear as smaller dots around mean. If this is
+                switched off, the replicates are shown as larger dots.
+              </Typography>
+            </li>
+            <li>
+              <Typography variant="body2" gutterBottom>
+                <em>Annotation line switch</em> shows/hides the annotation in the correlation plot by a black line. The annotation is at the position defined by the time slider. Hovering over the point in correlation plot shows both the Spearman's correlation and P-value between the mean fluorescence and expression scores.
+              </Typography>
+            </li>
+          </ul>
           <Typography variant="body2" gutterBottom>
-            Fluorescence is normalised by ....
+          Slider can be used to view the data at different time points. By default, it is fixed at <b>5h 20 min</b>, the timepoint just after which the dual reporter system reaches its maximum. 
           </Typography>
 
           <Slider
             defaultValue={this.state.sliderDefaultPosition}
             step={1}
             min={0}
-            max={23}
+            max={42}
             onChange={this.handleSliderChange}
             valueLabelDisplay="auto"
             key="GFP Slider"
@@ -152,12 +181,15 @@ class Results extends Component {
             </Typography>
           </Grid>
 
-          <PlotLegend />
+          {/* <PlotLegend /> */}
 
           <Grid container direction="row" alignItems="stretch">
             {/* <Grid item md={6} sm={9} xs={9} className={classes.gridItem}> */}
             <Grid item md={6} sm={9} xs={9} className={classes.gridItem}>
               <div className={classes.paper}>
+              <Typography variant="h6" component="h2" gutterBottom>
+                  Normalised fluorescence
+                </Typography>
                 <ScatterPlot
                   sliderCurrentPosition={this.state.sliderCurrentPosition}
                   fluorescence={fluorescence}
@@ -168,6 +200,9 @@ class Results extends Component {
             </Grid>
             <Grid item md={6} sm={9} xs={9} className={classes.gridItem}>
               <div className={classes.paper}>
+              <Typography variant="h6" component="h2" gutterBottom>
+                  Correlation plot
+                </Typography>
                 <CorrelationPlot
                   sliderCurrentPosition={this.state.sliderCurrentPosition}
                   correlation={correlation}

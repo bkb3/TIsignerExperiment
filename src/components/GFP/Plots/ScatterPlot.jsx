@@ -3,8 +3,8 @@ import { Scatter } from "@reactchartjs/react-chart.js";
 import "chartjs-plugin-colorschemes/src/plugins/plugin.colorschemes";
 import { Tableau10 } from "chartjs-plugin-colorschemes/src/colorschemes/colorschemes.tableau";
 
-const maxYaxis = 50;
-const minYaxis = 15;
+const maxYaxis = 75;
+const minYaxis = 0;
 
 function ScatterPlot(props) {
   let i = props.sliderCurrentPosition;
