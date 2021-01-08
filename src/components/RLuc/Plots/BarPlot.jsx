@@ -36,10 +36,10 @@ function BarPlot(props) {
     labels: company,
     datasets: [
       {
-        label: 'Mean',
+        label: "Mean",
         data: props.fluorescence.map((a) => a["Data"][i]["Mean Luminescence"]),
-        fill:false,
-        backgroundColor: 'rgba(54, 162, 235, 0.4)',
+        fill: false,
+        backgroundColor: "rgba(54, 162, 235, 0.4)",
       },
       {
         type: "scatter",
@@ -51,7 +51,7 @@ function BarPlot(props) {
         pointRadius: function (context) {
           var index = context.dataIndex;
           var d = index < 13 ? fluorescence : props.fluorescence;
-          return d[index].Type === "Optimised" ? 3: 5;
+          return d[index].Type === "Optimised" ? 3 : 5;
         },
         pointStyle: function (context) {
           var index = context.dataIndex;
@@ -74,7 +74,7 @@ function BarPlot(props) {
         pointRadius: function (context) {
           var index = context.dataIndex;
           var d = index < 13 ? fluorescence : props.fluorescence;
-          return d[index].Type === "Optimised" ? 3: 5;
+          return d[index].Type === "Optimised" ? 3 : 5;
         },
         pointStyle: function (context) {
           var index = context.dataIndex;
@@ -97,7 +97,7 @@ function BarPlot(props) {
         pointRadius: function (context) {
           var index = context.dataIndex;
           var d = index < 13 ? fluorescence : props.fluorescence;
-          return d[index].Type === "Optimised" ? 3: 5;
+          return d[index].Type === "Optimised" ? 3 : 5;
         },
         pointStyle: function (context) {
           var index = context.dataIndex;
@@ -129,18 +129,6 @@ function BarPlot(props) {
             labelString: "Normalised Luminescence",
           },
         },
-        {
-          id: "invoice-amount",
-          display: false,
-          stacked: false,
-          scaleLabel: {
-            display: false,
-            labelString: "Dollar Amount",
-          },
-          ticks: {
-            beginAtZero: true,
-          },
-        },
       ],
       xAxes: [
         {
@@ -153,20 +141,8 @@ function BarPlot(props) {
             display: true,
             labelString: "Expression Score",
           },
-        },
-        {
-          id: "invoice-time",
-          type: "linear",
-          display: false,
-          stacked: false,
-          scaleLabel: {
+          gridLines: {
             display: false,
-            labelString: "Days",
-          },
-          ticks: {
-            beginAtZero: true,
-            stepSize: 1,
-            suggestedMax: 125,
           },
         },
       ],
