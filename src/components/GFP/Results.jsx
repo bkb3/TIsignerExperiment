@@ -125,7 +125,7 @@ class Results extends Component {
           </Typography>
 
           <Typography variant="body1" gutterBottom>
-          Since this is a dual reporter system (GFP/RFP), GFP fluorescence is normalised by the RFP fluorescence.
+          GFP fluorescence is normalised by the RFP fluorescence and the construct with lowest expression score.
           </Typography>
 
           <Typography variant="body1" gutterBottom>

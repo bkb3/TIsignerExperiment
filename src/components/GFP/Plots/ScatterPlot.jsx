@@ -3,7 +3,7 @@ import { Scatter } from "@reactchartjs/react-chart.js";
 import "chartjs-plugin-colorschemes/src/plugins/plugin.colorschemes";
 import { Tableau10 } from "chartjs-plugin-colorschemes/src/colorschemes/colorschemes.tableau";
 
-const maxYaxis = 75;
+const maxYaxis = 7;
 const minYaxis = 0;
 
 function ScatterPlot(props) {
