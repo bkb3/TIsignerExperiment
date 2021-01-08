@@ -14,8 +14,8 @@ function BarPlot(props) {
   let expressionScore = props.fluorescence.map((a) => a["Expression Score"]);
 
   // For scatterplot
-  let maxYaxis = props.maxYaxis;
-  let minYaxis = props.minYaxis;
+  // let maxYaxis = props.maxYaxis;
+  // let minYaxis = props.minYaxis;
 
   // const fluorescence = !props.showNative
   //   ? props.fluorescence.filter(function (x) {
@@ -28,9 +28,9 @@ function BarPlot(props) {
     (a) => a["Data"][i]["All Luminescence"]
   );
 
-  let currentMeanFluorescence = fluorescence.map(
-    (a) => a["Data"][i]["Mean Luminescence"]
-  );
+  // let currentMeanFluorescence = fluorescence.map(
+  //   (a) => a["Data"][i]["Mean Luminescence"]
+  // );
 
   const data = {
     labels: company,
@@ -62,7 +62,7 @@ function BarPlot(props) {
             ? "rect"
             : "circle";
         },
-        pointHoverRadius: 1,
+        pointHoverRadius: 7,
       },
       {
         type: "scatter",
@@ -85,7 +85,7 @@ function BarPlot(props) {
             ? "rect"
             : "circle";
         },
-        pointHoverRadius: 1,
+        pointHoverRadius: 7,
       },
       {
         type: "scatter",
@@ -108,7 +108,7 @@ function BarPlot(props) {
             ? "rect"
             : "circle";
         },
-        pointHoverRadius: 1,
+        pointHoverRadius: 7,
       },
     ],
   };
@@ -183,7 +183,7 @@ function BarPlot(props) {
       callbacks: {
         label: function (tooltipItem, data) {
           let constructType = types[tooltipItem.index];
-          let comp = company[tooltipItem.index];
+          // let comp = company[tooltipItem.index];
           let datasetLabel =
             data.datasets[tooltipItem.datasetIndex].label || "";
           return [
