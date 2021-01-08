@@ -132,6 +132,48 @@ export const sequences = [
     "Expression Score": 95.89,
   },
   {
+    Type: "Optimised",
+    "First 30 nt": "ATGTCTAAGGGTGAGGAGCTCTTCACAGGA",
+    "Opening Energy": 12.08,
+    "Expression Score": 57.84,
+  },
+  {
+    Type: "Optimised",
+    "First 30 nt": "ATGTCGAAAGGTGAGGAACTGTTCACTGGG",
+    "Opening Energy": 15.19,
+    "Expression Score": 25.13,
+  },
+  {
+    Type: "Optimised",
+    "First 30 nt": "ATGAGTAAAGGGGAAGAGCTTTTCACCGGG",
+    "Opening Energy": 13.88,
+    "Expression Score": 36.68,
+  },
+  {
+    Type: "Optimised",
+    "First 30 nt": "ATGAGTAAAGGAGAAGAACTCTTTACCGGA",
+    "Opening Energy": 13.45,
+    "Expression Score": 41.25,
+  },
+  {
+    Type: "Optimised",
+    "First 30 nt": "ATGTCGAAAGGCGAGGAACTGTTCACTGGA",
+    "Opening Energy": 12.67,
+    "Expression Score": 50.49,
+  },
+  {
+    Type: "Optimised",
+    "First 30 nt": "ATGTCGAAAGGTGAAGAACTTTTCACTGGT",
+    "Opening Energy": 19.59,
+    "Expression Score": 8.19,
+  },
+  {
+    Type: "Optimised",
+    "First 30 nt": "ATGTCCAAAGGAGAAGAACTATTCACCGGA",
+    "Opening Energy": 10.86,
+    "Expression Score": 72.76,
+  },
+  {
     Type: "Native",
     "First 30 nt": "ATGAGTAAAGGAGAAGAACTTTTCACTGGA",
     "Opening Energy": 11.68,
