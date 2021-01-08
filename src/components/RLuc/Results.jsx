@@ -20,6 +20,7 @@ import Switch from "@material-ui/core/Switch";
 import { fluorescence } from "./Data/Data";
 import PlotLegend from "../Main/PlotLegend";
 import ScatterPlot from "./Plots/ScatterPlot";
+import BarPlot from "./Plots/BarPlot";
 // import ScatterPlot from "./Plots/ScatterPlotly";
 // import CorrelationPlot from "./Plots/CorrelationPlot";
 
@@ -133,9 +134,10 @@ class Results extends Component {
           </Typography>
 
           <Typography variant="body1" gutterBottom>
-            Options:
+            Barplot shows the mean of normalised luminescence. Biological replicates are
+            overlayed over the bars.
           </Typography>
-          <ul>
+          {/* <ul>
             <li>
               <Typography variant="body2" gutterBottom>
                 <em>Scale Y-axis</em> gives the best view of the plot. Turning
@@ -158,7 +160,7 @@ class Results extends Component {
           </ul>
           <Typography variant="body2" gutterBottom>
             Hovering on points will show the details.
-          </Typography>
+          </Typography>*/}
 
           {/* <Slider
             defaultValue={this.state.sliderDefaultPosition}
@@ -190,7 +192,16 @@ class Results extends Component {
                 <Typography variant="h6" component="h2" gutterBottom>
                   Induced
                 </Typography>
-                <ScatterPlot
+                {/*<ScatterPlot
+                  IndUnind={"Induced"}
+                  fluorescence={fluorescence}
+                  fixYAxis={this.state.fixYAxis}
+                  showAllConstructs={this.state.showAllConstructs}
+                  maxYaxis={1.8}
+                  minYaxis={0.7}
+                  showNative={this.state.showNative}
+                />*/}
+                <BarPlot
                   IndUnind={"Induced"}
                   fluorescence={fluorescence}
                   fixYAxis={this.state.fixYAxis}
@@ -206,7 +217,16 @@ class Results extends Component {
                 <Typography variant="h6" component="h2" gutterBottom>
                   Uninduced
                 </Typography>
-                <ScatterPlot
+                {/*<ScatterPlot
+                  IndUnind={"Uninduced"}
+                  fluorescence={fluorescence}
+                  fixYAxis={this.state.fixYAxis}
+                  showAllConstructs={this.state.showAllConstructs}
+                  maxYaxis={7.5}
+                  minYaxis={0.5}
+                  showNative={this.state.showNative}
+                />*/}
+                <BarPlot
                   IndUnind={"Uninduced"}
                   fluorescence={fluorescence}
                   fixYAxis={this.state.fixYAxis}
@@ -218,10 +238,10 @@ class Results extends Component {
               </div>
             </Grid>
           </Grid>
-          <Grid container direction="row" justify="center">
+          {/* <Grid container direction="row" justify="center">
             <FormControl component="fieldset" className={classes.paper}>
               {/* <FormLabel component="legend">Plot Options</FormLabel> */}
-              <FormGroup row>
+          {/* <FormGroup row>
                 <FormControlLabel
                   control={
                     <Switch
@@ -244,7 +264,7 @@ class Results extends Component {
                     !this.state.showAllConstructs ? "Mean shown" : "Reps shown"
                   }
                 />
-                <FormControlLabel
+                {/* <FormControlLabel
                   control={
                     <Switch
                       checked={!this.state.showNative}
@@ -255,11 +275,11 @@ class Results extends Component {
                   label={
                     !this.state.showNative ? "Native hidden" : "Native shown"
                   }
-                />
-              </FormGroup>
+                />*/}
+          {/* </FormGroup>
               {/* <FormHelperText>Help text</FormHelperText> */}
-            </FormControl>
-          </Grid>
+          {/* </FormControl>
+          </Grid>*/}
 
           <Grid container direction="row" justify="center">
             <Button
