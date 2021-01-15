@@ -12,6 +12,7 @@ function BarPlot(props) {
     .map((value) => (typeof value === "string" ? value : "TIsigner"))
     .map((val, idx) => (types[idx] === "Native" ? "Native" : val));
   let expressionScore = props.fluorescence.map((a) => a["Expression Score"]);
+  let openingEnergy = props.fluorescence.map((a) => a["Opening Energy"]);
 
   // For scatterplot
   // let maxYaxis = props.maxYaxis;
@@ -166,6 +167,7 @@ function BarPlot(props) {
             `${datasetLabel}`,
             `Type : ${constructType}`,
             // `Company : ${comp === null ? "N/A" : comp}`,
+            `Opening Energy: ${openingEnergy[tooltipItem.index]}`,
             `Expression Score: ${expressionScore[tooltipItem.index]}`,
             `Normalised Luminescence: ${tooltipItem.value}`,
           ];

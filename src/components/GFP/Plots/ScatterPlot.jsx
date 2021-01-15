@@ -9,7 +9,7 @@ const minYaxis = 0;
 function ScatterPlot(props) {
   let i = props.sliderCurrentPosition;
   let types = props.fluorescence.map((a) => a["Type"]);
-  // let openingEnergy = fluorescence.map((a) => a["Opening Energy"]);
+  let openingEnergy = props.fluorescence.map((a) => a["Opening Energy"]);
   let expressionScore = props.fluorescence.map((a) => a["Expression Score"]);
   // let nucleotideSequence = props.fluorescence.map((a) => a["First 30 nt"]);
   // let nativeGFP = nucleotideSequence[0];
@@ -324,6 +324,7 @@ function ScatterPlot(props) {
           return [
             `${datasetLabel}`,
             `Type : ${constructType}`,
+            `Opening energy: ${openingEnergy[tooltipItem.index]}`,
             `Expression Score: ${tooltipItem.label}`,
             `Normalised Fluorescence: ${tooltipItem.value}`,
           ];
