@@ -89,7 +89,9 @@ const options = {
     yAxes: [
       {
         ticks: {
-          beginAtZero: true,
+          // beginAtZero: true,
+            suggestedMax: 95,
+            suggestedMin: 75,
         },
         scaleLabel: {
           display: true,
