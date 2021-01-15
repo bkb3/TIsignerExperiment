@@ -65,8 +65,8 @@ class Results extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sliderDefaultPosition: 32, //corresponds to 5h 20min
-      sliderCurrentPosition: 32,
+      sliderDefaultPosition: 22, //corresponds to 3h 40 min
+      sliderCurrentPosition: 22,
       fixYAxis: false,
       showAllConstructs: false,
       showCorrelationAnnotation: true,
@@ -157,7 +157,7 @@ class Results extends Component {
             </li>
           </ul>
           <Typography variant="body2" gutterBottom>
-          Slider can be used to view the data at different time points. By default, it is fixed at <b>5h 20 min</b>, the timepoint just after which the dual reporter system reaches its maximum. 
+          Slider can be used to view the data at different time points. By default, it is fixed at <b>3h 40 min</b>, the time point at which the correlation between GFP fluorescence and expression score is maximum.
           </Typography>
 
           <Slider

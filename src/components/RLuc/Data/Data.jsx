@@ -4,7 +4,7 @@ export const fluorescence = [
     Company: NaN,
     "First 30 nt": "ATGACATCAAAAGTATACGACCCAGAGCAG",
     "Opening Energy": 5.77,
-    "Expression Score": 97.63,
+    "Expression Score": 80.87,
     Data: [
       {
         "Ind/Unind": "Induced",
@@ -23,7 +23,7 @@ export const fluorescence = [
     Company: NaN,
     "First 30 nt": "ATGACAAGTAAAGTTTATGACCCAGAGCAG",
     "Opening Energy": 6.22,
-    "Expression Score": 97.29,
+    "Expression Score": 80.94,
     Data: [
       {
         "Ind/Unind": "Induced",
@@ -42,7 +42,7 @@ export const fluorescence = [
     Company: NaN,
     "First 30 nt": "ATGACCAGCAAAGTTTATGACCCAGAGCAG",
     "Opening Energy": 6.36,
-    "Expression Score": 97.15,
+    "Expression Score": 80.96,
     Data: [
       {
         "Ind/Unind": "Induced",
@@ -61,7 +61,7 @@ export const fluorescence = [
     Company: NaN,
     "First 30 nt": "ATGACAAGCAAAGTTTATGACCCAGAGCAG",
     "Opening Energy": 6.38,
-    "Expression Score": 97.12,
+    "Expression Score": 80.97,
     Data: [
       {
         "Ind/Unind": "Induced",
@@ -80,7 +80,7 @@ export const fluorescence = [
     Company: NaN,
     "First 30 nt": "ATGACTTCGAAAGTTTATGATCCAGAACAG",
     "Opening Energy": 10.13,
-    "Expression Score": 80.31,
+    "Expression Score": 82.94,
     Data: [
       {
         "Ind/Unind": "Induced",
@@ -99,7 +99,7 @@ export const fluorescence = [
     Company: NaN,
     "First 30 nt": "ATGACATCAAAAGTTTATGATCCAGAACAA",
     "Opening Energy": 10.38,
-    "Expression Score": 77.87,
+    "Expression Score": 83.23,
     Data: [
       {
         "Ind/Unind": "Induced",
@@ -118,7 +118,7 @@ export const fluorescence = [
     Company: NaN,
     "First 30 nt": "ATGACGTCGAAAGTTTACGATCCAGAACAA",
     "Opening Energy": 9.9,
-    "Expression Score": 82.37,
+    "Expression Score": 82.7,
     Data: [
       {
         "Ind/Unind": "Induced",
@@ -137,7 +137,7 @@ export const fluorescence = [
     Company: NaN,
     "First 30 nt": "ATGACATCGAAAGTTTACGATCCAGAACAA",
     "Opening Energy": 9.93,
-    "Expression Score": 82.11,
+    "Expression Score": 82.73,
     Data: [
       {
         "Ind/Unind": "Induced",
@@ -156,7 +156,7 @@ export const fluorescence = [
     Company: NaN,
     "First 30 nt": "ATGACCTCGAAAGTTTATGACCCAGAACAA",
     "Opening Energy": 9.55,
-    "Expression Score": 85.25,
+    "Expression Score": 82.38,
     Data: [
       {
         "Ind/Unind": "Induced",
@@ -175,7 +175,7 @@ export const fluorescence = [
     Company: NaN,
     "First 30 nt": "ATGACTTCGAAAGTTTATGATCCAGAACAA",
     "Opening Energy": 13.15,
-    "Expression Score": 44.74,
+    "Expression Score": 88.98,
     Data: [
       {
         "Ind/Unind": "Induced",
@@ -194,7 +194,7 @@ export const fluorescence = [
     Company: "GeneArt",
     "First 30 nt": "ATGACCAGCAAAGTTTATGATCCGGAACAG",
     "Opening Energy": 9.79,
-    "Expression Score": 83.34,
+    "Expression Score": 82.59,
     Data: [
       {
         "Ind/Unind": "Induced",
@@ -213,7 +213,7 @@ export const fluorescence = [
     Company: "IDT",
     "First 30 nt": "ATGACGTCCAAGGTTTACGATCCTGAGCAG",
     "Opening Energy": 11.18,
-    "Expression Score": 68.97,
+    "Expression Score": 84.38,
     Data: [
       {
         "Ind/Unind": "Induced",
@@ -232,7 +232,7 @@ export const fluorescence = [
     Company: "Epoch",
     "First 30 nt": "ATGACCAGCAAAGTGTATGATCCGGAACAG",
     "Opening Energy": 9.74,
-    "Expression Score": 83.72,
+    "Expression Score": 82.55,
     Data: [
       {
         "Ind/Unind": "Induced",
@@ -251,7 +251,7 @@ export const fluorescence = [
     Company: "GenScript",
     "First 30 nt": "ATGACCAGCAAAGTGTATGACCCGGAACAA",
     "Opening Energy": 9.63,
-    "Expression Score": 84.64,
+    "Expression Score": 82.45,
     Data: [
       {
         "Ind/Unind": "Induced",
@@ -270,7 +270,7 @@ export const fluorescence = [
     Company: "ATUM",
     "First 30 nt": "ATGACCTCCAAAGTCTATGACCCTGAACAA",
     "Opening Energy": 7.73,
-    "Expression Score": 94.57,
+    "Expression Score": 81.33,
     Data: [
       {
         "Ind/Unind": "Induced",
@@ -285,7 +285,6 @@ export const fluorescence = [
     ],
   },
 ];
-
 // export const correlation = [
 //   {
 //     Time: "0h 0min",

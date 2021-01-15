@@ -3,7 +3,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGTCGAAGGGTGAAGAACTCTTCACTGGT",
     "Opening Energy": 21.68,
-    "Expression Score": 5.78,
+    "Expression Score": 7.65,
     Data: [
       {
         Time: "0h 0min",
@@ -269,7 +269,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGAGTAAAGGGGAGGAACTCTTTACCGGG",
     "Opening Energy": 20.37,
-    "Expression Score": 7.07,
+    "Expression Score": 19.26,
     Data: [
       {
         Time: "0h 0min",
@@ -535,7 +535,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGTCGAAGGGCGAAGAACTCTTCACTGGT",
     "Opening Energy": 18.8,
-    "Expression Score": 9.67,
+    "Expression Score": 47.34,
     Data: [
       {
         Time: "0h 0min",
@@ -801,7 +801,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGTCGAAAGGGGAAGAACTGTTCACCGGC",
     "Opening Energy": 14.23,
-    "Expression Score": 33.2,
+    "Expression Score": 92.16,
     Data: [
       {
         Time: "0h 0min",
@@ -1067,7 +1067,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGTCTAAAGGAGAAGAGCTTTTCACTGGG",
     "Opening Energy": 13.77,
-    "Expression Score": 37.81,
+    "Expression Score": 90.84,
     Data: [
       {
         Time: "0h 0min",
@@ -1333,7 +1333,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGAGCAAAGGGGAAGAATTATTTACAGGT",
     "Opening Energy": 5.56,
-    "Expression Score": 97.75,
+    "Expression Score": 80.84,
     Data: [
       {
         Time: "0h 0min",
@@ -1599,7 +1599,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGTCGAAGGGTGAAGAACTTTTCACTGGG",
     "Opening Energy": 17.84,
-    "Expression Score": 12.12,
+    "Expression Score": 68.0,
     Data: [
       {
         Time: "0h 0min",
@@ -1865,7 +1865,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGTCCAAAGGTGAAGAGCTTTTCACCGGG",
     "Opening Energy": 15.8,
-    "Expression Score": 21.09,
+    "Expression Score": 93.0,
     Data: [
       {
         Time: "0h 0min",
@@ -2131,7 +2131,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGTCGAAAGGTGAAGAGCTGTTCACCGGT",
     "Opening Energy": 15.66,
-    "Expression Score": 21.95,
+    "Expression Score": 93.0,
     Data: [
       {
         Time: "0h 0min",
@@ -2397,7 +2397,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGTCTAAAGGTGAAGAACTATTCACAGGG",
     "Opening Energy": 11.87,
-    "Expression Score": 60.55,
+    "Expression Score": 86.0,
     Data: [
       {
         Time: "0h 0min",
@@ -2663,7 +2663,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGTCTAAAGGTGAGGAGCTCTTCACAGGA",
     "Opening Energy": 11.31,
-    "Expression Score": 67.45,
+    "Expression Score": 85.0,
     Data: [
       {
         Time: "0h 0min",
@@ -2929,7 +2929,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGAGTAAAGGAGAGGAGCTTTTCACAGGA",
     "Opening Energy": 8.78,
-    "Expression Score": 90.29,
+    "Expression Score": 82.0,
     Data: [
       {
         Time: "0h 0min",
@@ -3195,7 +3195,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGAGTAAGGGAGAAGAGCTGTTCACTGGA",
     "Opening Energy": 10.99,
-    "Expression Score": 71.18,
+    "Expression Score": 84.07,
     Data: [
       {
         Time: "0h 0min",
@@ -3461,7 +3461,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGAGCAAAGGAGAAGAATTATTTACGGGA",
     "Opening Energy": 6.71,
-    "Expression Score": 96.72,
+    "Expression Score": 81.04,
     Data: [
       {
         Time: "0h 0min",
@@ -3727,7 +3727,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGAGTAAAGGGGAAGAACTCTTTACCGGG",
     "Opening Energy": 20.37,
-    "Expression Score": 7.07,
+    "Expression Score": 19.26,
     Data: [
       {
         Time: "0h 0min",
@@ -3993,7 +3993,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGTCGAAGGGCGAAGAACTCTTCACTGGT",
     "Opening Energy": 18.8,
-    "Expression Score": 9.67,
+    "Expression Score": 47.34,
     Data: [
       {
         Time: "0h 0min",
@@ -4259,7 +4259,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGTCGAAGGGTGAAGAACTGTTCACTGGT",
     "Opening Energy": 18.79,
-    "Expression Score": 9.7,
+    "Expression Score": 48.0,
     Data: [
       {
         Time: "0h 0min",
@@ -4525,7 +4525,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGAGTAAGGGGGAGGAGCTCTTCACCGGA",
     "Opening Energy": 14.92,
-    "Expression Score": 27.23,
+    "Expression Score": 94.0,
     Data: [
       {
         Time: "0h 0min",
@@ -4791,7 +4791,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGTCGAAAGGGGAAGAATTGTTCACTGGA",
     "Opening Energy": 10.47,
-    "Expression Score": 76.95,
+    "Expression Score": 83.0,
     Data: [
       {
         Time: "0h 0min",
@@ -5057,7 +5057,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGAGTAAGGGGGAGGAGCTGTTCACAGGA",
     "Opening Energy": 10.32,
-    "Expression Score": 78.49,
+    "Expression Score": 83.0,
     Data: [
       {
         Time: "0h 0min",
@@ -5323,7 +5323,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGAGTAAGGGAGAGGAATTGTTCACGGGT",
     "Opening Energy": 9.66,
-    "Expression Score": 84.36,
+    "Expression Score": 82.0,
     Data: [
       {
         Time: "0h 0min",
@@ -5589,7 +5589,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGAGCAAAGGAGAGGAATTATTTACGGGC",
     "Opening Energy": 7.2,
-    "Expression Score": 95.89,
+    "Expression Score": 81.0,
     Data: [
       {
         Time: "0h 0min",
@@ -5855,7 +5855,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGTCTAAGGGTGAGGAGCTCTTCACAGGA",
     "Opening Energy": 12.08,
-    "Expression Score": 57.84,
+    "Expression Score": 86.16,
     Data: [
       {
         Time: "0h 0min",
@@ -6121,7 +6121,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGTCGAAAGGTGAGGAACTGTTCACTGGG",
     "Opening Energy": 15.19,
-    "Expression Score": 25.13,
+    "Expression Score": 94.0,
     Data: [
       {
         Time: "0h 0min",
@@ -6387,7 +6387,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGAGTAAAGGGGAAGAGCTTTTCACCGGG",
     "Opening Energy": 13.88,
-    "Expression Score": 36.68,
+    "Expression Score": 91.0,
     Data: [
       {
         Time: "0h 0min",
@@ -6653,7 +6653,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGAGTAAAGGAGAAGAACTCTTTACCGGA",
     "Opening Energy": 13.45,
-    "Expression Score": 41.25,
+    "Expression Score": 90.0,
     Data: [
       {
         Time: "0h 0min",
@@ -6919,7 +6919,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGTCGAAAGGCGAGGAACTGTTCACTGGA",
     "Opening Energy": 12.67,
-    "Expression Score": 50.49,
+    "Expression Score": 88.0,
     Data: [
       {
         Time: "0h 0min",
@@ -7185,7 +7185,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGTCGAAAGGTGAAGAACTTTTCACTGGT",
     "Opening Energy": 19.59,
-    "Expression Score": 8.19,
+    "Expression Score": 31.0,
     Data: [
       {
         Time: "0h 0min",
@@ -7451,7 +7451,7 @@ export const fluorescence = [
     Type: "Optimised",
     "First 30 nt": "ATGTCCAAAGGAGAAGAACTATTCACCGGA",
     "Opening Energy": 10.86,
-    "Expression Score": 72.76,
+    "Expression Score": 84.0,
     Data: [
       {
         Time: "0h 0min",
@@ -7714,49 +7714,48 @@ export const fluorescence = [
     ],
   },
 ];
-
 export const correlation = [
-  { Time: "0h 0min", "Mean SpearmanR": -0.02, "Mean Pvalue": 0.92 },
-  { Time: "0h 10min", "Mean SpearmanR": -0.19, "Mean Pvalue": 0.33 },
-  { Time: "0h 20min", "Mean SpearmanR": -0.11, "Mean Pvalue": 0.56 },
-  { Time: "0h 30min", "Mean SpearmanR": -0.17, "Mean Pvalue": 0.38 },
-  { Time: "0h 40min", "Mean SpearmanR": -0.14, "Mean Pvalue": 0.48 },
-  { Time: "0h 50min", "Mean SpearmanR": -0.07, "Mean Pvalue": 0.71 },
-  { Time: "1h 0min", "Mean SpearmanR": -0.04, "Mean Pvalue": 0.83 },
-  { Time: "1h 10min", "Mean SpearmanR": -0.03, "Mean Pvalue": 0.89 },
-  { Time: "1h 20min", "Mean SpearmanR": -0.02, "Mean Pvalue": 0.91 },
-  { Time: "1h 30min", "Mean SpearmanR": 0.01, "Mean Pvalue": 0.96 },
-  { Time: "1h 40min", "Mean SpearmanR": 0.0, "Mean Pvalue": 0.98 },
-  { Time: "1h 50min", "Mean SpearmanR": 0.03, "Mean Pvalue": 0.87 },
-  { Time: "2h 0min", "Mean SpearmanR": 0.08, "Mean Pvalue": 0.67 },
-  { Time: "2h 10min", "Mean SpearmanR": 0.12, "Mean Pvalue": 0.54 },
-  { Time: "2h 20min", "Mean SpearmanR": 0.19, "Mean Pvalue": 0.33 },
-  { Time: "2h 30min", "Mean SpearmanR": 0.26, "Mean Pvalue": 0.17 },
-  { Time: "2h 40min", "Mean SpearmanR": 0.27, "Mean Pvalue": 0.16 },
-  { Time: "2h 50min", "Mean SpearmanR": 0.31, "Mean Pvalue": 0.11 },
-  { Time: "3h 0min", "Mean SpearmanR": 0.32, "Mean Pvalue": 0.09 },
-  { Time: "3h 10min", "Mean SpearmanR": 0.32, "Mean Pvalue": 0.09 },
-  { Time: "3h 20min", "Mean SpearmanR": 0.36, "Mean Pvalue": 0.06 },
-  { Time: "3h 30min", "Mean SpearmanR": 0.37, "Mean Pvalue": 0.05 },
-  { Time: "3h 40min", "Mean SpearmanR": 0.39, "Mean Pvalue": 0.04 },
-  { Time: "3h 50min", "Mean SpearmanR": 0.4, "Mean Pvalue": 0.03 },
-  { Time: "4h 0min", "Mean SpearmanR": 0.42, "Mean Pvalue": 0.02 },
-  { Time: "4h 10min", "Mean SpearmanR": 0.44, "Mean Pvalue": 0.02 },
-  { Time: "4h 20min", "Mean SpearmanR": 0.45, "Mean Pvalue": 0.02 },
-  { Time: "4h 30min", "Mean SpearmanR": 0.46, "Mean Pvalue": 0.01 },
-  { Time: "4h 40min", "Mean SpearmanR": 0.46, "Mean Pvalue": 0.01 },
-  { Time: "4h 50min", "Mean SpearmanR": 0.48, "Mean Pvalue": 0.01 },
-  { Time: "5h 0min", "Mean SpearmanR": 0.49, "Mean Pvalue": 0.01 },
-  { Time: "5h 10min", "Mean SpearmanR": 0.51, "Mean Pvalue": 0.0 },
-  { Time: "5h 20min", "Mean SpearmanR": 0.53, "Mean Pvalue": 0.0 },
-  { Time: "5h 30min", "Mean SpearmanR": 0.52, "Mean Pvalue": 0.0 },
-  { Time: "5h 40min", "Mean SpearmanR": 0.53, "Mean Pvalue": 0.0 },
-  { Time: "5h 50min", "Mean SpearmanR": 0.53, "Mean Pvalue": 0.0 },
-  { Time: "6h 0min", "Mean SpearmanR": 0.53, "Mean Pvalue": 0.0 },
-  { Time: "6h 10min", "Mean SpearmanR": 0.52, "Mean Pvalue": 0.0 },
-  { Time: "6h 20min", "Mean SpearmanR": 0.52, "Mean Pvalue": 0.0 },
-  { Time: "6h 30min", "Mean SpearmanR": 0.53, "Mean Pvalue": 0.0 },
-  { Time: "6h 40min", "Mean SpearmanR": 0.54, "Mean Pvalue": 0.0 },
-  { Time: "6h 50min", "Mean SpearmanR": 0.56, "Mean Pvalue": 0.0 },
-  { Time: "7h 0min", "Mean SpearmanR": 0.56, "Mean Pvalue": 0.0 },
+  { Time: "0h 0min", "Mean SpearmanR": 0.42, "Mean Pvalue": 0.02 },
+  { Time: "0h 10min", "Mean SpearmanR": 0.43, "Mean Pvalue": 0.02 },
+  { Time: "0h 20min", "Mean SpearmanR": 0.42, "Mean Pvalue": 0.02 },
+  { Time: "0h 30min", "Mean SpearmanR": 0.36, "Mean Pvalue": 0.05 },
+  { Time: "0h 40min", "Mean SpearmanR": 0.38, "Mean Pvalue": 0.04 },
+  { Time: "0h 50min", "Mean SpearmanR": 0.38, "Mean Pvalue": 0.04 },
+  { Time: "1h 0min", "Mean SpearmanR": 0.33, "Mean Pvalue": 0.08 },
+  { Time: "1h 10min", "Mean SpearmanR": 0.27, "Mean Pvalue": 0.16 },
+  { Time: "1h 20min", "Mean SpearmanR": 0.28, "Mean Pvalue": 0.14 },
+  { Time: "1h 30min", "Mean SpearmanR": 0.28, "Mean Pvalue": 0.13 },
+  { Time: "1h 40min", "Mean SpearmanR": 0.34, "Mean Pvalue": 0.07 },
+  { Time: "1h 50min", "Mean SpearmanR": 0.35, "Mean Pvalue": 0.06 },
+  { Time: "2h 0min", "Mean SpearmanR": 0.46, "Mean Pvalue": 0.01 },
+  { Time: "2h 10min", "Mean SpearmanR": 0.5, "Mean Pvalue": 0.01 },
+  { Time: "2h 20min", "Mean SpearmanR": 0.53, "Mean Pvalue": 0.0 },
+  { Time: "2h 30min", "Mean SpearmanR": 0.61, "Mean Pvalue": 0.0 },
+  { Time: "2h 40min", "Mean SpearmanR": 0.65, "Mean Pvalue": 0.0 },
+  { Time: "2h 50min", "Mean SpearmanR": 0.67, "Mean Pvalue": 0.0 },
+  { Time: "3h 0min", "Mean SpearmanR": 0.69, "Mean Pvalue": 0.0 },
+  { Time: "3h 10min", "Mean SpearmanR": 0.7, "Mean Pvalue": 0.0 },
+  { Time: "3h 20min", "Mean SpearmanR": 0.7, "Mean Pvalue": 0.0 },
+  { Time: "3h 30min", "Mean SpearmanR": 0.7, "Mean Pvalue": 0.0 },
+  { Time: "3h 40min", "Mean SpearmanR": 0.72, "Mean Pvalue": 0.0 },
+  { Time: "3h 50min", "Mean SpearmanR": 0.71, "Mean Pvalue": 0.0 },
+  { Time: "4h 0min", "Mean SpearmanR": 0.7, "Mean Pvalue": 0.0 },
+  { Time: "4h 10min", "Mean SpearmanR": 0.7, "Mean Pvalue": 0.0 },
+  { Time: "4h 20min", "Mean SpearmanR": 0.69, "Mean Pvalue": 0.0 },
+  { Time: "4h 30min", "Mean SpearmanR": 0.67, "Mean Pvalue": 0.0 },
+  { Time: "4h 40min", "Mean SpearmanR": 0.67, "Mean Pvalue": 0.0 },
+  { Time: "4h 50min", "Mean SpearmanR": 0.67, "Mean Pvalue": 0.0 },
+  { Time: "5h 0min", "Mean SpearmanR": 0.66, "Mean Pvalue": 0.0 },
+  { Time: "5h 10min", "Mean SpearmanR": 0.64, "Mean Pvalue": 0.0 },
+  { Time: "5h 20min", "Mean SpearmanR": 0.63, "Mean Pvalue": 0.0 },
+  { Time: "5h 30min", "Mean SpearmanR": 0.62, "Mean Pvalue": 0.0 },
+  { Time: "5h 40min", "Mean SpearmanR": 0.62, "Mean Pvalue": 0.0 },
+  { Time: "5h 50min", "Mean SpearmanR": 0.62, "Mean Pvalue": 0.0 },
+  { Time: "6h 0min", "Mean SpearmanR": 0.62, "Mean Pvalue": 0.0 },
+  { Time: "6h 10min", "Mean SpearmanR": 0.62, "Mean Pvalue": 0.0 },
+  { Time: "6h 20min", "Mean SpearmanR": 0.61, "Mean Pvalue": 0.0 },
+  { Time: "6h 30min", "Mean SpearmanR": 0.61, "Mean Pvalue": 0.0 },
+  { Time: "6h 40min", "Mean SpearmanR": 0.6, "Mean Pvalue": 0.0 },
+  { Time: "6h 50min", "Mean SpearmanR": 0.58, "Mean Pvalue": 0.0 },
+  { Time: "7h 0min", "Mean SpearmanR": 0.58, "Mean Pvalue": 0.0 },
 ];
