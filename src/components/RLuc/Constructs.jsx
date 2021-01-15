@@ -90,8 +90,8 @@ const options = {
       {
         ticks: {
           // beginAtZero: true,
-            suggestedMax: 95,
-            suggestedMin: 75,
+            suggestedMax: 100,
+            suggestedMin: 0,
         },
         scaleLabel: {
           display: true,
