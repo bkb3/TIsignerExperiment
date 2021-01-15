@@ -20,7 +20,7 @@ function Home() {
   return (
     <div className={classes.root}>
       <Typography variant="h4" gutterBottom>
-        TISIGNER experiment
+        TIsigner experiment
       </Typography>
       <Typography variant="h5" gutterBottom>
         About the experiment

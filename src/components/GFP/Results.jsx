@@ -157,7 +157,7 @@ class Results extends Component {
             </li>
           </ul>
           <Typography variant="body2" gutterBottom>
-          Slider can be used to view the data at different time points. By default, it is fixed at <b>3h 40 min</b>, the time point at which the correlation between GFP fluorescence and expression score is maximum (Spearman's ρ = 0.72, P-value=1.3 x 10<sup>-5</sup>).
+          Slider can be used to view the data at different time points. By default, it is fixed at <b>3h 40 min</b>, the time point at which the correlation between GFP fluorescence and expression score is maximum (Spearman's ρ = 0.72, P-value = 1.3 x 10<sup>-5</sup>).
           </Typography>
 
           <Slider
