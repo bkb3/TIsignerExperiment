@@ -1,0 +1,2 @@
+.customFade{background:linear-gradient(90deg,#fff,#000,#fff);background-repeat:no-repeat;background-size:80%;-webkit-animation:animate 4s linear infinite;animation:animate 4s linear infinite;-webkit-background-clip:text;-webkit-text-fill-color:hsla(0,0%,100%,0)}@-webkit-keyframes animate{0%{background-position:-500%}to{background-position:500%}}@keyframes animate{0%{background-position:-500%}to{background-position:500%}}
+/*# sourceMappingURL=5.c949588e.chunk.css.map */
