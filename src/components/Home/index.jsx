@@ -34,11 +34,11 @@ function Home() {
         expression can be tuned using the accesibility of the translation
         initiation region. The theory behind this can be viewed at this paper{" "}
         <a
-          href="https://doi.org/10.1101/726752"
+          href="https://doi.org/10.1371/journal.pcbi.1009461"
           target="_blank"
           rel="noopener noreferrer"
         >
-          DOI: 10.1101/726752
+          DOI: 10.1371/journal.pcbi.1009461
         </a>
         . In brief, our approach has the following features:
       </Typography>
