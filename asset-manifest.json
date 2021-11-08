@@ -1,0 +1,43 @@
+{
+  "files": {
+    "static/js/0.426f1274.chunk.js": "/TIsignerExperiment/static/js/0.426f1274.chunk.js",
+    "static/js/0.426f1274.chunk.js.map": "/TIsignerExperiment/static/js/0.426f1274.chunk.js.map",
+    "main.css": "/TIsignerExperiment/static/css/main.babb4a32.chunk.css",
+    "main.js": "/TIsignerExperiment/static/js/main.5b8c2599.chunk.js",
+    "main.js.map": "/TIsignerExperiment/static/js/main.5b8c2599.chunk.js.map",
+    "runtime-main.js": "/TIsignerExperiment/static/js/runtime-main.20cdcfaa.js",
+    "runtime-main.js.map": "/TIsignerExperiment/static/js/runtime-main.20cdcfaa.js.map",
+    "static/js/3.832d55d0.chunk.js": "/TIsignerExperiment/static/js/3.832d55d0.chunk.js",
+    "static/js/3.832d55d0.chunk.js.map": "/TIsignerExperiment/static/js/3.832d55d0.chunk.js.map",
+    "static/js/4.6cf8dfca.chunk.js": "/TIsignerExperiment/static/js/4.6cf8dfca.chunk.js",
+    "static/js/4.6cf8dfca.chunk.js.map": "/TIsignerExperiment/static/js/4.6cf8dfca.chunk.js.map",
+    "static/css/5.c949588e.chunk.css": "/TIsignerExperiment/static/css/5.c949588e.chunk.css",
+    "static/js/5.077966c2.chunk.js": "/TIsignerExperiment/static/js/5.077966c2.chunk.js",
+    "static/js/5.077966c2.chunk.js.map": "/TIsignerExperiment/static/js/5.077966c2.chunk.js.map",
+    "static/js/6.022de086.chunk.js": "/TIsignerExperiment/static/js/6.022de086.chunk.js",
+    "static/js/6.022de086.chunk.js.map": "/TIsignerExperiment/static/js/6.022de086.chunk.js.map",
+    "static/js/7.8b179e66.chunk.js": "/TIsignerExperiment/static/js/7.8b179e66.chunk.js",
+    "static/js/7.8b179e66.chunk.js.map": "/TIsignerExperiment/static/js/7.8b179e66.chunk.js.map",
+    "static/js/8.038dc579.chunk.js": "/TIsignerExperiment/static/js/8.038dc579.chunk.js",
+    "static/js/8.038dc579.chunk.js.map": "/TIsignerExperiment/static/js/8.038dc579.chunk.js.map",
+    "static/js/9.1d4bb26c.chunk.js": "/TIsignerExperiment/static/js/9.1d4bb26c.chunk.js",
+    "static/js/9.1d4bb26c.chunk.js.map": "/TIsignerExperiment/static/js/9.1d4bb26c.chunk.js.map",
+    "static/js/10.46792596.chunk.js": "/TIsignerExperiment/static/js/10.46792596.chunk.js",
+    "static/js/10.46792596.chunk.js.map": "/TIsignerExperiment/static/js/10.46792596.chunk.js.map",
+    "static/js/11.c592365e.chunk.js": "/TIsignerExperiment/static/js/11.c592365e.chunk.js",
+    "static/js/11.c592365e.chunk.js.map": "/TIsignerExperiment/static/js/11.c592365e.chunk.js.map",
+    "static/js/12.02b64122.chunk.js": "/TIsignerExperiment/static/js/12.02b64122.chunk.js",
+    "static/js/12.02b64122.chunk.js.map": "/TIsignerExperiment/static/js/12.02b64122.chunk.js.map",
+    "index.html": "/TIsignerExperiment/index.html",
+    "static/css/5.c949588e.chunk.css.map": "/TIsignerExperiment/static/css/5.c949588e.chunk.css.map",
+    "static/css/main.babb4a32.chunk.css.map": "/TIsignerExperiment/static/css/main.babb4a32.chunk.css.map",
+    "static/js/0.426f1274.chunk.js.LICENSE.txt": "/TIsignerExperiment/static/js/0.426f1274.chunk.js.LICENSE.txt",
+    "static/js/3.832d55d0.chunk.js.LICENSE.txt": "/TIsignerExperiment/static/js/3.832d55d0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.20cdcfaa.js",
+    "static/js/3.832d55d0.chunk.js",
+    "static/css/main.babb4a32.chunk.css",
+    "static/js/main.5b8c2599.chunk.js"
+  ]
+}

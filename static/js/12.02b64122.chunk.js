@@ -1,0 +1,2 @@
+(this.webpackJsonptisigner_experiment=this.webpackJsonptisigner_experiment||[]).push([[12],{346:function(t,e,i){"use strict";i.r(e);var r=i(2),n=(i(0),i(54)),c=i(133),o=Object(c.a)({root:{width:"100%",maxWidth:500}});e.default=function(){var t=o();return Object(r.jsx)("div",{className:t.root,children:Object(r.jsx)(n.a,{variant:"h5",gutterBottom:!0,children:"RLuc Protocol"})})}}}]);
+//# sourceMappingURL=12.02b64122.chunk.js.map
